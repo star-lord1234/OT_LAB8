@@ -9,4 +9,4 @@
 - Exactly-one QUBO matched its direct formula for all states; penalty 5.0 produced a feasible ground state while 0.5 and 2.0 did not.
 - The first combined A+B run stopped at collection because duplicate `test_experiment.py` names were not package-qualified; fixed with test-package markers and logged as F-006.
 - Final repository-wide gate: preflight 7/7, repository validation passed, and 42/42 tests passed.
-- The implementation commit will be added after it is created.
+- Verified implementation commit: `e2b80847e9436d73a54620442c1e74a6fffc2c5c` (`[AI:Codex] Implement Track B discrete optimization`).

@@ -16,7 +16,9 @@ def test_registry_defines_all_tracks_and_existing_locations() -> None:
     assert validate_registry_paths(tracks) == []
     assert tracks["C"].dependencies == ("B",)
     assert tracks["I"].dependencies == ("C", "D")
-    assert all(track.status == "scaffolded" for track in tracks.values())
+    assert tracks["A"].status == "implemented"
+    assert tracks["A"].entrypoint == "tracks.A_continuous.benchmarks.run:main"
+    assert all(tracks[track_id].status == "scaffolded" for track_id in "BCDEFGHIJ")
 
 
 def test_prompt_record_validation(tmp_path: Path) -> None:

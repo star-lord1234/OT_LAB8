@@ -15,12 +15,12 @@ def test_track_plan_command() -> None:
         text=True,
     )
     assert "Track A: Continuous optimization" in completed.stdout
-    assert "status: scaffolded" in completed.stdout
+    assert "status: implemented" in completed.stdout
 
 
 def test_unimplemented_track_refuses_to_claim_run() -> None:
     completed = subprocess.run(
-        [str(ROOT / "scripts" / "run_track.py"), "A"],
+        [str(ROOT / "scripts" / "run_track.py"), "B"],
         check=False,
         capture_output=True,
         text=True,

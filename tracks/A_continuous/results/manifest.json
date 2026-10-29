@@ -1,0 +1,45 @@
+{
+  "artifacts": [
+    "backprop.json",
+    "convergence.csv",
+    "curvature.json",
+    "environment.json",
+    "gradient_check.json",
+    "landscapes.json",
+    "manifest.json",
+    "method_runs.csv",
+    "method_summary.csv",
+    "noisy_objective.json",
+    "plots/landscape_convergence.png",
+    "plots/noisy_objective.png",
+    "plots/optimizer_convergence.png",
+    "plots/regularization_effect.png",
+    "plots/second_order_convergence.png",
+    "plots/step_size_sensitivity.png",
+    "regularization.json",
+    "second_order_checks.json",
+    "sensitivity.json"
+  ],
+  "methods": [
+    "batch_gd",
+    "sgd",
+    "mini_batch_sgd",
+    "momentum",
+    "nesterov",
+    "adagrad",
+    "rmsprop",
+    "adam",
+    "newton",
+    "gauss_newton",
+    "bfgs"
+  ],
+  "runtime_seconds": 4.094435042236,
+  "seeds": [
+    3986925838,
+    1689274379,
+    3364955321
+  ],
+  "status": "verified_experiment_with_syllabus_gap",
+  "track": "A",
+  "unresolved": "Exact Chapter 6 classroom syllabus has not been supplied; additional taught curvature methods may still be required."
+}

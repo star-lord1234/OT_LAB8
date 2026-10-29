@@ -8,7 +8,13 @@ INF-06,GLOBAL,Headless plot generation,src/optlab/common/plotting.py,tests/infra
 INF-07,GLOBAL,Correctness verification records,src/optlab/common/verification.py,tests/infrastructure/test_verification_environment.py,pytest evidence,Verification methodology,implemented
 INF-08,GLOBAL,Privacy-safe environment metadata,src/optlab/common/environment.py,tests/infrastructure/test_verification_environment.py,results/environment.json,Experimental setup,implemented
 INF-09,GLOBAL,AI prompt and revision validation,src/optlab/common/prompts.py,tests/infrastructure/test_registry_prompts.py,prompts/_cross_track,AI disclosure,implemented
-TRACK-A,A,Track A evidence contract,tracks/A_continuous/implementation,tracks/A_continuous/tests,tracks/A_continuous/results,Track A,planned
+A-01,A,First-order optimizer comparison,tracks/A_continuous/implementation/optimizers.py,tracks/A_continuous/tests/test_optimizers.py,tracks/A_continuous/results/method_summary.csv,report/track_a.md#A.1-objective-baselines-and-protocol,verified
+A-02,A,Newton and Gauss-Newton,tracks/A_continuous/implementation/optimizers.py,tracks/A_continuous/tests/test_optimizers.py,tracks/A_continuous/results/second_order_checks.json,report/track_a.md#A.2-gradients-backpropagation-and-curvature,verified
+A-03,A,Backpropagation versus parameter update,tracks/A_continuous/implementation/pytorch_demo.py,tracks/A_continuous/tests/test_curvature_backprop.py,tracks/A_continuous/results/backprop.json,report/track_a.md#A.2-gradients-backpropagation-and-curvature,verified
+A-04,A,Exact and approximate curvature,tracks/A_continuous/implementation/curvature.py,tracks/A_continuous/tests/test_curvature_backprop.py,tracks/A_continuous/results/curvature.json,report/track_a.md#A.2-gradients-backpropagation-and-curvature,verified-provisional-syllabus
+A-05,A,Convex strongly-convex and non-convex landscapes,tracks/A_continuous/objectives.py,tracks/A_continuous/tests/test_objectives.py,tracks/A_continuous/results/landscapes.json,report/track_a.md#A.3-convexity-non-convexity-and-sensitivity,verified
+A-06,A,Step size tuning and noisy gradients,tracks/A_continuous/implementation/experiment.py,tracks/A_continuous/tests/test_experiment.py,tracks/A_continuous/results/sensitivity.json,report/track_a.md#A.3-convexity-non-convexity-and-sensitivity,verified
+A-07,A,Additional methods actually taught in Chapter 6,UNRESOLVED,UNRESOLVED,UNRESOLVED,report/track_a.md#A.5-reproduction-limitations-and-syllabus-blocker,blocked-awaiting-syllabus
 TRACK-B,B,Track B evidence contract,tracks/B_discrete/implementation,tracks/B_discrete/tests,tracks/B_discrete/results,Track B,planned
 TRACK-C,C,Track C evidence contract,tracks/C_quantum_optimization/implementation,tracks/C_quantum_optimization/tests,tracks/C_quantum_optimization/results,Track C,planned
 TRACK-D,D,Track D evidence contract,tracks/D_parallel_distributed/implementation,tracks/D_parallel_distributed/tests,tracks/D_parallel_distributed/results,Track D,planned

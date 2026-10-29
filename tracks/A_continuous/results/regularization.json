@@ -1,0 +1,23 @@
+[
+  {
+    "accuracy": 0.9375,
+    "final_objective": 0.20303064683178174,
+    "l2": 0.0,
+    "runtime_seconds": 0.0038437917828559875,
+    "weight_norm": 2.493583394973394
+  },
+  {
+    "accuracy": 0.93125,
+    "final_objective": 0.3911322905133633,
+    "l2": 0.1,
+    "runtime_seconds": 0.003717666957527399,
+    "weight_norm": 1.3687817337605805
+  },
+  {
+    "accuracy": 0.93125,
+    "final_objective": 0.6018883265711327,
+    "l2": 1.0,
+    "runtime_seconds": 0.0016241250559687614,
+    "weight_norm": 0.3679299422114093
+  }
+]

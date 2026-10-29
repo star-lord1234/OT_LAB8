@@ -19,6 +19,6 @@ dependencies = [
 package = false
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["src"]
+testpaths = ["tests", "tracks"]
+pythonpath = ["src", "."]
 addopts = "-ra"

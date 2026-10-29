@@ -36,3 +36,11 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** added `scripts/_bootstrap.py`; every project CLI now re-executes with the unresolved `.venv/bin/python` path before importing project modules. The first attempted fix incorrectly resolved the symlink and still bypassed venv activation; the final guard compares `sys.prefix` instead.
 - **Regression tests:** `tests/infrastructure/test_cli.py::test_track_plan_command` and `test_unimplemented_track_refuses_to_claim_run`.
 - **Lesson:** executable Python scripts must not rely on the shell's generic `python3` when the project promises an isolated environment.
+
+## F-005 - Scaffold-state tests became stale after Track A implementation
+
+- **AI-generated artifact:** initial infrastructure tests hard-coded that every track, including A, must remain `scaffolded` and refuse execution.
+- **Failure:** after Track A was correctly registered as implemented, the full run reported 3 failed and 28 passed tests even though the focused Track A suite passed 9/9.
+- **Fix:** assert that A is implemented with its registered entry point, while using still-scaffolded Track B to preserve the refusal-to-claim-an-unimplemented-run regression check.
+- **Regression tests:** `tests/infrastructure/test_cli.py::test_track_plan_command`, `test_unimplemented_track_refuses_to_claim_run`, and `tests/infrastructure/test_registry_prompts.py::test_registry_defines_all_tracks_and_existing_locations`.
+- **Lesson:** lifecycle tests should preserve the invariant (implemented tracks run; scaffolded tracks refuse) rather than hard-code that a specific track can never advance.

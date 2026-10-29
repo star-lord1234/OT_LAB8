@@ -1,0 +1,109 @@
+{
+  "convex_not_strong": {
+    "final_objective": 1.429519348466637e-17,
+    "final_parameters": [
+      1.0000000026734992,
+      2.673498750259246e-09
+    ],
+    "hessian_eigenvalues_at_final": [
+      0.0,
+      2.0
+    ],
+    "initial": [
+      3.0,
+      2.0
+    ],
+    "stopping_condition": "gradient_norm<=1e-08"
+  },
+  "definitions": {
+    "convex_not_strong": "0.5*(x-target)^T [[1,1],[1,1]] (x-target); Hessian eigenvalues 0,2",
+    "nonconvex": "(x^2-1)^2 + 0.2x + 0.5y^2",
+    "strongly_convex": "0.5*(x-target)^T diag(1,10) (x-target)"
+  },
+  "nonconvex_left_basin": {
+    "final_objective": -0.2024398341670257,
+    "final_parameters": [
+      -1.02412030021505,
+      0.0010956074084471994
+    ],
+    "hessian_eigenvalues_at_final": [
+      1.0,
+      8.585868671750772
+    ],
+    "initial": [
+      -0.2,
+      0.5
+    ],
+    "stopping_condition": "max_iterations=150"
+  },
+  "nonconvex_right_basin": {
+    "final_objective": 0.19743475303607325,
+    "final_parameters": [
+      0.9739943532312777,
+      0.0010956074084471994
+    ],
+    "hessian_eigenvalues_at_final": [
+      1.0,
+      7.38398000151698
+    ],
+    "initial": [
+      0.2,
+      0.5
+    ],
+    "stopping_condition": "max_iterations=150"
+  },
+  "nonconvex_stationary_points": [
+    {
+      "classification": "local minimum",
+      "hessian_eigenvalues": [
+        1.0,
+        8.585868671750777
+      ],
+      "objective": -0.20244043434482242,
+      "point": [
+        -1.0241203002150503,
+        0.0
+      ]
+    },
+    {
+      "classification": "saddle point",
+      "hessian_eigenvalues": [
+        -3.969848673267433,
+        1.0
+      ],
+      "objective": 1.005006281486546,
+      "point": [
+        0.050125946984044385,
+        0.0
+      ]
+    },
+    {
+      "classification": "local minimum",
+      "hessian_eigenvalues": [
+        1.0,
+        7.38398000151698
+      ],
+      "objective": 0.19743415285827653,
+      "point": [
+        0.9739943532312777,
+        0.0
+      ]
+    }
+  ],
+  "strongly_convex": {
+    "final_objective": 2.7376517346140926e-11,
+    "final_parameters": [
+      1.0000073995293561,
+      -1.0
+    ],
+    "hessian_eigenvalues_at_final": [
+      1.0,
+      10.0
+    ],
+    "initial": [
+      3.0,
+      2.0
+    ],
+    "stopping_condition": "max_iterations=150"
+  }
+}

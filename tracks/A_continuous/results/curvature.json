@@ -1,0 +1,40 @@
+{
+  "diagonal_hvp_relative_error": 0.19403268333657994,
+  "eigenvalues": [
+    0.23319514278415607,
+    0.35,
+    0.4668048572158439
+  ],
+  "empirical_fisher_hvp_relative_error": 0.24810830949246124,
+  "hessian": [
+    [
+      0.3500000000000001,
+      0.11680485721584392,
+      -1.5265566588595904e-17
+    ],
+    [
+      0.11680485721584392,
+      0.3499999999999999,
+      4.163336342344337e-18
+    ],
+    [
+      -1.5265566588595904e-17,
+      4.163336342344337e-18,
+      0.35
+    ]
+  ],
+  "hvp_relative_error": 4.9044350124751874e-11,
+  "notes": "HVP is checked independently by finite differences. Diagonal, empirical Fisher, and rank-1 matrices are approximations and need not match the exact Hessian.",
+  "point": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "probe_vector": [
+    0.5,
+    0.75,
+    1.0
+  ],
+  "rank1_hvp_relative_error": 0.6494743528009301,
+  "runtime_seconds": 0.0002042911946773529
+}

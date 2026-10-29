@@ -13,4 +13,4 @@ fi
 "$PYTHON_BIN" "$ROOT_DIR/scripts/validate_repo.py"
 MPLCONFIGDIR="$ROOT_DIR/.cache/matplotlib" \
   XDG_CACHE_HOME="$ROOT_DIR/.cache/xdg" \
-  "$PYTHON_BIN" -m pytest "$ROOT_DIR/tests"
+  "$PYTHON_BIN" -m pytest "$ROOT_DIR/tests" "$ROOT_DIR/tracks"

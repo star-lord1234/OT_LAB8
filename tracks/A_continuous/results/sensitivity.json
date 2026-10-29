@@ -1,0 +1,26 @@
+[
+  {
+    "final_objective": 0.40055620161481187,
+    "learning_rate": 0.01,
+    "stopping_condition": "max_iterations=80",
+    "theoretical_stability_threshold": 0.2
+  },
+  {
+    "final_objective": 3.2142701189977287e-06,
+    "learning_rate": 0.08,
+    "stopping_condition": "max_iterations=80",
+    "theoretical_stability_threshold": 0.2
+  },
+  {
+    "final_objective": 4.650023536446952e-14,
+    "learning_rate": 0.18,
+    "stopping_condition": "max_iterations=80",
+    "theoretical_stability_threshold": 0.2
+  },
+  {
+    "final_objective": 1273904852944.263,
+    "learning_rate": 0.22,
+    "stopping_condition": "diverged",
+    "theoretical_stability_threshold": 0.2
+  }
+]

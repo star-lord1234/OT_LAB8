@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: scaffold only. No experimental claim should be added without linked raw evidence and correctness checks.
+Status: active implementation. Track A has linked experimental evidence; other tracks remain scaffolded.
 
 ## Executive summary
 
@@ -16,7 +16,7 @@ Pending exact syllabus.
 
 ## Track A - Continuous optimization
 
-Pending.
+Implemented and verified, subject to the unresolved Chapter 6 syllabus audit. See the full [Track A report section](track_a.md), raw [method table](../tracks/A_continuous/results/method_runs.csv), and generated [evidence manifest](../tracks/A_continuous/results/manifest.json).
 
 ## Track B - Discrete optimization
 

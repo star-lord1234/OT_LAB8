@@ -4,7 +4,7 @@
     {
       "id": "A",
       "name": "Continuous optimization",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/A_continuous",
       "config": "configs/tracks/A.toml",
       "implementation": "tracks/A_continuous/implementation",
@@ -12,7 +12,7 @@
       "tests": "tracks/A_continuous/tests",
       "results": "tracks/A_continuous/results",
       "report_section": "report/report.md#track-a-continuous-optimization",
-      "entrypoint": null,
+      "entrypoint": "tracks.A_continuous.benchmarks.run:main",
       "dependencies": []
     },
     {

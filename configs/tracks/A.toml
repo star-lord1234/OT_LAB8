@@ -5,4 +5,5 @@ base_seed = 20261029
 output_dir = "../../tracks/A_continuous/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"
+epochs = 60

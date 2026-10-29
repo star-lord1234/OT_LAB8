@@ -1,0 +1,23 @@
+{
+  "record_id": "2026-10-29-track-a-implementation",
+  "date": "2026-10-29",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "Track A",
+  "purpose": "Implement and verify the complete explicitly named Track A continuous-optimization scope",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": null,
+  "revisions": [
+    {
+      "reason": "The first evidence bundle contained per-run records but no compact cross-run aggregate",
+      "action": "Added method_summary.csv with objective and runtime means and standard deviations"
+    },
+    {
+      "reason": "Visual QA found that clipping a negative non-convex objective on a log axis flattened its curve",
+      "action": "Changed the shared landscape plot to use nonnegative objective gap to each run's best observed value"
+    }
+  ],
+  "notes": "The exact deployed model snapshot is not exposed. The prompt, checks, and revisions recorded here occurred in this implementation turn."
+}

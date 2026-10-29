@@ -14,6 +14,7 @@ from _bootstrap import ensure_project_python
 
 ensure_project_python(ROOT)
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT))
 
 from optlab.common.registry import load_registry, validate_registry_paths  # noqa: E402
 

@@ -1,0 +1,72 @@
+{
+  "accuracy": 1.0,
+  "analytic_gradient": -0.007411818857467913,
+  "backward_changed_parameters": false,
+  "device": "cpu",
+  "epochs": 120,
+  "explanation": "loss.backward() computes and accumulates .grad without updating parameters; optimizer.step() consumes those gradients to update parameters.",
+  "final_loss": 0.004347783689671107,
+  "finite_difference_gradient": -0.007411818869762498,
+  "gradient_absolute_error": 1.2294584621208582e-11,
+  "gradient_parameter": "first layer weight[0,0]",
+  "history": [
+    {
+      "iteration": 1,
+      "objective": 0.679297573592737
+    },
+    {
+      "iteration": 11,
+      "objective": 0.5177832698647831
+    },
+    {
+      "iteration": 21,
+      "objective": 0.2924188613394149
+    },
+    {
+      "iteration": 31,
+      "objective": 0.10508616384453773
+    },
+    {
+      "iteration": 41,
+      "objective": 0.03515845485535808
+    },
+    {
+      "iteration": 51,
+      "objective": 0.017119475387657013
+    },
+    {
+      "iteration": 61,
+      "objective": 0.011140387883626614
+    },
+    {
+      "iteration": 71,
+      "objective": 0.008506079733102715
+    },
+    {
+      "iteration": 81,
+      "objective": 0.007045232469830223
+    },
+    {
+      "iteration": 91,
+      "objective": 0.00608342877859947
+    },
+    {
+      "iteration": 101,
+      "objective": 0.005373201264207241
+    },
+    {
+      "iteration": 111,
+      "objective": 0.004811040332681871
+    },
+    {
+      "iteration": 120,
+      "objective": 0.004390523542340922
+    }
+  ],
+  "loss": "binary cross-entropy with logits",
+  "model": "2-4-1 tanh MLP on four XOR examples",
+  "optimizer": "Adam(lr=0.05)",
+  "optimizer_step_changed_parameters": true,
+  "runtime_seconds": 0.019405874889343977,
+  "torch_version": "2.15.0"
+}

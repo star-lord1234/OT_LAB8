@@ -1,0 +1,23 @@
+[
+  {
+    "final_objective": 0.0024544826008644936,
+    "noise_std": 0.2,
+    "runtime_seconds": 0.0008450420573353767,
+    "seed": 3986925838,
+    "stopping_condition": "max_iterations=100"
+  },
+  {
+    "final_objective": 0.0022486616313452516,
+    "noise_std": 0.2,
+    "runtime_seconds": 0.0008174171671271324,
+    "seed": 1689274379,
+    "stopping_condition": "max_iterations=100"
+  },
+  {
+    "final_objective": 0.0013880706065822871,
+    "noise_std": 0.2,
+    "runtime_seconds": 0.0008456669747829437,
+    "seed": 3364955321,
+    "stopping_condition": "max_iterations=100"
+  }
+]

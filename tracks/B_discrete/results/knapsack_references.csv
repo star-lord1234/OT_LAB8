@@ -1,0 +1,4 @@
+instance,items,capacity,optimal_objective,selected,total_weight,runtime_seconds,states_enumerated,peak_python_bytes
+classic_greedy_counterexample,3,50,220,011,50,0.00010370882228016853,8,1196
+project_selection_8,8,24,44,01101100,24,0.0021667080000042915,256,27656
+allocation_14,14,39,83,10101110110010,39,0.16561787482351065,16384,305432

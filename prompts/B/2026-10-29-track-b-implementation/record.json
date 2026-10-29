@@ -1,0 +1,19 @@
+{
+  "record_id": "2026-10-29-track-b-implementation",
+  "date": "2026-10-29",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "Track B",
+  "purpose": "Implement and verify Track B discrete optimization, Max-Cut QUBO/Ising, and the Track C fixture",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": null,
+  "revisions": [
+    {
+      "reason": "The first combined A+B pytest collection found duplicate top-level test_experiment module names",
+      "action": "Added package markers to both track test directories and retained the combined full-suite gate"
+    }
+  ],
+  "notes": "The exact deployed model snapshot is not exposed. Only work from this implementation turn is recorded."
+}

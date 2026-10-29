@@ -44,3 +44,11 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** assert that A is implemented with its registered entry point, while using still-scaffolded Track B to preserve the refusal-to-claim-an-unimplemented-run regression check.
 - **Regression tests:** `tests/infrastructure/test_cli.py::test_track_plan_command`, `test_unimplemented_track_refuses_to_claim_run`, and `tests/infrastructure/test_registry_prompts.py::test_registry_defines_all_tracks_and_existing_locations`.
 - **Lesson:** lifecycle tests should preserve the invariant (implemented tracks run; scaffolded tracks refuse) rather than hard-code that a specific track can never advance.
+
+## F-006 - Track test modules collided during pytest collection
+
+- **AI-generated artifact:** Track A and Track B each contained a file named `test_experiment.py`, while their `tests/` directories lacked package markers.
+- **Failure:** the first combined A+B run stopped during collection with an `import file mismatch`; pytest imported the B file using the already-loaded top-level module name from A.
+- **Fix:** added `__init__.py` to both track test directories so their fully qualified module names are distinct.
+- **Regression coverage:** the repository-wide `scripts/test_all.sh` collects both track suites in one invocation.
+- **Lesson:** independently valid test folders can still collide when combined; multi-track test structure must be package-safe from the start.

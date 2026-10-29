@@ -149,12 +149,12 @@ All paths below are proposed. "Result" names the evidence that must exist before
 
 | ID | Class | Requirement | Planned implementation | Verification/test | Required result/evidence | Report section |
 |---|---|---|---|---|---|---|
-| B-01 | M | Selection/scheduling/allocation/combinatorial formulation. | Small 0/1 knapsack with binary variables and capacity. | Tiny exhaustive enumeration. | Formal model and feasible baseline. | B.1. |
-| B-02 | M | Greedy, ILP, Branch-and-Bound, and dynamic programming; exact versus heuristic comparison. | Four solvers on identical instances. | Exhaustive tiny optimum and feasibility assertions. | Objective/runtime/optimality-gap table. | B.2-B.3. |
-| B-03 | M | QUBO and Ising formulation with binary-to-spin conversion. | Tiny weighted Max-Cut converted consistently. | Enumerate all states and match cut scores/energies. | QUBO/Ising coefficients and equivalence table. | B.4. |
-| B-04 | M | Explicit penalty terms for constraints. | Separate tiny exactly-one or capacity-constrained QUBO. | Enumerate feasible/infeasible energies across penalty strengths. | Verified penalty threshold/behavior. | B.4. |
-| B-05 | M | Classical QUBO solution becomes Track C baseline. | Save canonical instance and brute-force optimum. | Cross-track fixture hash and expected optimum. | Reusable B-to-C fixture. | B.4; C.1. |
-| B-06 | MS | Feature selection or other combinatorial applications taught. | Minimal taught-domain instance if required. | Exhaustive/reference comparison. | Added coverage evidence. | B; syllabus appendix. |
+| B-01 | M | Selection/scheduling/allocation/combinatorial formulation. | Three fixed 0/1 knapsack instances in `models.py`; formal model in `MATHEMATICS.md`. | Exhaustive feasibility and optimum checks. | `knapsack_instances.json`, `knapsack_references.csv`. | `report/track_b.md` B.1. |
+| B-02 | M | Greedy, ILP, Branch-and-Bound, and dynamic programming; exact versus heuristic comparison. | Four solvers in `implementation/solvers.py` receive identical instances/constraints. | Every exact result compared with independent enumeration; known greedy counterexample retained. | `knapsack_runs.csv`, `knapsack_summary.csv`, comparison plot. | `report/track_b.md` B.2. |
+| B-03 | M | QUBO and Ising formulation with binary-to-spin conversion. | Five-vertex weighted Max-Cut in `implementation/maxcut.py`; full derivation in `MATHEMATICS.md`. | All 32 states prove QUBO = Ising = negative cut. | `maxcut_energies.csv`, `qubo_ising_coefficients.json`, plot. | `report/track_b.md` B.3. |
+| B-04 | M | Explicit penalty terms for constraints. | Exactly-one three-choice QUBO with `A(sum(x)-1)^2`. | All eight states and three penalty strengths enumerated; direct/QUBO error zero. | `penalty_sweep.csv`, shared penalty plot. | `report/track_b.md` B.4. |
+| B-05 | M | Classical QUBO solution becomes Track C baseline. | Versioned fixture containing graph, conventions, coefficients, optima, and digest. | Hash recomputation and exhaustive optimum test. | `maxcut_track_c_fixture.json`; optimum cut 8.0. | `report/track_b.md` B.3; C.1. |
+| B-06 | MS | Feature selection or other combinatorial applications taught. | **UNRESOLVED until the Chapter 6 syllabus is supplied.** | Syllabus-specific reference test. | Visible blocker in manifest, coverage matrix, progress, and report. | `report/track_b.md` B.5; syllabus appendix. |
 
 ### Track C - Quantum optimization
 

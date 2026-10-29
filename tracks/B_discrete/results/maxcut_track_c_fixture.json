@@ -1,0 +1,138 @@
+{
+  "bit_order": "left-to-right characters are x_0 through x_4; s_i=2*x_i-1",
+  "classical_optimum_cut": 8.0,
+  "classical_optimum_energy": -8.0,
+  "edges": [
+    {
+      "u": 0,
+      "v": 1,
+      "weight": 1.0
+    },
+    {
+      "u": 0,
+      "v": 2,
+      "weight": 1.5
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "weight": 0.5
+    },
+    {
+      "u": 1,
+      "v": 3,
+      "weight": 2.0
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "weight": 1.0
+    },
+    {
+      "u": 2,
+      "v": 4,
+      "weight": 2.5
+    },
+    {
+      "u": 3,
+      "v": 4,
+      "weight": 1.5
+    }
+  ],
+  "enumerated_states": 32,
+  "fixture_version": 1,
+  "ising_convention": "E(s)=offset+sum_i h_i s_i+sum_{i<j} J_ij s_i s_j",
+  "ising_coupling": [
+    [
+      0.0,
+      0.5,
+      0.75,
+      0.0,
+      0.0
+    ],
+    [
+      0.5,
+      0.0,
+      0.25,
+      1.0,
+      0.0
+    ],
+    [
+      0.75,
+      0.25,
+      0.0,
+      0.5,
+      1.25
+    ],
+    [
+      0.0,
+      1.0,
+      0.5,
+      0.0,
+      0.75
+    ],
+    [
+      0.0,
+      0.0,
+      1.25,
+      0.75,
+      0.0
+    ]
+  ],
+  "ising_linear": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "ising_offset": -5.0,
+  "optimal_bitstrings": [
+    "00110",
+    "01100",
+    "10011",
+    "11001"
+  ],
+  "optimization": "maximize cut_value; equivalently minimize QUBO/Ising energy=-cut_value",
+  "problem": "weighted_max_cut",
+  "qubo_convention": "E(x)=x^T Q x with symmetric off-diagonal entries counted twice",
+  "qubo_matrix": [
+    [
+      -2.5,
+      1.0,
+      1.5,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      -3.5,
+      0.5,
+      2.0,
+      0.0
+    ],
+    [
+      1.5,
+      0.5,
+      -5.5,
+      1.0,
+      2.5
+    ],
+    [
+      0.0,
+      2.0,
+      1.0,
+      -4.5,
+      1.5
+    ],
+    [
+      0.0,
+      0.0,
+      2.5,
+      1.5,
+      -4.0
+    ]
+  ],
+  "sha256_without_hash_field": "baf60a299f2a2be478511dd30f8de470621aee8103b1e16424912b1cab90a530",
+  "vertices": 5
+}

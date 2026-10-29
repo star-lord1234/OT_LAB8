@@ -1,6 +1,6 @@
 # Track B AI prompt history
 
-No Track B implementation prompt has been recorded yet. Do not add synthetic entries.
+A real Track B implementation interaction is recorded under `2026-10-29-track-b-implementation/`. Do not add synthetic entries.
 
 For each real AI interaction, create a dated subdirectory containing:
 

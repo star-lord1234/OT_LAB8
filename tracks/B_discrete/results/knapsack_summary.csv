@@ -1,0 +1,13 @@
+instance,items,method,objective,optimal_objective,optimality_gap_percent,feasible,verified_optimum,runtime_seconds_mean,runtime_seconds_std,runs
+classic_greedy_counterexample,3,greedy,160,220,27.272727272727273,True,False,2.1097250282764435e-05,3.095502475673421e-06,3
+classic_greedy_counterexample,3,integer_linear_programming,220,220,0.0,True,True,0.0017871526069939137,0.0008532412977264237,3
+classic_greedy_counterexample,3,branch_and_bound,220,220,0.0,True,True,4.0485989302396774e-05,8.167496889436414e-06,3
+classic_greedy_counterexample,3,dynamic_programming,220,220,0.0,True,True,0.0003051523429652055,7.790968123261669e-06,3
+project_selection_8,8,greedy,39,44,11.363636363636363,True,False,2.3166649043560028e-05,2.6107104229756945e-06,3
+project_selection_8,8,integer_linear_programming,44,44,0.0,True,True,0.006865972342590491,0.0002628248519374114,3
+project_selection_8,8,branch_and_bound,44,44,0.0,True,True,7.936094577113788e-05,4.449366062254579e-06,3
+project_selection_8,8,dynamic_programming,44,44,0.0,True,True,0.0005027639369169871,6.0181433790013925e-06,3
+allocation_14,14,greedy,82,83,1.2048192771084338,True,False,3.377767279744148e-05,6.0096920590748094e-06,3
+allocation_14,14,integer_linear_programming,83,83,0.0,True,True,0.005655694132049878,9.671389618841298e-05,3
+allocation_14,14,branch_and_bound,83,83,0.0,True,True,9.954177464048068e-05,4.095137129299721e-06,3
+allocation_14,14,dynamic_programming,83,83,0.0,True,True,0.0014591945024828117,2.889545328165004e-06,3

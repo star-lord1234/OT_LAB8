@@ -1,0 +1,119 @@
+[
+  {
+    "binary_variables": [
+      "x_0",
+      "x_1",
+      "x_2"
+    ],
+    "capacity": 50,
+    "constraint": "sum_i weight_i * x_i <= capacity",
+    "domain": "x_i in {0,1}",
+    "exhaustive_optimum": 220,
+    "name": "classic_greedy_counterexample",
+    "objective": "maximize sum_i value_i * x_i",
+    "values": [
+      60,
+      100,
+      120
+    ],
+    "weights": [
+      10,
+      20,
+      30
+    ]
+  },
+  {
+    "binary_variables": [
+      "x_0",
+      "x_1",
+      "x_2",
+      "x_3",
+      "x_4",
+      "x_5",
+      "x_6",
+      "x_7"
+    ],
+    "capacity": 24,
+    "constraint": "sum_i weight_i * x_i <= capacity",
+    "domain": "x_i in {0,1}",
+    "exhaustive_optimum": 44,
+    "name": "project_selection_8",
+    "objective": "maximize sum_i value_i * x_i",
+    "values": [
+      7,
+      13,
+      6,
+      12,
+      9,
+      16,
+      10,
+      4
+    ],
+    "weights": [
+      4,
+      7,
+      3,
+      8,
+      5,
+      9,
+      6,
+      2
+    ]
+  },
+  {
+    "binary_variables": [
+      "x_0",
+      "x_1",
+      "x_2",
+      "x_3",
+      "x_4",
+      "x_5",
+      "x_6",
+      "x_7",
+      "x_8",
+      "x_9",
+      "x_10",
+      "x_11",
+      "x_12",
+      "x_13"
+    ],
+    "capacity": 39,
+    "constraint": "sum_i weight_i * x_i <= capacity",
+    "domain": "x_i in {0,1}",
+    "exhaustive_optimum": 83,
+    "name": "allocation_14",
+    "objective": "maximize sum_i value_i * x_i",
+    "values": [
+      6,
+      10,
+      9,
+      13,
+      7,
+      17,
+      12,
+      14,
+      11,
+      8,
+      20,
+      6,
+      13,
+      12
+    ],
+    "weights": [
+      2,
+      5,
+      4,
+      7,
+      3,
+      9,
+      6,
+      8,
+      5,
+      4,
+      11,
+      3,
+      6,
+      7
+    ]
+  }
+]

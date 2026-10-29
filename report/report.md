@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Track A has linked experimental evidence; other tracks remain scaffolded.
+Status: active implementation. Tracks A and B have linked experimental evidence; Tracks C-J remain scaffolded.
 
 ## Executive summary
 
@@ -20,7 +20,7 @@ Implemented and verified, subject to the unresolved Chapter 6 syllabus audit. Se
 
 ## Track B - Discrete optimization
 
-Pending.
+Implemented and verified, subject to the unresolved Chapter 6 syllabus audit. See the full [Track B report section](track_b.md), [knapsack summary](../tracks/B_discrete/results/knapsack_summary.csv), and reusable [Track C Max-Cut fixture](../tracks/B_discrete/results/maxcut_track_c_fixture.json).
 
 ## Track C - Quantum optimization
 

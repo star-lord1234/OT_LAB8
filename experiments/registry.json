@@ -18,7 +18,7 @@
     {
       "id": "B",
       "name": "Discrete optimization",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/B_discrete",
       "config": "configs/tracks/B.toml",
       "implementation": "tracks/B_discrete/implementation",
@@ -26,7 +26,7 @@
       "tests": "tracks/B_discrete/tests",
       "results": "tracks/B_discrete/results",
       "report_section": "report/report.md#track-b-discrete-optimization",
-      "entrypoint": null,
+      "entrypoint": "tracks.B_discrete.benchmarks.run:main",
       "dependencies": []
     },
     {

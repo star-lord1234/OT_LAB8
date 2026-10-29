@@ -1,10 +1,10 @@
 # Track B - Discrete optimization
 
-Status: **scaffolded; no algorithm implementation or result exists yet.**
+Status: **implemented and verified; exact Chapter 6 syllabus coverage remains blocked.**
 
-## Minimum planned scope
+## Implemented scope
 
-Compare greedy, ILP, branch-and-bound, and dynamic programming; produce verified QUBO/Ising and constrained-penalty fixtures for Track C.
+Greedy, SciPy HiGHS ILP, branch-and-bound, and dynamic programming solve identical 0/1 knapsack instances and are checked against exhaustive enumeration. A five-vertex weighted Max-Cut fixture verifies QUBO and Ising energies for every state, and a separate exactly-one QUBO demonstrates constraint-penalty strength.
 
 The authoritative acceptance criteria are the Track B rows in `REQUIREMENTS.md`. Chapter 6 syllabus-dependent rows remain unresolved until classroom materials are supplied.
 
@@ -24,4 +24,16 @@ Inspect this plan without running an experiment:
 ./scripts/run_track.py B --plan
 ```
 
-A normal run intentionally exits non-zero until the registry status is changed to `implemented` and a tested entry point is registered.
+Generate all results and plots:
+
+```bash
+./scripts/run_track.py B
+```
+
+Run focused tests:
+
+```bash
+.venv/bin/python -m pytest tracks/B_discrete/tests
+```
+
+See `MATHEMATICS.md`, `results/manifest.json`, and `report/track_b.md`. B-06 remains blocked until the exact classroom syllabus is supplied.

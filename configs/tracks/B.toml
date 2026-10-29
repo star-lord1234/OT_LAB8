@@ -5,4 +5,4 @@ base_seed = 20261029
 output_dir = "../../tracks/B_discrete/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"

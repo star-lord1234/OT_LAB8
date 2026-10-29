@@ -1,0 +1,35 @@
+{
+  "artifacts": [
+    "environment.json",
+    "knapsack_instances.json",
+    "knapsack_references.csv",
+    "knapsack_runs.csv",
+    "knapsack_summary.csv",
+    "manifest.json",
+    "maxcut_energies.csv",
+    "maxcut_track_c_fixture.json",
+    "penalty_sweep.csv",
+    "plots/knapsack_comparison.png",
+    "plots/qubo_ising_penalty.png",
+    "qubo_ising_coefficients.json"
+  ],
+  "knapsack_methods": [
+    "greedy",
+    "integer_linear_programming",
+    "branch_and_bound",
+    "dynamic_programming"
+  ],
+  "maxcut_classical_optimum": 8.0,
+  "repeats": 3,
+  "runtime_seconds": 0.8585390830412507,
+  "safe_penalty_demonstrated": true,
+  "seeds_recorded_for_timing_runs": [
+    3986925838,
+    1689274379,
+    3364955321
+  ],
+  "status": "verified_experiment_with_syllabus_gap",
+  "track": "B",
+  "track_c_fixture_sha256": "baf60a299f2a2be478511dd30f8de470621aee8103b1e16424912b1cab90a530",
+  "unresolved": "Exact Chapter 6 syllabus is unavailable; B-06 remains unresolved for any additional taught discrete method or application."
+}

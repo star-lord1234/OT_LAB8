@@ -1,0 +1,12 @@
+{
+  "analytic_gradient": -0.41868789897527947,
+  "backend": "PennyLane default.qubit local simulator",
+  "circuit_evaluations_parameter_shift": 2,
+  "expectation": 0.908130190694961,
+  "finite_difference_absolute_error": 4.22762935770038e-11,
+  "finite_difference_gradient": -0.41868789901755576,
+  "parameter_shift_absolute_error": 5.551115123125783e-17,
+  "parameter_shift_gradient": -0.4186878989752794,
+  "physical_hardware": false,
+  "theta": 0.432
+}

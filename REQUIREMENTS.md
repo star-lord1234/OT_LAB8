@@ -160,16 +160,16 @@ All paths below are proposed. "Result" names the evidence that must exist before
 
 | ID | Class | Requirement | Planned implementation | Verification/test | Required result/evidence | Report section |
 |---|---|---|---|---|---|---|
-| C-01 | M | Solve B's QUBO with QAOA and compare with classical baseline. | Small local-simulator QAOA. | Hamiltonian/bit-order tests against B enumeration. | Approximation/expected cut, runtime, circuit evaluations. | C.1-C.2. |
-| C-02 | M | Demonstrate VQE. | Tiny known Hamiltonian on local simulator. | Ground energy against exact eigensolver. | Energy convergence/error table. | C.2. |
-| C-03 | M | Demonstrate parameterized circuits and a QNN. | Tiny PQC used as trainable QNN. | Shape/probability/gradient and tiny-label tests. | Separate PQC structure and QNN training evidence. | C.2-C.3. |
-| C-04 | M | Parameter-shift. | Shared quantum gradient utility. | Compare against finite differences/statevector reference. | Gradient error table. | C.3. |
-| C-05 | M | SPSA and quantum natural gradient; compare optimizers. | Optimize the same tiny circuit under matched budgets. | Seeded convergence and reference objective. | Quality/evaluation-count/runtime comparison. | C.3. |
-| C-06 | M | Finite-shot measurement cost. | 100/1,000/10,000-shot runs. | Exact statevector reference and repeated seeds. | Error/variance versus shots. | C.4. |
-| C-07 | M/MC | Hardware noise and clear simulation/hardware labeling. | Local hardware noise model; real hardware only if freely accessible. | Noisy versus noiseless reference. | Noise degradation plot labeled simulated. | C.4. |
-| C-08 | M | Barren-plateau behavior as circuit size grows. | Gradient-variance proxy over small sizes/depths. | Repeated random initializations; avoid asymptotic proof claim. | Gradient magnitude/variance trend with caveat. | C.4. |
-| C-09 | M/MS | Hybrid quantum-classical methods taught. | QAOA/VQE outer loops plus any additional syllabus method. | Method-specific reference test. | Complete syllabus mapping. | C; syllabus appendix. |
-| C-10 | M | Limits of embedding QUBO on annealing hardware. | Tiny connectivity/minor-embedding or chain-strength simulation/analysis. | Verify logical versus embedded solution on toy graph if SDK permits. | Verifiable embedding limitation evidence. | C.5 or I.4. |
+| C-01 | M | Solve B's QUBO with QAOA and compare with classical baseline. | Hash-validated B fixture and depths 1-3 in shared `quantum/maxcut.py`. | All 32 basis energies equal negative Track B cut; probabilities bounded and normalized. | `qaoa_runs.csv`, `qaoa_best.json`, convergence/depth plot. | `report/track_c.md` C.1. |
+| C-02 | M | Demonstrate VQE. | Four-parameter two-qubit ansatz for a four-term Hamiltonian. | Ground energy compared with exact 4-by-4 diagonalization. | `vqe_runs.csv`, classical reference, convergence plot. | `report/track_c.md` C.2. |
+| C-03 | M | Demonstrate parameterized circuits and a QNN. | Two-qubit angle-encoded QNN trained on four points. | Accuracy/loss checks and matched classical tanh baseline. | `qnn_runs.csv`, circuit diagram, training plot. | `report/track_c.md` C.3. |
+| C-04 | M | Parameter-shift. | Manual one-qubit rule plus parameter-shift QNN training. | Compare with analytic derivative and finite difference. | `parameter_shift.json`; absolute error `5.55e-17`. | `report/track_c.md` C.2-C.3. |
+| C-05 | M | SPSA and quantum natural gradient; compare optimizers. | Seeded SPSA on QAOA; block-diagonal QNG versus GD on VQE. | Exact cut/ground-energy references and explicit evaluation counts. | QAOA/VQE raw runs and convergence plots. | `report/track_c.md` C.1-C.2. |
+| C-06 | M | Finite-shot measurement cost. | 12 repeats at 100, 1,000, and 10,000 simulated shots. | Exact statevector expected-cut reference. | `finite_shots.csv`, summary, shot-error plot. | `report/track_c.md` C.4. |
+| C-07 | M/MC | Hardware noise and clear simulation/hardware labeling. | `default.mixed` depolarizing model at four scales; no hardware claim. | Noiseless mixed-state result agrees with statevector reference. | `noise_simulation.csv`, degradation plot, manifest label. | `report/track_c.md` C.4. |
+| C-08 | M | Barren-plateau behavior as circuit size grows. | Global/local gradient-variance proxy at 2-10 qubits with 32 random starts. | Parameter-shift samples; finite-size caveat retained. | `barren_plateau_proxy.csv`, log-variance plot. | `report/track_c.md` C.4. |
+| C-09 | M/MS | Hybrid quantum-classical methods taught. | QAOA, VQE, SPSA, QNG implemented; additional exact syllabus list unavailable. | **UNRESOLVED until the Chapter 6 syllabus is supplied.** | Visible blocker in manifest, matrix, progress, and report. | `report/track_c.md` C.5; syllabus appendix. |
+| C-10 | M | Limits of embedding QUBO on annealing hardware. | Logical K3 embedded on four-node square with one two-qubit chain. | Exhaustive physical states at three chain strengths. | `embedding_chain_strength.csv`, chain-break plot. | `report/track_c.md` C.5. |
 
 ### Track D - Submodular, parallel, distributed, and multi-task optimization
 

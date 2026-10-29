@@ -1,0 +1,7 @@
+method,seed,steps,learning_rate,final_energy,exact_ground_energy,absolute_error,runtime_seconds,repeat,backend,physical_hardware
+gradient_descent,3986925838,70,0.15,-1.0368316829987203,-1.036931687685298,0.0001000046865777815,0.2608523331582546,0,PennyLane default.qubit local simulator,False
+gradient_descent,1689274379,70,0.15,-1.0364619699292312,-1.036931687685298,0.0004697177560668564,0.21559691661968827,1,PennyLane default.qubit local simulator,False
+gradient_descent,3364955321,70,0.15,-1.0365443381294368,-1.036931687685298,0.0003873495558612827,0.24546237476170063,2,PennyLane default.qubit local simulator,False
+quantum_natural_gradient,3986925838,70,0.15,-1.0369316876852985,-1.036931687685298,4.440892098500626e-16,0.46658170921728015,0,PennyLane default.qubit local simulator,False
+quantum_natural_gradient,1689274379,70,0.15,-1.036931687685298,-1.036931687685298,0.0,0.45466975029557943,1,PennyLane default.qubit local simulator,False
+quantum_natural_gradient,3364955321,70,0.15,-1.0369316876852763,-1.036931687685298,2.1760371282653068e-14,0.4905601660721004,2,PennyLane default.qubit local simulator,False

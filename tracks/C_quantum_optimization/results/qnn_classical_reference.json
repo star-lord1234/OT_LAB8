@@ -1,0 +1,12 @@
+{
+  "accuracy": 1.0,
+  "final_loss": 1.6983383372371857e-06,
+  "method": "classical_tanh_linear_bfgs",
+  "parameters": [
+    3.6677127417111848,
+    -1.374402314851377e-08,
+    -5.9342436998053134e-09
+  ],
+  "runtime_seconds": 0.002288457937538624,
+  "success": true
+}

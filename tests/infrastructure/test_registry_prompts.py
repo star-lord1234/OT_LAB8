@@ -20,7 +20,9 @@ def test_registry_defines_all_tracks_and_existing_locations() -> None:
     assert tracks["A"].entrypoint == "tracks.A_continuous.benchmarks.run:main"
     assert tracks["B"].status == "implemented"
     assert tracks["B"].entrypoint == "tracks.B_discrete.benchmarks.run:main"
-    assert all(tracks[track_id].status == "scaffolded" for track_id in "CDEFGHIJ")
+    assert tracks["C"].status == "implemented"
+    assert tracks["C"].entrypoint == "tracks.C_quantum_optimization.benchmarks.run:main"
+    assert all(tracks[track_id].status == "scaffolded" for track_id in "DEFGHIJ")
 
 
 def test_prompt_record_validation(tmp_path: Path) -> None:

@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Tracks A and B have linked experimental evidence; Tracks C-J remain scaffolded.
+Status: active implementation. Tracks A-C have linked experimental evidence; Tracks D-J remain scaffolded.
 
 ## Executive summary
 
@@ -24,7 +24,7 @@ Implemented and verified, subject to the unresolved Chapter 6 syllabus audit. Se
 
 ## Track C - Quantum optimization
 
-Pending.
+Implemented and verified on local simulators, subject to the unresolved Chapter 6 syllabus audit. See the full [Track C report section](track_c.md), [QAOA result](../tracks/C_quantum_optimization/results/qaoa_best.json), and simulation-only [evidence manifest](../tracks/C_quantum_optimization/results/manifest.json).
 
 ## Track D - Submodular, parallel, and distributed optimization
 

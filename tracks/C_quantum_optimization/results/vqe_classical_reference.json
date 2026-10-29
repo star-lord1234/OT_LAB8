@@ -1,0 +1,6 @@
+{
+  "ground_energy": -1.036931687685298,
+  "matrix_dimension": 4,
+  "method": "classical_exact_diagonalization",
+  "runtime_seconds": 0.0003532092086970806
+}

@@ -1,0 +1,38 @@
+{
+  "approximation_ratio": 0.9090381292867217,
+  "circuit_depth": 21,
+  "classical_optimum_cut": 8.0,
+  "depth": 3,
+  "energy": -7.272305034293774,
+  "expected_cut": 7.272305034293773,
+  "gate_count": 41,
+  "learning_rate": 0.08,
+  "most_likely_bitstring": "00110",
+  "most_likely_cut": 8.0,
+  "optimal_probability": 0.4940244882038551,
+  "optimizer": "adam_autodiff_simulator",
+  "parameter_shift_hardware_evaluation_estimate": 780,
+  "parameters": [
+    [
+      0.3515530191563716,
+      1.3148584370907792
+    ],
+    [
+      3.0264157422281657,
+      3.01254216587178
+    ],
+    [
+      2.3032387047328493,
+      1.3707476688692186
+    ]
+  ],
+  "repeat": 2,
+  "result_type": "local noiseless statevector simulation",
+  "runtime_seconds": 0.8398519172333181,
+  "seed": 3364955321,
+  "simulator_objective_calls": 61,
+  "steps": 60,
+  "track_b_fixture": "tracks/B_discrete/results/maxcut_track_c_fixture.json",
+  "track_b_fixture_sha256": "baf60a299f2a2be478511dd30f8de470621aee8103b1e16424912b1cab90a530",
+  "uniform_random_expected_cut": 5.0
+}

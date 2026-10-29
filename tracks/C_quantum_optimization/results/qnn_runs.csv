@@ -1,0 +1,4 @@
+method,seed,steps,final_loss,accuracy,runtime_seconds,repeat,backend,physical_hardware
+two_qubit_qnn_parameter_shift_adam,3986925838,60,0.025772219256309133,1.0,0.8682720842771232,0,PennyLane default.qubit local simulator,False
+two_qubit_qnn_parameter_shift_adam,1689274379,60,0.02612364732378608,1.0,0.8668949170969427,1,PennyLane default.qubit local simulator,False
+two_qubit_qnn_parameter_shift_adam,3364955321,60,0.02590481966107743,1.0,0.8604702916927636,2,PennyLane default.qubit local simulator,False

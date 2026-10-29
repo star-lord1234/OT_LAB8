@@ -1,6 +1,6 @@
 # Track C AI prompt history
 
-No Track C implementation prompt has been recorded yet. Do not add synthetic entries.
+A real Track C implementation interaction is recorded under `2026-10-29-track-c-implementation/`. Do not add synthetic entries.
 
 For each real AI interaction, create a dated subdirectory containing:
 

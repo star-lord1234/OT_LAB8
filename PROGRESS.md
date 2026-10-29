@@ -2,7 +2,7 @@
 
 Last updated: 2026-10-29
 
-Current phase: **Tracks A and B implemented and verified; Tracks C-J remain to be implemented.**
+Current phase: **Tracks A-C implemented and verified; Tracks D-J remain to be implemented.**
 
 ## 1. Status legend
 
@@ -26,8 +26,8 @@ Current phase: **Tracks A and B implemented and verified; Tracks C-J remain to b
 | Repository infrastructure | COMPLETE | A-J paths, shared utilities, registry, CLIs, prompt records, and 22 passing infrastructure tests are present. |
 | Exact Chapter 6 syllabus audit | BLOCKED | Obtain lecture notes/slides or official topic list and resolve `SYL-01` through `SYL-08`. |
 | Environment/version capture | COMPLETE | Real machine/tool/package state and final 7/7 preflight are documented in `SETUP.md`. |
-| Algorithm implementation | IN PROGRESS | Tracks A and B implemented; Tracks C-J remain. |
-| Experiments/results/report | IN PROGRESS | A and B have real results, plots, prompt history, and draft report sections. |
+| Algorithm implementation | IN PROGRESS | Tracks A-C implemented; Tracks D-J remain. |
+| Experiments/results/report | IN PROGRESS | A-C have real results, plots, prompt history, and draft report sections. |
 
 ## 3. Track status
 
@@ -35,7 +35,7 @@ Current phase: **Tracks A and B implemented and verified; Tracks C-J remain to b
 |---|---|---|---|---|
 | A | Tiny objectives/model; all named first-order optimizers, Newton, Gauss-Newton, backprop, curvature, tuning/noise | IMPLEMENTED / VERIFIED / syllabus-blocked | Exact Chapter 6 list | A-01 through A-06 have code, tests, raw results, figures, and report links. A-07/SYL-01 remains unresolved. |
 | B | Knapsack exact/heuristic comparison; Max-Cut QUBO/Ising; separate constrained penalty QUBO | IMPLEMENTED / VERIFIED / syllabus-blocked | Exact Chapter 6 list | B-01 through B-05 have code, exhaustive tests, raw results, plots, report links, and a hashed C fixture. B-06 remains unresolved. |
-| C | QAOA, VQE, PQC/QNN, parameter-shift, SPSA, QNG, shots/noise/plateau, embedding limits | PLANNED / syllabus-blocked | B fixture; chosen quantum SDK; Chapter 6 list | Classical agreement on tiny cases and all `C-*` evidence, clearly labeled simulation. |
+| C | QAOA, VQE, PQC/QNN, parameter-shift, SPSA, QNG, shots/noise/plateau, embedding limits | IMPLEMENTED / VERIFIED SIMULATION / syllabus-blocked | Exact Chapter 6 list | C-01 through C-08 and C-10 have tests, results, plots, report links, and explicit simulator labels. C-09 remains unresolved. |
 | D | Maximum coverage; scheduling/parallel forms; FedAvg; MGDA; GradNorm | PLANNED / syllabus-blocked | A model utilities; measured CPU/core count; Chapter 6 list | Correct serial references; makespan/speedup/efficiency; all three parallel forms; distributed/multi-task comparisons. |
 | E | Offline batching simulation; FIFO, greedy, exact small solver | PLANNED | Shared discrete/metrics modules; explicit service model | Section 4 workflow, strategy table, tiny exhaustive check, and multi-setting results complete. |
 | F | Toy compiler; constant folding/propagation and DCE; pass-order optimization | PLANNED | Shared discrete solver; grammar/semantics specification | Lexer/parser/IR/codegen work; two passes preserve output; four required metrics reported. |
@@ -84,7 +84,7 @@ No track may be marked COMPLETE merely because its script runs. Its formulation,
 | 2 | Scaffold shared experiment contract | COMPLETE | Seeds, config, timing/memory, repeats, exports, plotting, verification, environment metadata, registry, and prompt validation have 22 passing tests. |
 | 2 | Select Track J codebase | NOT STARTED | Public license, pinned commit, >1,000-line conservative target, passing tests, and usable coverage data. |
 | 3 | Implement A and B | COMPLETE EXCEPT SYLLABUS AUDIT | A-01 through A-06 and B-01 through B-05 pass; A-07/B-06 await the syllabus. |
-| 4 | Implement C and D | NOT STARTED | Track gates pass; C consumes B fixture; D consumes A utilities. |
+| 4 | Implement C and D | IN PROGRESS | C implemented against B's hashed fixture; D not started; C-09 awaits the syllabus. |
 | 5 | Implement F, G, H | NOT STARTED | Named domain artifacts and correctness evidence exist. |
 | 6 | Complete E, I, J | NOT STARTED | Main case study, full quantum/QML comparison, and realistic SE optimization close. |
 | 7 | Consolidate report/demo/evidence | NOT STARTED | Clean-clone run, coverage checker, report links, AI logs, Q1-Q10, and demo pass. |

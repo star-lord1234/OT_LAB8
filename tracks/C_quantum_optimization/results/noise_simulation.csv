@@ -1,0 +1,5 @@
+noise_scale,single_qubit_depolarizing_probability,post_entangler_local_depolarizing_probability,expected_cut,approximation_ratio,optimal_probability,most_likely_bitstring,most_likely_cut,backend,physical_hardware
+0.0,0.0,0.0,7.272305034293769,0.9090381292867211,0.4940244882038546,00110,8.0,PennyLane default.mixed simulator,False
+0.5,0.0005,0.005,7.02515214402281,0.8781440180028512,0.44558914424420276,00110,8.0,PennyLane default.mixed simulator,False
+1.0,0.001,0.01,6.804019048677519,0.8505023810846899,0.4038484356206753,00110,8.0,PennyLane default.mixed simulator,False
+2.0,0.002,0.02,6.429520523177594,0.8036900653971992,0.3366642006304066,00110,8.0,PennyLane default.mixed simulator,False

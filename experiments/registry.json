@@ -32,7 +32,7 @@
     {
       "id": "C",
       "name": "Quantum optimization",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/C_quantum_optimization",
       "config": "configs/tracks/C.toml",
       "implementation": "tracks/C_quantum_optimization/implementation",
@@ -40,7 +40,7 @@
       "tests": "tracks/C_quantum_optimization/tests",
       "results": "tracks/C_quantum_optimization/results",
       "report_section": "report/report.md#track-c-quantum-optimization",
-      "entrypoint": null,
+      "entrypoint": "tracks.C_quantum_optimization.benchmarks.run:main",
       "dependencies": ["B"]
     },
     {

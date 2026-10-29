@@ -52,3 +52,11 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** added `__init__.py` to both track test directories so their fully qualified module names are distinct.
 - **Regression coverage:** the repository-wide `scripts/test_all.sh` collects both track suites in one invocation.
 - **Lesson:** independently valid test folders can still collide when combined; multi-track test structure must be package-safe from the start.
+
+## F-007 - QAOA optimizer result schemas differed
+
+- **AI-generated artifact:** the first Track C QAOA exporter combined Adam and SPSA result mappings, but only Adam included a `learning_rate` field.
+- **Failure:** the focused Track C smoke test stopped because the strict shared CSV writer rejects heterogeneous columns.
+- **Fix:** record SPSA's explicit `a_k` and `c_k` gain schedules in the common learning-rate field.
+- **Regression test:** `tracks/C_quantum_optimization/tests/test_experiment.py::test_track_c_smoke_experiment_writes_cross_track_evidence`.
+- **Lesson:** optimizer-specific hyperparameters still need a uniform evidence schema for fair comparison and reproducible export.

@@ -5,4 +5,11 @@ base_seed = 20261029
 output_dir = "../../tracks/C_quantum_optimization/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"
+qaoa_steps = 60
+spsa_steps = 80
+vqe_steps = 70
+qnn_steps = 60
+shot_repeats = 12
+plateau_repeats = 32
+depths = [1, 2, 3]

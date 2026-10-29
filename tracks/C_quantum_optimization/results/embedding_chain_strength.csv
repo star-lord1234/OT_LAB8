@@ -1,0 +1,4 @@
+chain_strength,physical_ground_energy,ground_state_count,unbroken_ground_states,broken_chain_fraction,logical_optimum_cut,embedding,simulated
+0.25,-2.75,2,0,1.0,2,"logical A=[q0,q1], B=[q2], C=[q3] on square q0-q1-q2-q3-q0",True
+1.0,-2.0,8,6,0.25,2,"logical A=[q0,q1], B=[q2], C=[q3] on square q0-q1-q2-q3-q0",True
+3.0,-4.0,6,6,0.0,2,"logical A=[q0,q1], B=[q2], C=[q3] on square q0-q1-q2-q3-q0",True

@@ -1,0 +1,42 @@
+{
+  "artifacts": [
+    "barren_plateau_proxy.csv",
+    "circuit_diagrams.txt",
+    "embedding_chain_strength.csv",
+    "environment.json",
+    "finite_shots.csv",
+    "finite_shots_summary.csv",
+    "manifest.json",
+    "noise_simulation.csv",
+    "parameter_shift.json",
+    "plots/plateau_embedding.png",
+    "plots/qaoa_convergence_depth.png",
+    "plots/shots_noise.png",
+    "plots/vqe_qnn_training.png",
+    "qaoa_best.json",
+    "qaoa_convergence.csv",
+    "qaoa_runs.csv",
+    "qnn_classical_reference.json",
+    "qnn_convergence.csv",
+    "qnn_runs.csv",
+    "vqe_classical_reference.json",
+    "vqe_convergence.csv",
+    "vqe_runs.csv"
+  ],
+  "best_qaoa_expected_cut": 7.272305034293773,
+  "best_qaoa_optimal_probability": 0.4940244882038551,
+  "qnn_classical_accuracy": 1.0,
+  "result_type": "local simulation only; no physical quantum hardware was used",
+  "reusable_for_track_i": [
+    "src/optlab/quantum/maxcut.py",
+    "src/optlab/quantum/variational.py",
+    "src/optlab/quantum/diagnostics.py"
+  ],
+  "runtime_seconds": 14.279519500210881,
+  "status": "verified_experiment_with_syllabus_gap",
+  "track": "C",
+  "track_b_classical_optimum_cut": 8.0,
+  "track_b_fixture_sha256": "baf60a299f2a2be478511dd30f8de470621aee8103b1e16424912b1cab90a530",
+  "unresolved": "Exact Chapter 6 syllabus is unavailable; C-09 remains unresolved for any additional taught hybrid method.",
+  "vqe_exact_ground_energy": -1.036931687685298
+}

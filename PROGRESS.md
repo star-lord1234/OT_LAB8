@@ -77,7 +77,7 @@ No track may be marked COMPLETE merely because its script runs. Its formulation,
 | Priority | Work item | Status | Exit criterion |
 |---|---|---|---|
 | 0 | Acquire Chapter 6 syllabus | BLOCKED | Instructor material stored/referenced and every taught method mapped. |
-| 1 | Initialize repository/provenance workflow | IN PROGRESS | Structure, prompt schema, README register, ignore rules, and tests are complete; initial Git commit is the remaining gate. |
+| 1 | Initialize repository/provenance workflow | COMPLETE | Initial verified commit `648899c` is tagged `setup-v1`; prompt schema, README register, ignore rules, and tests are active. |
 | 1 | Capture real environment | COMPLETE | Actual hardware/OS/tool versions recorded in `SETUP.md`; final preflight passes 7/7. |
 | 1 | Choose one quantum stack | COMPLETE | PennyLane statevector and mixed-state noise circuits execute locally on CPU. |
 | 1 | Verify xv6 toolchain | IN PROGRESS | QEMU and RISC-V GCC/binutils pass preflight; pinned xv6 build, boot, and baseline `usertests` remain. |

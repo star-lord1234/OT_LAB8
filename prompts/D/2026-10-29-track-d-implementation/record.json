@@ -8,7 +8,7 @@
   "prompt_file": "prompt.md",
   "response_file": "response.md",
   "verification_file": "verification.md",
-  "commit": null,
+  "commit": "fc1465de94ef784f3cc5d9d6903cdecc1ad1b057",
   "revisions": [
     {
       "reason": "Two tiny ProcessPool tasks could both execute on one worker before the second process finished spawning",

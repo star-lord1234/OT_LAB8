@@ -9,4 +9,4 @@
 - Equal weighting, MGDA, and GradNorm share the same dataset and initialization; all reduced mean loss, with trade-offs reported rather than hidden.
 - Focused Track D gate: 10/10 tests passed, including the full smoke experiment.
 - Repository-wide gate: environment preflight 7/7, repository/prompt validation passed, and 62/62 tests passed.
-- Commit linkage is added only after the implementation commit exists.
+- Verified implementation commit: `fc1465de94ef784f3cc5d9d6903cdecc1ad1b057` (`[AI:Codex] Implement Track D parallel and distributed optimization`).

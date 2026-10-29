@@ -8,7 +8,7 @@
   "prompt_file": "prompt.md",
   "response_file": "response.md",
   "verification_file": "verification.md",
-  "commit": null,
+  "commit": "30901e6efcf81cfe7c8214c7aeef1d4160024553",
   "revisions": [
     {
       "reason": "Adam and SPSA initially emitted heterogeneous result columns",

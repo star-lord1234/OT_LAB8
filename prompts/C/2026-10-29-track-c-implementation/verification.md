@@ -13,4 +13,4 @@
 - Global-cost gradient variance decreased over the tested 2-10 qubit range; the report labels this a finite-size proxy, not proof.
 - Visual QA replaced arbitrary scaled-probability lines with secondary axes and added depth/evaluation-cost evidence.
 - Final repository-wide gate: preflight 7/7, repository validation passed, and 52/52 tests passed.
-- The implementation commit will be added after it is created.
+- Verified implementation commit: `30901e6efcf81cfe7c8214c7aeef1d4160024553` (`[AI:Codex] Implement Track C quantum optimization`).

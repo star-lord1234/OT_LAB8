@@ -1,0 +1,23 @@
+{
+  "record_id": "2026-10-29-repository-scaffold",
+  "date": "2026-10-29",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "cross-track",
+  "purpose": "Create the repository, shared infrastructure, tests, AI provenance templates, and initial commits",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": null,
+  "revisions": [
+    {
+      "reason": "Direct CLI execution selected Homebrew Python instead of the project virtual environment",
+      "action": "Added a shared bootstrap that re-executes every project CLI with .venv/bin/python"
+    },
+    {
+      "reason": "The first bootstrap resolved the venv symlink and therefore bypassed venv activation semantics",
+      "action": "Compare sys.prefix to the venv but execute the unresolved .venv/bin/python path"
+    }
+  ],
+  "notes": "Response and verification contain only work actually performed in this turn."
+}

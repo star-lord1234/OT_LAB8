@@ -1,0 +1,19 @@
+.DS_Store
+.python/
+.venv/
+.cache/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+tmp/
+
+# Generated setup and experiment data
+setup_logs/*.tmp
+data/generated/
+results/raw/
+
+# External xv6 checkout; only the pinned revision and patch belong in Git
+external/xv6-riscv/

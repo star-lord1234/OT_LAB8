@@ -1,0 +1,8 @@
+track = "F"
+experiment = "compiler_optimization"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/F_compiler/results"
+
+[parameters]
+status = "scaffolded"

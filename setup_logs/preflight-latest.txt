@@ -1,0 +1,26 @@
+Preflight started: 2026-10-29T13:17:51Z
+Project root: /Users/biancasawant/OTLab_8
+
+Assignment 8 environment verification
+python=3.12.13
+executable=/Users/biancasawant/OTLab_8/.venv/bin/python
+platform=macOS-26.5.2-arm64-arm-64bit
+architecture=arm64
+logical_cpus=10
+
+[PASS] 1. Numerical optimization libraries
+       numpy=2.5.4, scipy=1.18.1, linear_residual=0.000e+00, optimizer_objective=6.711e-15
+[PASS] 2. PyTorch tensor operations and autograd
+       torch=2.15.0, cpu_autograd_gradient=[2.0, 4.0, 6.0], mps_built=True, mps_available=False, not used; CPU is the required baseline
+[PASS] 3. ILP solver availability
+       solver=SciPy HiGHS MILP, solution=[1, 0], objective=3.0
+[PASS] 4. Quantum circuit execution
+       pennylane=0.45.1, bell_probs=[0.4999999999999999, 0.0, 0.0, 0.4999999999999999], default.mixed_bitflip_expectation=-0.500
+[PASS] 5. SQLite
+       sqlite=3.53.1, in_memory_sum=6, plan_rows=1
+[PASS] 6. Multiprocessing
+       start_method=spawn, workers=2, output=[1, 4, 9, 16]
+[PASS] 7. QEMU and RISC-V tools
+       qemu=QEMU emulator version 11.1.1, compiler=riscv64-elf-gcc (GCC) 16.2.0, objdump=GNU objdump (GNU Binutils) 2.47.20260726, qemu_virt_machine=yes, rv64_compile_and_disassemble=yes
+
+Summary: 7/7 checks passed

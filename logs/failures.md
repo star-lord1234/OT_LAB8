@@ -1,0 +1,38 @@
+# Genuine AI-Assisted Failure Log
+
+These are real cross-track setup/infrastructure failures observed on 2026-10-29. They are not manufactured examples. Future track failures should be appended with their prompt record, reproduction, regression test, fix, commit, and lesson.
+
+## F-001 - Matplotlib cache path was not sandbox-safe
+
+- **AI-generated artifact:** initial `scripts/preflight.sh`.
+- **Failure:** PennyLane/matplotlib tried to create `/Users/biancasawant/.matplotlib`, which was not writable in the managed environment. The first preflight did not stream useful progress.
+- **Evidence:** the captured warning stated that matplotlib created a temporary cache because the default path was not permitted.
+- **Fix:** create ignored project cache directories and set `MPLCONFIGDIR`, `XDG_CACHE_HOME`, and `PYTHONUNBUFFERED=1` in the wrapper.
+- **Verification:** the final preflight executes quantum checks without the permission warning and passes 7/7.
+- **Lesson:** make cache locations explicit in reproducible/sandboxed workflows; an import check alone is insufficient.
+
+## F-002 - Concurrent retries corrupted the same preflight log
+
+- **AI action:** a retry started while the first long-running verifier was still active because its session identifier was not retained in the displayed output.
+- **Failure:** two processes wrote `setup_logs/preflight-before-native.txt`, interleaving lines.
+- **Evidence:** the corrupted file contained duplicated sections and a split ILP line. Its replacement carries an explicit reconstruction note.
+- **Fix:** `scripts/preflight.sh` now acquires an atomic per-log lock directory and refuses a second writer.
+- **Regression test:** `tests/infrastructure/test_cli.py::test_preflight_lock_prevents_interleaved_log`.
+- **Lesson:** diagnostic tooling also needs concurrency protection and provenance; do not silently present repaired logs as originals.
+
+## F-003 - Homebrew install command allowed automatic cleanup
+
+- **AI-generated command:** the first native-tool install set `HOMEBREW_NO_AUTO_UPDATE=1` but omitted `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+- **Failure/safety impact:** Homebrew automatically removed an old `ca-certificates` Cellar version, cached bottles, logs, and temporary staging files after installation. No project data was removed, but the side effect exceeded the intended install-only scope.
+- **Evidence:** the Homebrew output explicitly reported its automatic cleanup and every removed path category; `SETUP.md` preserves the event.
+- **Fix:** all documented future Homebrew install commands include both no-auto-update and no-install-cleanup flags.
+- **Verification:** `SETUP.md` documents the exact safe command and the observed side effect; no later cleanup command was issued.
+- **Lesson:** package managers may perform implicit cleanup. Disable it proactively when the user requires approval for destructive actions.
+
+## F-004 - Direct CLI commands used the wrong Python interpreter
+
+- **AI-generated artifact:** Python CLI scripts with `#!/usr/bin/env python3` while dependencies were isolated in `.venv`.
+- **Failure:** the README's direct command `./scripts/run_track.py A --plan` selected Homebrew Python 3.14 and failed with `ModuleNotFoundError: numpy`. The first infrastructure run reported 2 failed and 20 passed tests.
+- **Fix:** added `scripts/_bootstrap.py`; every project CLI now re-executes with the unresolved `.venv/bin/python` path before importing project modules. The first attempted fix incorrectly resolved the symlink and still bypassed venv activation; the final guard compares `sys.prefix` instead.
+- **Regression tests:** `tests/infrastructure/test_cli.py::test_track_plan_command` and `test_unimplemented_track_refuses_to_claim_run`.
+- **Lesson:** executable Python scripts must not rely on the shell's generic `python3` when the project promises an isolated environment.

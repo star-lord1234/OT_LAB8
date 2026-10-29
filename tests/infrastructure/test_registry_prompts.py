@@ -1,0 +1,59 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from optlab.common.prompts import validate_prompt_record
+from optlab.common.registry import load_registry, validate_registry_paths
+
+
+ROOT = Path(__file__).resolve().parents[2]
+
+
+def test_registry_defines_all_tracks_and_existing_locations() -> None:
+    tracks = load_registry(ROOT / "experiments" / "registry.json")
+    assert tuple(tracks) == tuple("ABCDEFGHIJ")
+    assert validate_registry_paths(tracks) == []
+    assert tracks["C"].dependencies == ("B",)
+    assert tracks["I"].dependencies == ("C", "D")
+    assert all(track.status == "scaffolded" for track in tracks.values())
+
+
+def test_prompt_record_validation(tmp_path: Path) -> None:
+    for name in ("prompt.md", "response.md", "verification.md"):
+        (tmp_path / name).write_text(name, encoding="utf-8")
+    record = {
+        "record_id": "example",
+        "date": "2026-10-29",
+        "tool": "Example tool",
+        "model": "Example model",
+        "scope": "cross-track",
+        "purpose": "schema test",
+        "prompt_file": "prompt.md",
+        "response_file": "response.md",
+        "verification_file": "verification.md",
+        "commit": None,
+        "revisions": [],
+    }
+    path = tmp_path / "record.json"
+    path.write_text(json.dumps(record), encoding="utf-8")
+    assert validate_prompt_record(path) == []
+
+
+def test_prompt_record_reports_missing_evidence(tmp_path: Path) -> None:
+    record = {
+        "record_id": "example",
+        "date": "2026-10-29",
+        "tool": "Example tool",
+        "model": "Example model",
+        "scope": "cross-track",
+        "purpose": "schema test",
+        "prompt_file": "missing.md",
+        "response_file": "missing-response.md",
+        "verification_file": "missing-verification.md",
+        "commit": None,
+        "revisions": [],
+    }
+    path = tmp_path / "record.json"
+    path.write_text(json.dumps(record), encoding="utf-8")
+    assert len(validate_prompt_record(path)) == 3

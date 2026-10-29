@@ -1,0 +1,107 @@
+# Assignment 8 - Optimize Anything
+
+Lightweight, reproducible implementation workspace for the compulsory Tracks A-J. The authoritative requirements and current status are in `REQUIREMENTS.md` and `PROGRESS.md`.
+
+Current state: **repository infrastructure only**. No track algorithm or experiment result is claimed yet.
+
+## Quick start
+
+The verified macOS setup is documented in `SETUP.md`.
+
+```bash
+UV_PYTHON_INSTALL_DIR="$PWD/.python" uv sync --locked --python 3.12
+./scripts/preflight.sh
+./scripts/test_all.sh
+```
+
+## Track commands
+
+List tracks:
+
+```bash
+./scripts/run_track.py --list
+```
+
+Inspect one track's registered locations without running it:
+
+```bash
+./scripts/run_track.py A --plan
+```
+
+Run an implemented track:
+
+```bash
+./scripts/run_track.py A
+```
+
+Until a track has a tested entry point and its registry status is `implemented`, the last command deliberately exits with status 2 and states that no experiment ran.
+
+Inspect every plan or run every implemented track:
+
+```bash
+./scripts/run_all.py --plans
+./scripts/run_all.py
+```
+
+Capture privacy-safe environment metadata:
+
+```bash
+.venv/bin/python scripts/capture_environment.py
+```
+
+Run infrastructure tests and all currently available checks:
+
+```bash
+./scripts/test_all.sh
+```
+
+Run pytest alone:
+
+```bash
+MPLCONFIGDIR="$PWD/.cache/matplotlib" \
+XDG_CACHE_HOME="$PWD/.cache/xdg" \
+  .venv/bin/python -m pytest tests
+```
+
+Validate structure, registry, and prompt records:
+
+```bash
+.venv/bin/python scripts/validate_repo.py
+```
+
+## Repository map
+
+- `src/optlab/common/`: shared experiment infrastructure.
+- `tracks/A_*` through `tracks/J_*`: explicit implementation, benchmark, test, and result locations.
+- `configs/tracks/`: per-track configuration placeholders.
+- `experiments/registry.json`: single track registry and dependency map.
+- `tests/infrastructure/`: infrastructure regression tests.
+- `prompts/A` through `prompts/J`: honest track AI histories; currently empty except explanatory README files.
+- `prompts/_cross_track/`: actual requirements, setup, and scaffolding interactions.
+- `logs/`: AI tools register, genuine failure log, and tool-comparison template.
+- `report/`: technical-report, demo, and viva scaffolds.
+- `setup_logs/`: retained real preflight outputs.
+
+## Evidence rules
+
+- Raw measurements are retained; plots/tables must be generated from them.
+- Random experiments use explicit seeds and repeated runs.
+- Simulation, theory, and measured hardware results must be labeled separately.
+- A script running is not enough: formulation, baseline, comparison, correctness, results, prompts, and report links are all required.
+- Prompt, response, failure, tool, model, timing, and commit records must be real. Unknown model snapshots are recorded as unknown rather than guessed.
+
+## AI tools register
+
+The assignment requires this table in the README. The machine-readable source is `logs/ai_tools_register.csv`.
+
+| Date | Tool | Model | Scope | Work |
+|---|---|---|---|---|
+| 2026-10-29 | OpenAI Codex | GPT-5 family; exact deployed snapshot not exposed | Cross-track only | Requirements audit, environment inspection/setup, infrastructure code, debugging, testing, and documentation |
+
+No Track A-J algorithm implementation and no second AI tool comparison have occurred yet.
+
+## Important blockers
+
+- Obtain the exact Chapter 6 classroom syllabus before Tracks A-D or I can be declared complete.
+- Build, boot, and baseline-test a pinned xv6 revision before claiming Track G readiness.
+- Select a real public codebase for Track J before implementing its benchmark.

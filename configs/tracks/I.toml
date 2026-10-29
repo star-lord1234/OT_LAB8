@@ -1,0 +1,8 @@
+track = "I"
+experiment = "quantum_algorithms_qml"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/I_quantum_qml/results"
+
+[parameters]
+status = "scaffolded"

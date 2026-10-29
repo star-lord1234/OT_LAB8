@@ -1,0 +1,8 @@
+track = "C"
+experiment = "quantum_optimization"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/C_quantum_optimization/results"
+
+[parameters]
+status = "scaffolded"

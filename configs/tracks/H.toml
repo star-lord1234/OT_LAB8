@@ -1,0 +1,8 @@
+track = "H"
+experiment = "sqlite_index_selection"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/H_dbms/results"
+
+[parameters]
+status = "scaffolded"

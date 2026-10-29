@@ -1,0 +1,2 @@
+date,tool,model,scope,work_types,prompt_records,notes
+2026-10-29,OpenAI Codex,"GPT-5 family (exact deployed snapshot not exposed)",cross-track,"requirements analysis; environment inspection; code generation; debugging; testing; documentation","prompts/_cross_track/2026-10-29-requirements-audit; prompts/_cross_track/2026-10-29-macos-setup; prompts/_cross_track/2026-10-29-repository-scaffold","Only AI tool used so far; no A-J algorithm implementation yet"

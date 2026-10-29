@@ -1,0 +1,8 @@
+track = "E"
+experiment = "request_batching_case_study"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/E_case_study/results"
+
+[parameters]
+status = "scaffolded"

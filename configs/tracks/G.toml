@@ -1,0 +1,8 @@
+track = "G"
+experiment = "xv6_scheduler"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/G_xv6/results"
+
+[parameters]
+status = "scaffolded"

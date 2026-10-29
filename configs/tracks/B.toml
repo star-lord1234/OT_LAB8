@@ -1,0 +1,8 @@
+track = "B"
+experiment = "discrete_optimization"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/B_discrete/results"
+
+[parameters]
+status = "scaffolded"

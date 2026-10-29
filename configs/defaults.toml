@@ -1,0 +1,13 @@
+repeats = 3
+base_seed = 20261029
+
+[measurement]
+warmup_runs = 1
+record_wall_time = true
+record_peak_python_memory = true
+record_process_max_rss = true
+
+[output]
+json = true
+csv = true
+plots = true

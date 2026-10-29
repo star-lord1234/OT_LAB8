@@ -1,0 +1,22 @@
+{
+  "record_id": "2026-10-29-macos-setup",
+  "date": "2026-10-29",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "cross-track",
+  "purpose": "Inspect and prepare the real macOS development environment",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": null,
+  "revisions": [
+    {
+      "reason": "Initial preflight used an unwritable default matplotlib cache",
+      "action": "Moved caches under the project and enabled unbuffered output"
+    },
+    {
+      "reason": "Concurrent retries interleaved one diagnostic log",
+      "action": "Added an honest provenance note and later added per-log locking"
+    }
+  ]
+}

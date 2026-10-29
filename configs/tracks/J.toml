@@ -1,0 +1,8 @@
+track = "J"
+experiment = "test_prioritization"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/J_software_engineering/results"
+
+[parameters]
+status = "scaffolded"

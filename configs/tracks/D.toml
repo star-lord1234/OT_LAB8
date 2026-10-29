@@ -1,0 +1,8 @@
+track = "D"
+experiment = "parallel_distributed"
+repeats = 3
+base_seed = 20261029
+output_dir = "../../tracks/D_parallel_distributed/results"
+
+[parameters]
+status = "scaffolded"

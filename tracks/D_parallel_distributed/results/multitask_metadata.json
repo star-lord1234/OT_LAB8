@@ -1,0 +1,7 @@
+{
+  "examples": 128,
+  "gradnorm_definition": "adaptive positive task weights targeting equalized shared-gradient norms and relative training rates",
+  "mgda_definition": "minimum-norm convex combination of the two shared-parameter gradients",
+  "model": "three inputs -> shared two-unit tanh bottleneck -> two task-specific scalar heads",
+  "shared_initialization": true
+}

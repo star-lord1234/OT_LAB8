@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Tracks A-C have linked experimental evidence; Tracks D-J remain scaffolded.
+Status: active implementation. Tracks A-D have linked experimental evidence; Tracks E-J remain scaffolded.
 
 ## Executive summary
 
@@ -28,7 +28,7 @@ Implemented and verified on local simulators, subject to the unresolved Chapter 
 
 ## Track D - Submodular, parallel, and distributed optimization
 
-Pending.
+Implemented and verified with real local spawned processes, subject to the unresolved Chapter 6 syllabus audit. See the full [Track D report section](track_d.md), [parallel summary](../tracks/D_parallel_distributed/results/parallel_summary.csv), and [evidence manifest](../tracks/D_parallel_distributed/results/manifest.json).
 
 ## Track E - Main case study
 

@@ -1,27 +1,31 @@
 # Track D - Submodular, parallel, distributed, and multi-task optimization
 
-Status: **scaffolded; no algorithm implementation or result exists yet.**
+Status: **implemented and experimentally verified on local CPU processes; exact Chapter 6 syllabus coverage remains blocked.**
 
-## Minimum planned scope
-
-Measure submodular greedy quality, makespan/speedup/efficiency, parallel forms, FedAvg, MGDA, and GradNorm against verified baselines.
+This track contains independently verifiable maximum-coverage, CPU scheduling/overhead, data/model/pipeline parallel, federated-learning, and two-task optimization experiments. Process work uses macOS-safe `spawn`; results retain worker PIDs and negative speedups.
 
 The authoritative acceptance criteria are the Track D rows in `REQUIREMENTS.md`. Chapter 6 syllabus-dependent rows remain unresolved until classroom materials are supplied.
 
 ## Fixed locations
 
 - Implementation: `tracks/D_parallel_distributed/implementation/`
-- Benchmark runner/data preparation: `tracks/D_parallel_distributed/benchmarks/`
-- Track-specific tests: `tracks/D_parallel_distributed/tests/`
-- Raw and summarized track evidence: `tracks/D_parallel_distributed/results/`
+- Benchmark runner: `tracks/D_parallel_distributed/benchmarks/`
+- Tests: `tracks/D_parallel_distributed/tests/`
+- Results and plots: `tracks/D_parallel_distributed/results/`
 - Configuration: `configs/tracks/D.toml`
 - Prompt history: `prompts/D/`
-- Report destination: see `experiments/registry.json`
+- Report: `report/track_d.md`
 
-Inspect this plan without running an experiment:
+Run the full evidence bundle:
 
 ```bash
-./scripts/run_track.py D --plan
+./scripts/run_track.py D
 ```
 
-A normal run intentionally exits non-zero until the registry status is changed to `implemented` and a tested entry point is registered.
+Run focused tests:
+
+```bash
+.venv/bin/python -m pytest tracks/D_parallel_distributed/tests
+```
+
+The real dynamic scheduler is a central shared queue. A separate discrete-event local-deque simulation provides the work-stealing investigation and is explicitly not reported as wall-clock performance. D-08 remains unresolved until the classroom syllabus confirms whether additional distributed or multi-task methods were taught.

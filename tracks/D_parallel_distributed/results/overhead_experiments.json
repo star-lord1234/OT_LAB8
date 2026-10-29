@@ -1,0 +1,46 @@
+[
+  {
+    "checksum": 51836832,
+    "column_major_seconds": 0.04454808263108134,
+    "column_over_row_ratio": 1.572997735811307,
+    "experiment": "locality",
+    "matrix_size": 600,
+    "repeats": 3,
+    "row_major_seconds": 0.028320500161498785
+  },
+  {
+    "experiment": "synchronization",
+    "increments_per_process": 20000,
+    "local_then_reduce_seconds": 0.11768491705879569,
+    "lock_overhead_seconds": 0.22101512411609292,
+    "locked_shared_counter_seconds": 0.3387000411748886,
+    "locked_worker_pids": [
+      67353,
+      67354
+    ],
+    "processes": 2,
+    "reduction_worker_pids": [
+      67358,
+      67359
+    ],
+    "total": 40000
+  },
+  {
+    "approx_payload_bytes": 8000000,
+    "checksum": 32767557568,
+    "communication_overhead_seconds": 0.018337625078856945,
+    "compact_message_seconds": 0.0005875830538570881,
+    "compact_worker_pids": [
+      67360
+    ],
+    "experiment": "communication",
+    "large_over_compact_ratio": 32.20856695659065,
+    "payload_size_integers": 250000,
+    "processes": 2,
+    "transferred_payload_seconds": 0.018925208132714033,
+    "transferred_worker_pids": [
+      67360,
+      67361
+    ]
+  }
+]

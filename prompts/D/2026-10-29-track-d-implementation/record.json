@@ -1,0 +1,31 @@
+{
+  "record_id": "2026-10-29-track-d-implementation",
+  "date": "2026-10-29",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "Track D",
+  "purpose": "Implement and verify submodular, parallel, federated, and multi-task optimization experiments on macOS",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": null,
+  "revisions": [
+    {
+      "reason": "Two tiny ProcessPool tasks could both execute on one worker before the second process finished spawning",
+      "action": "Replaced data/model and local-reduction controls with explicitly launched spawn processes and asserted two distinct PIDs"
+    },
+    {
+      "reason": "A central dynamic queue is not literal deque work stealing",
+      "action": "Kept the real shared-queue measurement and added a separate task-conserving local-deque work-stealing simulation labeled non-wall-clock"
+    },
+    {
+      "reason": "The first communication comparison confounded serialization with worker-side data generation",
+      "action": "Used one warmed pool to time equivalent large-payload and compact-message acknowledgements"
+    },
+    {
+      "reason": "Visual QA showed sub-0.002 parallel-form speedup bars were effectively invisible on a linear axis",
+      "action": "Changed only that panel to a labeled logarithmic scale and corrected the large-versus-compact IPC label"
+    }
+  ],
+  "notes": "Only observed work and revisions from this interaction are recorded; no second AI tool or invented history is claimed."
+}

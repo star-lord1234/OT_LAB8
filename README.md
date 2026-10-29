@@ -2,7 +2,7 @@
 
 Lightweight, reproducible implementation workspace for the compulsory Tracks A-J. The authoritative requirements and current status are in `REQUIREMENTS.md` and `PROGRESS.md`.
 
-Current state: **repository infrastructure only**. No track algorithm or experiment result is claimed yet.
+Current state: **Tracks A-D implemented and experimentally verified; Tracks E-J remain scaffolded.** Exact Chapter 6 coverage for A-D remains blocked until the classroom syllabus is supplied.
 
 ## Quick start
 
@@ -76,7 +76,7 @@ Validate structure, registry, and prompt records:
 - `configs/tracks/`: per-track configuration placeholders.
 - `experiments/registry.json`: single track registry and dependency map.
 - `tests/infrastructure/`: infrastructure regression tests.
-- `prompts/A` through `prompts/J`: honest track AI histories; currently empty except explanatory README files.
+- `prompts/A` through `prompts/J`: honest track AI histories; A-D currently contain implementation records.
 - `prompts/_cross_track/`: actual requirements, setup, and scaffolding interactions.
 - `logs/`: AI tools register, genuine failure log, and tool-comparison template.
 - `report/`: technical-report, demo, and viva scaffolds.
@@ -96,9 +96,9 @@ The assignment requires this table in the README. The machine-readable source is
 
 | Date | Tool | Model | Scope | Work |
 |---|---|---|---|---|
-| 2026-10-29 | OpenAI Codex | GPT-5 family; exact deployed snapshot not exposed | Cross-track only | Requirements audit, environment inspection/setup, infrastructure code, debugging, testing, and documentation |
+| 2026-10-29 | OpenAI Codex | GPT-5 family; exact deployed snapshot not exposed | Cross-track and Tracks A-D | Requirements audit, environment/setup, implementation, debugging, experiments, testing, plots, and documentation |
 
-No Track A-J algorithm implementation and no second AI tool comparison have occurred yet.
+No second AI tool comparison has occurred yet; that mandatory cross-tool comparison remains open and will not be fabricated.
 
 ## Important blockers
 

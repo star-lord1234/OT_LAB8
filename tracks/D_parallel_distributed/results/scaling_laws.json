@@ -1,0 +1,19 @@
+{
+  "empirical_serial_fraction_clamped": 1.0,
+  "empirical_serial_fraction_raw": 1.2250915736880588,
+  "fit_source": "median measured dynamic-queue speedup at p=2",
+  "interpretation_caveat": "The fitted fraction includes process startup, scheduling, and communication overhead; Gustafson assumes workload scales with processor count.",
+  "measured_speedup_p2": 0.8988394112180415,
+  "predictions": [
+    {
+      "amdahl_speedup": 1.0,
+      "gustafson_scaled_speedup": 1.0,
+      "processes": 2
+    },
+    {
+      "amdahl_speedup": 1.0,
+      "gustafson_scaled_speedup": 1.0,
+      "processes": 4
+    }
+  ]
+}

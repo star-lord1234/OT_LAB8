@@ -1,0 +1,18 @@
+{
+  "class_fraction_per_client": [
+    0.2875,
+    0.55,
+    0.475,
+    0.4125
+  ],
+  "clients": 4,
+  "comparison_note": "Centralized full-batch steps equal rounds times local steps; FedAvg performs that many local steps per client and communicates once per round.",
+  "examples_per_client": [
+    80,
+    80,
+    80,
+    80
+  ],
+  "initial_accuracy": 0.43125,
+  "initial_loss": 0.6931471805599453
+}

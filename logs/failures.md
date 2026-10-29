@@ -60,3 +60,11 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** record SPSA's explicit `a_k` and `c_k` gain schedules in the common learning-rate field.
 - **Regression test:** `tracks/C_quantum_optimization/tests/test_experiment.py::test_track_c_smoke_experiment_writes_cross_track_evidence`.
 - **Lesson:** optimizer-specific hyperparameters still need a uniform evidence schema for fair comparison and reproducible export.
+
+## F-008 - Requested process count did not prove independent execution
+
+- **AI-generated artifact:** initial Track D data- and model-parallel demonstrations used a two-worker `ProcessPoolExecutor` for exactly two very short tasks.
+- **Failure:** correct numerical outputs were returned, but both tasks could finish on one worker before the second process completed spawning; the first real result file showed only one PID for each demonstration.
+- **Fix:** explicitly create one spawn process per partition/stage, collect indexed results through queues, check every exit code, and retain both PIDs in the result.
+- **Regression test:** `tracks/D_parallel_distributed/tests/test_parallel.py::test_data_model_and_pipeline_parallel_match_serial_results` asserts two distinct worker PIDs and serial equivalence.
+- **Lesson:** a configured pool size is not evidence of independent execution. Record process identities and test the actual execution topology.

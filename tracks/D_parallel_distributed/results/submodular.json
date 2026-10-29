@@ -1,0 +1,103 @@
+{
+  "approximation_ratio_observed": 0.875,
+  "budget": 2,
+  "exact": {
+    "evaluated_subsets": 15,
+    "method": "exact_enumeration",
+    "objective": 8,
+    "runtime_seconds": 1.970818266272545e-05,
+    "selection": [
+      1,
+      2
+    ]
+  },
+  "greedy": {
+    "method": "greedy",
+    "objective": 7,
+    "runtime_seconds": 2.8540845960378647e-05,
+    "selection": [
+      0,
+      2
+    ],
+    "trace": [
+      {
+        "marginal_gain": 5,
+        "selected_set": 0,
+        "step": 1,
+        "value": 5
+      },
+      {
+        "marginal_gain": 2,
+        "selected_set": 2,
+        "step": 2,
+        "value": 7
+      }
+    ]
+  },
+  "guarantee_assumptions": [
+    "normalized",
+    "nonnegative",
+    "monotone",
+    "submodular",
+    "cardinality constraint"
+  ],
+  "objective": "f(S) = cardinality of the union of selected sets",
+  "sets": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      0,
+      1,
+      2,
+      5
+    ],
+    [
+      3,
+      4,
+      6,
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      0,
+      6,
+      8
+    ],
+    [
+      2,
+      7,
+      9
+    ]
+  ],
+  "theoretical_guarantee": "greedy >= (1 - 1/e) OPT",
+  "universe": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "verification": {
+    "diminishing_returns": true,
+    "diminishing_returns_checks": 1458,
+    "monotone": true,
+    "monotonicity_checks": 729,
+    "normalized": true,
+    "submodular_inequality": true,
+    "submodular_inequality_checks": 4096,
+    "violations": []
+  }
+}

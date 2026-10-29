@@ -46,7 +46,7 @@
     {
       "id": "D",
       "name": "Submodular, parallel, distributed, and multi-task optimization",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/D_parallel_distributed",
       "config": "configs/tracks/D.toml",
       "implementation": "tracks/D_parallel_distributed/implementation",
@@ -54,7 +54,7 @@
       "tests": "tracks/D_parallel_distributed/tests",
       "results": "tracks/D_parallel_distributed/results",
       "report_section": "report/report.md#track-d-submodular-parallel-and-distributed-optimization",
-      "entrypoint": null,
+      "entrypoint": "tracks.D_parallel_distributed.benchmarks.run:main",
       "dependencies": ["A"]
     },
     {

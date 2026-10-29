@@ -1,0 +1,57 @@
+{
+  "artifacts": [
+    "environment.json",
+    "federated_comparison.csv",
+    "federated_history.csv",
+    "federated_metadata.json",
+    "manifest.json",
+    "multitask_comparison.csv",
+    "multitask_history.csv",
+    "multitask_metadata.json",
+    "overhead_experiments.json",
+    "parallel_forms.csv",
+    "parallel_runs.csv",
+    "parallel_summary.csv",
+    "plots/federated_comparison.png",
+    "plots/multitask_comparison.png",
+    "plots/parallel_forms_overheads.png",
+    "plots/parallel_scaling.png",
+    "plots/submodular_coverage.png",
+    "scaling_laws.json",
+    "submodular.json",
+    "work_stealing_simulation.json"
+  ],
+  "federated_grid": [
+    [
+      5,
+      1
+    ],
+    [
+      10,
+      1
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      10,
+      3
+    ]
+  ],
+  "multiprocessing_start_method": "spawn",
+  "multitask_methods": [
+    "equal",
+    "mgda",
+    "gradnorm"
+  ],
+  "parallel_forms_max_error": 1.4210854715202004e-14,
+  "parallel_negative_speedups_retained": true,
+  "repeats": 3,
+  "runtime_seconds": 6.577696875203401,
+  "status": "verified_experiment_with_syllabus_gap",
+  "submodular_exact_verified": true,
+  "submodular_observed_ratio": 0.875,
+  "track": "D",
+  "unresolved": "Exact Chapter 6 syllabus is unavailable; D-08 remains unresolved for any additional taught distributed or multi-task method."
+}

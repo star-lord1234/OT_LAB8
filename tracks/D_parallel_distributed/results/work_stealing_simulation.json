@@ -1,0 +1,220 @@
+[
+  {
+    "ideal_lower_bound_cost_units": 570000.0,
+    "model": "discrete-event local deque with idle-worker stealing from the most-loaded victim queue",
+    "not_a_wall_clock_result": true,
+    "processes": 2,
+    "schedule": [
+      {
+        "finish_cost_units": 220000.0,
+        "origin_worker": 0,
+        "start_cost_units": 0.0,
+        "stolen": false,
+        "task_id": 0,
+        "worker": 0
+      },
+      {
+        "finish_cost_units": 55000.0,
+        "origin_worker": 1,
+        "start_cost_units": 0.0,
+        "stolen": false,
+        "task_id": 6,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 105000.0,
+        "origin_worker": 1,
+        "start_cost_units": 55000.0,
+        "stolen": false,
+        "task_id": 7,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 150000.0,
+        "origin_worker": 1,
+        "start_cost_units": 105000.0,
+        "stolen": false,
+        "task_id": 8,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 190000.0,
+        "origin_worker": 1,
+        "start_cost_units": 150000.0,
+        "stolen": false,
+        "task_id": 9,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 225000.0,
+        "origin_worker": 1,
+        "start_cost_units": 190000.0,
+        "stolen": false,
+        "task_id": 10,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 420000.0,
+        "origin_worker": 0,
+        "start_cost_units": 220000.0,
+        "stolen": false,
+        "task_id": 1,
+        "worker": 0
+      },
+      {
+        "finish_cost_units": 255000.0,
+        "origin_worker": 1,
+        "start_cost_units": 225000.0,
+        "stolen": false,
+        "task_id": 11,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 315000.0,
+        "origin_worker": 0,
+        "start_cost_units": 255000.0,
+        "stolen": true,
+        "task_id": 5,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 380000.0,
+        "origin_worker": 0,
+        "start_cost_units": 315000.0,
+        "stolen": true,
+        "task_id": 4,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 540000.0,
+        "origin_worker": 0,
+        "start_cost_units": 380000.0,
+        "stolen": true,
+        "task_id": 3,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 600000.0,
+        "origin_worker": 0,
+        "start_cost_units": 420000.0,
+        "stolen": false,
+        "task_id": 2,
+        "worker": 0
+      }
+    ],
+    "simulated_parallel_efficiency": 0.95,
+    "static_contiguous_makespan_cost_units": 885000,
+    "steals": 3,
+    "tasks": 12,
+    "work_stealing_makespan_cost_units": 600000.0
+  },
+  {
+    "ideal_lower_bound_cost_units": 285000.0,
+    "model": "discrete-event local deque with idle-worker stealing from the most-loaded victim queue",
+    "not_a_wall_clock_result": true,
+    "processes": 4,
+    "schedule": [
+      {
+        "finish_cost_units": 220000.0,
+        "origin_worker": 0,
+        "start_cost_units": 0.0,
+        "stolen": false,
+        "task_id": 0,
+        "worker": 0
+      },
+      {
+        "finish_cost_units": 160000.0,
+        "origin_worker": 1,
+        "start_cost_units": 0.0,
+        "stolen": false,
+        "task_id": 3,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 55000.0,
+        "origin_worker": 2,
+        "start_cost_units": 0.0,
+        "stolen": false,
+        "task_id": 6,
+        "worker": 2
+      },
+      {
+        "finish_cost_units": 40000.0,
+        "origin_worker": 3,
+        "start_cost_units": 0.0,
+        "stolen": false,
+        "task_id": 9,
+        "worker": 3
+      },
+      {
+        "finish_cost_units": 75000.0,
+        "origin_worker": 3,
+        "start_cost_units": 40000.0,
+        "stolen": false,
+        "task_id": 10,
+        "worker": 3
+      },
+      {
+        "finish_cost_units": 105000.0,
+        "origin_worker": 2,
+        "start_cost_units": 55000.0,
+        "stolen": false,
+        "task_id": 7,
+        "worker": 2
+      },
+      {
+        "finish_cost_units": 105000.0,
+        "origin_worker": 3,
+        "start_cost_units": 75000.0,
+        "stolen": false,
+        "task_id": 11,
+        "worker": 3
+      },
+      {
+        "finish_cost_units": 150000.0,
+        "origin_worker": 2,
+        "start_cost_units": 105000.0,
+        "stolen": false,
+        "task_id": 8,
+        "worker": 2
+      },
+      {
+        "finish_cost_units": 285000.0,
+        "origin_worker": 0,
+        "start_cost_units": 105000.0,
+        "stolen": true,
+        "task_id": 2,
+        "worker": 3
+      },
+      {
+        "finish_cost_units": 350000.0,
+        "origin_worker": 0,
+        "start_cost_units": 150000.0,
+        "stolen": true,
+        "task_id": 1,
+        "worker": 2
+      },
+      {
+        "finish_cost_units": 225000.0,
+        "origin_worker": 1,
+        "start_cost_units": 160000.0,
+        "stolen": false,
+        "task_id": 4,
+        "worker": 1
+      },
+      {
+        "finish_cost_units": 280000.0,
+        "origin_worker": 1,
+        "start_cost_units": 220000.0,
+        "stolen": true,
+        "task_id": 5,
+        "worker": 0
+      }
+    ],
+    "simulated_parallel_efficiency": 0.8142857142857143,
+    "static_contiguous_makespan_cost_units": 600000,
+    "steals": 3,
+    "tasks": 12,
+    "work_stealing_makespan_cost_units": 350000.0
+  }
+]

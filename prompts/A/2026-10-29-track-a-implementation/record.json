@@ -8,7 +8,7 @@
   "prompt_file": "prompt.md",
   "response_file": "response.md",
   "verification_file": "verification.md",
-  "commit": null,
+  "commit": "7453d7cf35f47d97b668710a68bb7ed007cd4b98",
   "revisions": [
     {
       "reason": "The first evidence bundle contained per-run records but no compact cross-run aggregate",

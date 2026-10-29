@@ -11,4 +11,4 @@
 - First full repository run exposed 3 stale scaffold-state assertions (28 passed); those tests now preserve the lifecycle invariant using implemented A and scaffolded B. This genuine failure is logged as F-005.
 - Final full gate: preflight 7/7, repository validation passed, and 31/31 pytest tests passed.
 - Visual QA found and fixed a misleading negative-objective/log-axis combination in the landscape plot by plotting objective gaps.
-- Commit: pending until the verified implementation commit is created.
+- Verified implementation commit: `7453d7cf35f47d97b668710a68bb7ed007cd4b98` (`[AI:Codex] Implement Track A continuous optimization`).

@@ -8,4 +8,4 @@
 - Retained measured performance and optimization runtimes are linked from `report/track_h.md`; no production or SQLite-internal-optimizer claim is made.
 - Focused Track H gate: 8/8 tests passed.
 - Repository-wide gate: environment preflight 7/7, repository/prompt validation passed, and 97/97 tests passed.
-- Implementation commit is filled only after the final content is committed.
+- Verified implementation commit: `277e907ea89c0e441668ad3c06599e3dae286741` (`[AI:Codex] Implement Track H SQLite index selection`).

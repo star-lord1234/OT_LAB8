@@ -21,6 +21,15 @@ This hash was recorded in a follow-up documentation commit because a commit cann
 
 The implementation hash is linked by a follow-up documentation commit because a commit cannot contain its own final hash.
 
+## Track H implementation commit
+
+- Commit: `277e907ea89c0e441668ad3c06599e3dae286741`
+- Message: `[AI:Codex] Implement Track H SQLite index selection`
+- Scope: deterministic four-table synthetic database, five weighted queries and candidate indexes, measured page costs, 180-page binary model, baseline/greedy/MILP/DP comparison, actual SQLite plans, repeated timings, result hashes, plots, tests, report, and honest prompt/failure records.
+- Verification before commit: standalone generator reproduced the exact digest; focused Track H 8/8; preflight 7/7; repository validation passed; repository-wide 97/97; every query/configuration/repeat hash matched baseline.
+
+The implementation hash is linked by a follow-up documentation commit because a commit cannot contain its own final hash.
+
 ## Track G implementation commit
 
 - Commit: `ec147bb2b58ca6ff7035a9758e76e780bdc937c9`

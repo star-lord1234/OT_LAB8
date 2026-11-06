@@ -1,8 +1,8 @@
 # Assignment 8 Progress and Dependency Plan
 
-Last updated: 2026-10-29
+Last updated: 2026-11-06
 
-Current phase: **Tracks A-F implemented and verified; Tracks G-J remain to be implemented.**
+Current phase: **Tracks A-G implemented and verified; Tracks H-J remain to be implemented.**
 
 ## 1. Status legend
 
@@ -26,8 +26,8 @@ Current phase: **Tracks A-F implemented and verified; Tracks G-J remain to be im
 | Repository infrastructure | COMPLETE | A-J paths, shared utilities, registry, CLIs, prompt records, and 22 passing infrastructure tests are present. |
 | Exact Chapter 6 syllabus audit | BLOCKED | Obtain lecture notes/slides or official topic list and resolve `SYL-01` through `SYL-08`. |
 | Environment/version capture | COMPLETE | Real machine/tool/package state and final 7/7 preflight are documented in `SETUP.md`. |
-| Algorithm implementation | IN PROGRESS | Tracks A-F implemented; Tracks G-J remain. |
-| Experiments/results/report | IN PROGRESS | A-F have results, plots, prompt history, and draft report sections; E is explicitly simulation-only. |
+| Algorithm implementation | IN PROGRESS | Tracks A-G implemented; Tracks H-J remain. |
+| Experiments/results/report | IN PROGRESS | A-G have results, plots, prompt history, and draft report sections; C and E are explicitly simulation-only and G is QEMU-only. |
 
 ## 3. Track status
 
@@ -39,7 +39,7 @@ Current phase: **Tracks A-F implemented and verified; Tracks G-J remain to be im
 | D | Maximum coverage; scheduling/parallel forms; FedAvg; MGDA; GradNorm | IMPLEMENTED / VERIFIED / syllabus-blocked | Exact Chapter 6 list | D-01 through D-07 have code, spawn-safe tests, real results, plots, PIDs, and report links. D-08 remains unresolved. |
 | E | Offline batching simulation; FCFS, greedy, local DP, exact tiny solver | IMPLEMENTED / VERIFIED SIMULATION | None | E-01 through E-05 have formulation, identical repeated workloads, tests, results, plots, strategy table, exact reference, and report links. |
 | F | Toy compiler; folding/propagation, CSE, strength reduction, DCE; pass-order optimization | IMPLEMENTED / VERIFIED / FOUR-PASS TARGET | None | Five samples preserve outputs; B&B matches enumeration; instruction/runtime/size/compile metrics and report exist. |
-| G | xv6 priority scheduler; CPU/sleep/mixed workloads | PLANNED | QEMU/RISC-V tools now verified; pinned xv6 base remains | Baseline and modified QEMU runs; boot/usertests/progress; three workload results; cleanly applicable patch. |
+| G | xv6 priority scheduler; CPU/sleep/mixed workloads | IMPLEMENTED / VERIFIED / ONE FEATURE | None | Pinned pristine/support/optimized commits; 3 full usertests passes; 18 benchmark runs/108 jobs; clean-patch boot; report and provenance. |
 | H | SQLite storage-budgeted index selection using two methods plus default baseline | PLANNED | B discrete solvers; deterministic DB generator | Identical query results; plans, latency, throughput, storage; two-method selection comparison. |
 | I | Every taught quantum algorithm; two hand-coded circuits; QML/classical comparison; advantage analysis | PLANNED / syllabus-blocked | C quantum utilities; D speedup results; Chapter 6 list | Exact taught list covered; expected circuit outputs; matched QML/classical data; D contrast. |
 | J | Public Python codebase test prioritization/minimization | PLANNED | Select/pin licensed project; shared greedy/exact utilities | Baseline profile; formal budgeted objective; real tests/coverage; measured quality and maintenance risk. |
@@ -80,12 +80,12 @@ No track may be marked COMPLETE merely because its script runs. Its formulation,
 | 1 | Initialize repository/provenance workflow | COMPLETE | Initial verified commit `648899c` is tagged `setup-v1`; prompt schema, README register, ignore rules, and tests are active. |
 | 1 | Capture real environment | COMPLETE | Actual hardware/OS/tool versions recorded in `SETUP.md`; final preflight passes 7/7. |
 | 1 | Choose one quantum stack | COMPLETE | PennyLane statevector and mixed-state noise circuits execute locally on CPU. |
-| 1 | Verify xv6 toolchain | IN PROGRESS | QEMU and RISC-V GCC/binutils pass preflight; pinned xv6 build, boot, and baseline `usertests` remain. |
+| 1 | Verify xv6 toolchain | COMPLETE | QEMU/RISC-V tools pass preflight; pinned pristine, support baseline, and priority scheduler build/boot/full `usertests` pass; fresh patch boots. |
 | 2 | Scaffold shared experiment contract | COMPLETE | Seeds, config, timing/memory, repeats, exports, plotting, verification, environment metadata, registry, and prompt validation have 22 passing tests. |
 | 2 | Select Track J codebase | NOT STARTED | Public license, pinned commit, >1,000-line conservative target, passing tests, and usable coverage data. |
 | 3 | Implement A and B | COMPLETE EXCEPT SYLLABUS AUDIT | A-01 through A-06 and B-01 through B-05 pass; A-07/B-06 await the syllabus. |
 | 4 | Implement C and D | COMPLETE EXCEPT SYLLABUS AUDIT | C reuses B's hashed fixture; D has real process/distributed results; C-09/D-08 await the syllabus. |
-| 5 | Implement F, G, H | IN PROGRESS | F complete with four passes; G and H remain. |
+| 5 | Implement F, G, H | IN PROGRESS | F and G complete; H remains. |
 | 6 | Complete E, I, J | IN PROGRESS | E complete as a simulation-only case study; I and J remain. |
 | 7 | Consolidate report/demo/evidence | NOT STARTED | Clean-clone run, coverage checker, report links, AI logs, Q1-Q10, and demo pass. |
 | 8 | Publish | NOT STARTED | Public GitHub URL, secrets scan clean, final report and demo accessible. |
@@ -96,7 +96,7 @@ No track may be marked COMPLETE merely because its script runs. Its formulation,
 |---|---|---|---|
 | Missing exact syllabus | Mandatory methods may be omitted or unnecessary work added. | Treat as a release blocker; conservatively plan all named PDF methods. | OPEN/BLOCKED. |
 | Quantum package compatibility on Apple Silicon | C/I delay or oversized environment. | Select one SDK after a tiny compatibility probe; use local statevector/noise simulation and tiny circuits. | OPEN. |
-| xv6 baseline compatibility | Installed QEMU/GCC may still expose upstream build or boot issues. | Build and boot a pinned xv6 revision early; retain baseline and `usertests` logs. | TOOLS VERIFIED; XV6 BASELINE OPEN. |
+| xv6 baseline compatibility | Future upstream or toolchain versions may differ. | Pin `fa2ddcb7`; retain pristine/baseline/optimized transcripts and cleanly applicable patch. | RESOLVED FOR PINNED REVISION. |
 | Scope density | Superficial or unverifiable tracks. | Keep toy instances, share infrastructure, require evidence gates, and defer only explicit full-credit extensions. | CONTROLLED. |
 | Timing noise on a laptop | Weak speedup/latency claims. | Warm-up, repeat, report variability, minimize background load, and allow honest negative results. | OPEN. |
 | AI provenance reconstructed after the fact | Academic-misconduct risk. | Start prompt and Git traceability before code; never fabricate failures or history. | CRITICAL/PREVENTIVE. |

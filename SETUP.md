@@ -1,8 +1,11 @@
 # macOS Development Environment
 
-Verified: 2026-10-29 (Asia/Kolkata)
+Environment inventory verified: 2026-10-29; xv6 validation updated: 2026-11-06
+(Asia/Kolkata)
 
-Environment status: **the requested development preflight passes 7/7.** This means the numerical, ML, ILP, quantum, SQLite, multiprocessing, QEMU, and RISC-V tool capabilities were executed successfully. It does **not** yet mean that xv6 itself has been cloned, built, booted, or tested.
+Environment status: **the requested development preflight passes 7/7, and the
+pinned xv6 source has now been built, booted, and tested under QEMU.** Track G
+retains pristine, support-baseline, and optimized full-`usertests` transcripts.
 
 ## 1. Measured machine inventory
 
@@ -131,7 +134,11 @@ For xv6 commands, explicitly use the detected prefix when needed:
 make TOOLPREFIX=riscv64-elf- qemu
 ```
 
-The actual xv6 upstream revision must be pinned before the first build. A successful binary-version check is not a substitute for the required baseline boot and `usertests` run.
+Track G pins MIT xv6-riscv commit
+`fa2ddcb7ca87a77af579380a6eafd5aff163b44f`. The pristine source built and
+booted with `CPUS=1`, and full `usertests` reported `ALL TESTS PASSED`. The
+support-only comparison baseline and priority scheduler also passed the full
+suite; links are in `report/track_g.md`.
 
 ### Homebrew side effect observed
 
@@ -195,10 +202,14 @@ The earlier pre-native-tools run is retained at `setup_logs/preflight-before-nat
 
 ## 9. Unresolved items and honest limitations
 
-- **xv6 not yet validated:** the emulator/compiler exist, but no xv6 source revision has been cloned or built, and QEMU boot plus `usertests` remain future Track G gates.
+- **xv6 validated for Track G's pinned revision:** pristine, support-baseline,
+  optimized, and fresh-patch boot evidence is archived. This does not imply
+  compatibility with future upstream revisions.
 - **MPS unavailable:** CPU works and is the supported baseline. This is not a blocker for the planned toy-scale experiments.
 - **Timing stability:** laptop power state and background tasks can affect benchmarks. Experiments must use warm-ups, repeated runs, variability, and consistent power/background conditions.
 - **Exact Chapter 6 syllabus missing:** this blocks final method coverage, not environment readiness.
 - **Real quantum hardware not configured:** the assignment permits an applicable hardware-noise model when access allows; the local PennyLane mixed-state backend passed.
 
-The setup should only be described as **preflight-complete**, not assignment-complete or xv6-validated.
+The setup is **preflight-complete and xv6-validated for the pinned Track G
+revision**. The assignment remains incomplete while Tracks H-J and the exact
+Chapter 6 syllabus audit remain open.

@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Tracks A-F have linked experimental evidence; Tracks G-J remain scaffolded.
+Status: active implementation. Tracks A-G have linked experimental evidence; Tracks H-J remain scaffolded.
 
 ## Executive summary
 
@@ -40,7 +40,12 @@ Implemented and verified with the four-pass target. See the full [Track F report
 
 ## Track G - xv6 optimization
 
-Pending.
+Implemented and verified as one priority-scheduler feature with aging. See the
+full [Track G report section](track_g.md), complete
+[patch](../tracks/G_xv6/patches/priority-scheduler.patch),
+[benchmark comparison](../tracks/G_xv6/results/scheduler_comparison.csv), and
+[full usertests status](../tracks/G_xv6/results/usertests_status.json). Results
+come from RISC-V QEMU simulation, not physical hardware or the macOS scheduler.
 
 ## Track H - DBMS optimization
 

@@ -88,7 +88,7 @@
     {
       "id": "G",
       "name": "xv6 operating-system optimization",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/G_xv6",
       "config": "configs/tracks/G.toml",
       "implementation": "tracks/G_xv6/implementation",
@@ -96,7 +96,7 @@
       "tests": "tracks/G_xv6/tests",
       "results": "tracks/G_xv6/results",
       "report_section": "report/report.md#track-g-xv6-optimization",
-      "entrypoint": null,
+      "entrypoint": "tracks.G_xv6.benchmarks.run:main",
       "dependencies": []
     },
     {

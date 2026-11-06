@@ -1,0 +1,75 @@
+diff --git a/kernel/proc.c b/kernel/proc.c
+index ca24ee4..2e09f9c 100644
+--- a/kernel/proc.c
++++ b/kernel/proc.c
+@@ -26,6 +26,10 @@ extern char trampoline[]; // trampoline.S
+ // must be acquired before any p->lock.
+ struct spinlock wait_lock;
+ 
++// Every this many runnable scheduler rounds, waiting improves effective
++// priority by one level. Base priorities remain unchanged.
++#define PRIORITY_AGING_ROUNDS 8
++
+ // Allocate a page for each process's kernel stack.
+ // Map it high in memory, followed by an invalid
+ // guard page.
+@@ -446,25 +450,49 @@ scheduler(void)
+     intr_off();
+ 
+     int found = 0;
++    struct proc *selected = 0;
++    int best_effective = PRIORITY_MAX + 1;
++    int best_wait = -1;
++
++    // Scan without retaining a process lock. The selected process is
++    // revalidated under its own lock below, which keeps this safe if another
++    // CPU schedules it between the scan and the switch.
+     for (p = proc; p < &proc[NPROC]; p++) {
+       acquire(&p->lock);
+       if (p->state == RUNNABLE) {
+-        // Switch to chosen process.  It is the process's job
+-        // to release its lock and then reacquire it
+-        // before jumping back to us.
+-        p->state = RUNNING;
+-        c->proc = p;
+-        swtch(&c->context, &p->context);
++        found = 1;
++        if (p->wait_rounds < 1000000000)
++          p->wait_rounds++;
++        int effective = p->priority - p->wait_rounds / PRIORITY_AGING_ROUNDS;
++        if (effective < PRIORITY_MIN)
++          effective = PRIORITY_MIN;
++        if (effective < best_effective ||
++            (effective == best_effective && p->wait_rounds > best_wait)) {
++          selected = p;
++          best_effective = effective;
++          best_wait = p->wait_rounds;
++        }
++      }
++      release(&p->lock);
++    }
++
++    if (selected != 0) {
++      acquire(&selected->lock);
++      if (selected->state == RUNNABLE) {
++        // Switch to the chosen process. It releases its lock after switching
++        // in and reacquires it before returning to this scheduler context.
++        selected->wait_rounds = 0;
++        selected->state = RUNNING;
++        c->proc = selected;
++        swtch(&c->context, &selected->context);
+ 
+         // Don't re-enable interrupts on release.
+         mycpu()->intena = 0;
+ 
+-        // Process is done running for now.
+-        // It should have changed its p->state before coming back.
++        // Process is done running for now and changed its own state.
+         c->proc = 0;
+-        found = 1;
+       }
+-      release(&p->lock);
++      release(&selected->lock);
+     }
+     if (found == 0) {
+       // nothing to run; stop running on this core until an interrupt.

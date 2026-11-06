@@ -1,0 +1,21 @@
+{
+  "all_passed": true,
+  "comparison_baseline": {
+    "all_tests_passed": true,
+    "booted": true,
+    "explicit_failed_lines": [],
+    "log": "baseline_usertests.log"
+  },
+  "priority_scheduler": {
+    "all_tests_passed": true,
+    "booted": true,
+    "explicit_failed_lines": [],
+    "log": "priority_usertests.log"
+  },
+  "pristine": {
+    "all_tests_passed": true,
+    "booted": true,
+    "explicit_failed_lines": [],
+    "log": "pristine_usertests.log"
+  }
+}

@@ -28,7 +28,9 @@ def test_registry_defines_all_tracks_and_existing_locations() -> None:
     assert tracks["E"].entrypoint == "tracks.E_case_study.benchmarks.run:main"
     assert tracks["F"].status == "implemented"
     assert tracks["F"].entrypoint == "tracks.F_compiler.benchmarks.run:main"
-    assert all(tracks[track_id].status == "scaffolded" for track_id in "GHIJ")
+    assert tracks["G"].status == "implemented"
+    assert tracks["G"].entrypoint == "tracks.G_xv6.benchmarks.run:main"
+    assert all(tracks[track_id].status == "scaffolded" for track_id in "HIJ")
 
 
 def test_prompt_record_validation(tmp_path: Path) -> None:

@@ -92,3 +92,35 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** baseline trace rows now record `instructions_removed=0`, giving every row one explicit schema.
 - **Regression test:** `tracks/F_compiler/tests/test_experiment.py::test_track_f_smoke_experiment_writes_complete_evidence` executes the complete exporter.
 - **Lesson:** baseline and optimized evidence must share a uniform schema; an omitted field is ambiguous, not equivalent to a recorded zero.
+
+## F-012 - Initial xv6 CPU workload was below timer resolution
+
+- **AI-generated artifact:** the first `schedbench` CPU mode used eight million integer-mixing iterations per child, and the QEMU logger stopped at the summary prefix.
+- **Failure:** five of six jobs completed in zero xv6 ticks, so turnaround could not meaningfully distinguish schedulers; the final summary line was truncated by the QEMU monitor escape.
+- **Fix:** increase CPU work to eighty million iterations (and mixed bursts proportionally), then wait for a shell prompt after the expected marker before exiting QEMU.
+- **Evidence:** the discarded run is retained as `tracks/G_xv6/results/raw/calibration_short_cpu.log`; accepted CPU jobs span 3-8 ticks and contain complete summaries.
+- **Lesson:** calibrate work against the measured clock resolution, and do not terminate a console process on a partial marker.
+
+## F-013 - Direct Track G collector lacked repository bootstrap
+
+- **AI-generated artifact:** the first `tracks/G_xv6/benchmarks/collect.py` imported `tracks...` without adding the repository root to `sys.path`.
+- **Failure:** direct execution stopped with `ModuleNotFoundError: No module named 'tracks'` before QEMU launched.
+- **Fix:** resolve the repository root from the collector path and insert it before importing the QEMU driver.
+- **Regression coverage:** the accepted collector then completed all 18 benchmark runs; `scripts/test_all.sh` imports and tests the Track G modules.
+- **Lesson:** track-local CLIs need the same explicit bootstrap discipline as repository-level CLIs.
+
+## F-014 - xv6 patch generation used the outer Git repository
+
+- **AI command:** the first `git diff --output=... fa2ddcb..643d1fc` ran from the assignment repository rather than the ignored nested xv6 checkout.
+- **Failure:** Git could not resolve the xv6 commit IDs and created empty output files; `git apply` correctly rejected them.
+- **Fix:** run diff generation with `git -C external/xv6-riscv`; the resulting complete and scheduler-only patches contain 383 and 75 lines.
+- **Verification:** the complete patch passed `git apply --check` at the pinned commit in a fresh local clone, applied, rebuilt, booted, and ran the benchmark.
+- **Lesson:** nested repositories require an explicit Git context; always validate generated patch size and clean applicability.
+
+## F-015 - Registry lifecycle test was stale after Track G
+
+- **AI-generated artifact:** the infrastructure registry test still asserted that every track G-J must remain scaffolded.
+- **Failure:** the first repository-wide Track G gate reported 1 failed and 87 passed tests even though G was correctly implemented and its 10 focused tests passed.
+- **Fix:** assert G's implemented status and exact entry point, while retaining the scaffold refusal invariant for H-J.
+- **Regression coverage:** `tests/infrastructure/test_registry_prompts.py::test_registry_defines_all_tracks_and_existing_locations` and the repository-wide gate.
+- **Lesson:** lifecycle tests must advance with real track state while preserving the general implemented/scaffolded contract.

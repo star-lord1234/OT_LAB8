@@ -1,0 +1,31 @@
+{
+  "record_id": "2026-11-06-track-g-implementation",
+  "date": "2026-11-06",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "Track G",
+  "purpose": "Implement and verify one xv6-riscv priority-scheduler feature over three workloads",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": null,
+  "revisions": [
+    {
+      "reason": "The first CPU workload completed below xv6 timer resolution and the logger truncated the summary line",
+      "action": "Increased deterministic work and required the post-result shell prompt before QEMU exit"
+    },
+    {
+      "reason": "Direct collection initially failed to import the tracks package",
+      "action": "Added an explicit repository-root bootstrap before importing the QEMU driver"
+    },
+    {
+      "reason": "The first patch generation command used the outer repository",
+      "action": "Regenerated from the nested xv6 repository and verified clean application in a fresh clone"
+    },
+    {
+      "reason": "The first full repository gate retained a stale assertion that G-J were all scaffolded",
+      "action": "Registered G's exact entry point in the lifecycle test while retaining H-J as scaffolded"
+    }
+  ],
+  "notes": "Only observed work and failures are recorded. Results are QEMU simulation measurements; no physical-hardware or universal scheduler claim is made."
+}

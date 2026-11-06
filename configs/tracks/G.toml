@@ -5,4 +5,9 @@ base_seed = 20261029
 output_dir = "../../tracks/G_xv6/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"
+upstream_commit = "fa2ddcb7ca87a77af579380a6eafd5aff163b44f"
+qemu_cpus = 1
+workloads = ["cpu", "io", "mixed"]
+jobs_per_run = 6
+priority_levels = [0, 2]

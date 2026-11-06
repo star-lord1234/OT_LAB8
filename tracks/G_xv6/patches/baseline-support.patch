@@ -1,0 +1,312 @@
+diff --git a/Makefile b/Makefile
+index a26f3db..717503d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -151,6 +151,7 @@ UPROGS=\
+ 	$U/_forphan\
+ 	$U/_dorphan\
+ 	$U/_sync\
++	$U/_schedbench\
+ 
+ fs.img: mkfs/mkfs README $(UPROGS)
+ 	mkfs/mkfs fs.img README $(UPROGS)
+diff --git a/kernel/defs.h b/kernel/defs.h
+index 0ae6896..d54e97c 100644
+--- a/kernel/defs.h
++++ b/kernel/defs.h
+@@ -82,6 +82,7 @@ void            printkinit(void);
+ int             cpuid(void);
+ void            kexit(int);
+ int             kfork(void);
++int             ksetpriority(int);
+ int             growproc(int);
+ void            proc_mapstacks(pagetable_t);
+ pagetable_t     proc_pagetable(struct proc *);
+diff --git a/kernel/proc.c b/kernel/proc.c
+index 31f23a3..ca24ee4 100644
+--- a/kernel/proc.c
++++ b/kernel/proc.c
+@@ -124,6 +124,8 @@ allocproc(void)
+ found:
+   p->pid = allocpid();
+   p->state = USED;
++  p->priority = PRIORITY_DEFAULT;
++  p->wait_rounds = 0;
+ 
+   // Allocate a trapframe page.
+   if ((p->trapframe = (struct trapframe *)kalloc()) == 0) {
+@@ -167,6 +169,8 @@ freeproc(struct proc *p)
+   p->chan = 0;
+   p->killed = 0;
+   p->xstate = 0;
++  p->priority = PRIORITY_DEFAULT;
++  p->wait_rounds = 0;
+   p->state = UNUSED;
+ }
+ 
+@@ -507,6 +511,21 @@ yield(void)
+   release(&p->lock);
+ }
+ 
++// Set the current process's bounded base scheduling priority.
++int
++ksetpriority(int priority)
++{
++  struct proc *p = myproc();
++
++  if (priority < PRIORITY_MIN || priority > PRIORITY_MAX)
++    return -1;
++  acquire(&p->lock);
++  p->priority = priority;
++  p->wait_rounds = 0;
++  release(&p->lock);
++  return 0;
++}
++
+ // A fork child's very first scheduling by scheduler()
+ // will swtch to forkret.
+ void
+diff --git a/kernel/proc.h b/kernel/proc.h
+index 5603697..04baa54 100644
+--- a/kernel/proc.h
++++ b/kernel/proc.h
+@@ -78,6 +78,10 @@ struct trapframe {
+ 
+ enum procstate { UNUSED, USED, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
+ 
++#define PRIORITY_MIN 0
++#define PRIORITY_DEFAULT 1
++#define PRIORITY_MAX 2
++
+ // Per-process state
+ struct proc {
+   struct spinlock lock;
+@@ -88,6 +92,8 @@ struct proc {
+   int killed;           // If non-zero, have been killed
+   int xstate;           // Exit status to be returned to parent's wait
+   int pid;              // Process ID
++  int priority;         // Base scheduler priority; lower values run first
++  int wait_rounds;      // Runnable scheduler rounds since last selection
+ 
+   // wait_lock must be held when using this:
+   struct proc *parent; // Parent process
+diff --git a/kernel/syscall.c b/kernel/syscall.c
+index 1800f20..6afbde8 100644
+--- a/kernel/syscall.c
++++ b/kernel/syscall.c
+@@ -103,6 +103,7 @@ extern uint64 sys_link(void);
+ extern uint64 sys_mkdir(void);
+ extern uint64 sys_close(void);
+ extern uint64 sys_sync(void);
++extern uint64 sys_setpriority(void);
+ 
+ // An array mapping syscall numbers from syscall.h
+ // to the function that handles the system call.
+@@ -130,6 +131,7 @@ static uint64 (*syscalls[])(void) = {
+   [SYS_mkdir]   = sys_mkdir,
+   [SYS_close]   = sys_close,
+   [SYS_sync]    = sys_sync,
++  [SYS_setpriority] = sys_setpriority,
+   // clang-format on
+ };
+ 
+diff --git a/kernel/syscall.h b/kernel/syscall.h
+index 5a4a39f..6452472 100644
+--- a/kernel/syscall.h
++++ b/kernel/syscall.h
+@@ -21,3 +21,4 @@
+ #define SYS_mkdir  20
+ #define SYS_close  21
+ #define SYS_sync   22
++#define SYS_setpriority 23
+diff --git a/kernel/sysproc.c b/kernel/sysproc.c
+index cd25557..56d5a0e 100644
+--- a/kernel/sysproc.c
++++ b/kernel/sysproc.c
+@@ -110,3 +110,11 @@ sys_uptime(void)
+   release(&tickslock);
+   return xticks;
+ }
++
++uint64
++sys_setpriority(void)
++{
++  int priority;
++  argint(0, &priority);
++  return ksetpriority(priority);
++}
+diff --git a/user/schedbench.c b/user/schedbench.c
+new file mode 100644
+index 0000000..b32b2aa
+--- /dev/null
++++ b/user/schedbench.c
+@@ -0,0 +1,148 @@
++#include "kernel/types.h"
++#include "user/user.h"
++
++#define JOBS 6
++#define HIGH_PRIORITY 0
++#define LOW_PRIORITY 2
++
++struct start_token {
++  int tick;
++};
++
++struct result {
++  int job;
++  int pid;
++  int priority;
++  int start_tick;
++  int end_tick;
++  uint64 checksum;
++};
++
++static uint64
++burn(int rounds, int salt)
++{
++  volatile uint64 value = 1469598103934665603ULL ^ (uint64)salt;
++  for (int i = 0; i < rounds; i++) {
++    value ^= (uint64)(i + salt);
++    value *= 1099511628211ULL;
++  }
++  return value;
++}
++
++static uint64
++run_workload(char *workload, int job)
++{
++  uint64 checksum = 0;
++  if (strcmp(workload, "cpu") == 0) {
++    checksum = burn(80000000, job + 1);
++  } else if (strcmp(workload, "io") == 0) {
++    for (int i = 0; i < 30; i++) {
++      checksum ^= burn(15000, job + i + 1);
++      pause(1);
++    }
++  } else if (strcmp(workload, "mixed") == 0) {
++    for (int i = 0; i < 10; i++) {
++      checksum ^= burn(5000000, job + i + 1);
++      pause(1);
++    }
++  } else {
++    printf("unknown workload %s\n", workload);
++    exit(2);
++  }
++  return checksum;
++}
++
++static void
++write_exact(int fd, void *buffer, int size)
++{
++  if (write(fd, buffer, size) != size) {
++    printf("schedbench write failed\n");
++    exit(3);
++  }
++}
++
++static void
++read_exact(int fd, void *buffer, int size)
++{
++  if (read(fd, buffer, size) != size) {
++    printf("schedbench read failed\n");
++    exit(4);
++  }
++}
++
++int
++main(int argc, char **argv)
++{
++  if (argc != 3) {
++    printf("usage: schedbench cpu|io|mixed repeat\n");
++    exit(1);
++  }
++  char *workload = argv[1];
++  int repeat = atoi(argv[2]);
++  int ready_pipe[2];
++  int start_pipe[2];
++  int result_pipe[2];
++  if (pipe(ready_pipe) < 0 || pipe(start_pipe) < 0 || pipe(result_pipe) < 0) {
++    printf("schedbench pipe failed\n");
++    exit(1);
++  }
++
++  for (int job = 0; job < JOBS; job++) {
++    int pid = fork();
++    if (pid < 0) {
++      printf("schedbench fork failed\n");
++      exit(1);
++    }
++    if (pid == 0) {
++      int priority = job < JOBS / 2 ? HIGH_PRIORITY : LOW_PRIORITY;
++      if (setpriority(priority) < 0) {
++        printf("schedbench setpriority failed\n");
++        exit(5);
++      }
++      char ready = 'R';
++      write_exact(ready_pipe[1], &ready, 1);
++      struct start_token token;
++      read_exact(start_pipe[0], &token, sizeof(token));
++      struct result result;
++      result.job = job;
++      result.pid = getpid();
++      result.priority = priority;
++      result.start_tick = token.tick;
++      result.checksum = run_workload(workload, job);
++      result.end_tick = uptime();
++      write_exact(result_pipe[1], &result, sizeof(result));
++      exit(0);
++    }
++  }
++
++  for (int job = 0; job < JOBS; job++) {
++    char ready;
++    read_exact(ready_pipe[0], &ready, 1);
++  }
++  struct start_token token = {.tick = uptime()};
++  for (int job = 0; job < JOBS; job++)
++    write_exact(start_pipe[1], &token, sizeof(token));
++
++  int max_end = token.tick;
++  for (int completed = 0; completed < JOBS; completed++) {
++    struct result result;
++    read_exact(result_pipe[0], &result, sizeof(result));
++    if (result.end_tick > max_end)
++      max_end = result.end_tick;
++    printf("GRESULT workload=%s repeat=%d job=%d pid=%d priority=%d "
++           "start=%d end=%d turnaround=%d checksum=%ld\n",
++           workload, repeat, result.job, result.pid, result.priority,
++           result.start_tick, result.end_tick,
++           result.end_tick - result.start_tick, result.checksum);
++  }
++  for (int job = 0; job < JOBS; job++) {
++    int status = -1;
++    if (wait(&status) < 0 || status != 0) {
++      printf("schedbench child failure\n");
++      exit(6);
++    }
++  }
++  printf("GBENCH_DONE workload=%s repeat=%d jobs=%d makespan=%d\n",
++         workload, repeat, JOBS, max_end - token.tick);
++  exit(0);
++}
+diff --git a/user/user.h b/user/user.h
+index 29aad59..5771f9f 100644
+--- a/user/user.h
++++ b/user/user.h
+@@ -25,6 +25,7 @@ char *sys_sbrk(int, int);
+ int pause(int);
+ int uptime(void);
+ int sync(void);
++int setpriority(int);
+ 
+ // ulib.c
+ int stat(const char *, struct stat *);
+diff --git a/user/usys.pl b/user/usys.pl
+index 4d054e8..c3e6bf9 100755
+--- a/user/usys.pl
++++ b/user/usys.pl
+@@ -43,3 +43,4 @@ entry("sbrk");
+ entry("pause");
+ entry("uptime");
+ entry("sync");
++entry("setpriority");

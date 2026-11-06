@@ -1,0 +1,7 @@
+scheduler,workload,repeats,jobs_completed_total,mean_turnaround_ticks_mean,mean_turnaround_ticks_std,high_mean_turnaround_ticks_mean,high_mean_turnaround_ticks_std,low_mean_turnaround_ticks_mean,low_mean_turnaround_ticks_std,priority_separation_ticks_mean,priority_separation_ticks_std,makespan_ticks_mean,makespan_ticks_std,throughput_jobs_per_tick_mean,throughput_jobs_per_tick_std,jain_inverse_turnaround_mean,jain_inverse_turnaround_std
+baseline,cpu,3,18,6.444444444444445,0.1571348402636775,6.0,0.0,6.888888888888889,0.31426968052735416,0.888888888888889,0.31426968052735416,7.333333333333333,0.4714045207910317,0.8214285714285714,0.05050762722761051,0.9930077117580665,0.002852700493749026
+baseline,io,3,18,30.0,0.0,30.0,0.0,30.0,0.0,0.0,0.0,30.0,0.0,0.2,0.0,1.0000000000000004,0.0
+baseline,mixed,3,18,10.0,0.0,10.0,0.0,10.0,0.0,0.0,0.0,10.0,0.0,0.6,0.0,1.0,0.0
+priority,cpu,3,18,4.888888888888888,0.07856742013183875,3.0,0.0,6.777777777777778,0.15713484026367708,3.777777777777778,0.15713484026367708,7.0,0.0,0.8571428571428571,0.0,0.8704937611119217,0.005957230095109129
+priority,io,3,18,30.0,0.0,30.0,0.0,30.0,0.0,0.0,0.0,30.0,0.0,0.2,0.0,1.0000000000000004,0.0
+priority,mixed,3,18,10.0,0.0,10.0,0.0,10.0,0.0,0.0,0.0,10.0,0.0,0.6,0.0,1.0,0.0

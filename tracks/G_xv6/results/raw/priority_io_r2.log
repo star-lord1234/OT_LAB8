@@ -1,0 +1,22 @@
+# scheduler=priority
+# checkout=/Users/biancasawant/OTLab_8/external/xv6-riscv
+# command=schedbench io 2
+# elapsed_seconds=3.464709
+# booted=true
+# expected_seen=true
+# qemu_returncode=0
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 1 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+init: starting sh
+$ schedbench io 2
+GRESULT workload=io repeat=2 job=0 pid=4 priority=0 start=1 end=31 turnaround=30 checksum=6608132689625512815
+GRESULT workload=io repeat=2 job=1 pid=5 priority=0 start=1 end=31 turnaround=30 checksum=5687077154564182801
+GRESULT workload=io repeat=2 job=2 pid=6 priority=0 start=1 end=31 turnaround=30 checksum=-1241114285264506581
+GRESULT workload=io repeat=2 job=3 pid=7 priority=2 start=1 end=31 turnaround=30 checksum=833203455088153161
+GRESULT workload=io repeat=2 job=4 pid=8 priority=2 start=1 end=31 turnaround=30 checksum=-611564968982844313
+GRESULT workload=io repeat=2 job=5 pid=9 priority=2 start=1 end=31 turnaround=30 checksum=-8435392452849855759
+GBENCH_DONE workload=io repeat=2 jobs=6 makespan=30
+$ QEMU: Terminated
+

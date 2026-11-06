@@ -1,0 +1,31 @@
+{
+  "all_jobs_completed": true,
+  "all_usertests_passed": true,
+  "artifacts": [
+    "benchmark_jobs.csv",
+    "benchmark_runs.csv",
+    "benchmark_summary.csv",
+    "scheduler_comparison.csv",
+    "environment.json",
+    "usertests_status.json",
+    "plots/scheduler_metrics.png",
+    "../patches/baseline-support.patch",
+    "../patches/priority-scheduler.patch",
+    "../patches/scheduler-only.patch",
+    "raw/pristine_usertests.log",
+    "raw/baseline_usertests.log",
+    "raw/priority_usertests.log",
+    "raw/patch_verification.log"
+  ],
+  "feature": "priority scheduler with aging",
+  "jobs_per_run": 6,
+  "repeats_per_configuration": 3,
+  "second_feature_attempted": false,
+  "status": "verified_single_feature",
+  "track": "G",
+  "workloads": [
+    "cpu",
+    "io",
+    "mixed"
+  ]
+}

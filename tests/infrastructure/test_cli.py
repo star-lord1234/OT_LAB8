@@ -20,7 +20,7 @@ def test_track_plan_command() -> None:
 
 def test_unimplemented_track_refuses_to_claim_run() -> None:
     completed = subprocess.run(
-        [str(ROOT / "scripts" / "run_track.py"), "G"],
+        [str(ROOT / "scripts" / "run_track.py"), "H"],
         check=False,
         capture_output=True,
         text=True,

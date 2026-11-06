@@ -8,7 +8,7 @@
   "prompt_file": "prompt.md",
   "response_file": "response.md",
   "verification_file": "verification.md",
-  "commit": null,
+  "commit": "0298aff857eb7c7e8e5400eb52ce1cd45fa91d2e",
   "revisions": [
     {
       "reason": "The first optimization-trace export gave baseline rows fewer fields than pass rows",

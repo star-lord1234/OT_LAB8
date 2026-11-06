@@ -21,6 +21,15 @@ This hash was recorded in a follow-up documentation commit because a commit cann
 
 The implementation hash is linked by a follow-up documentation commit because a commit cannot contain its own final hash.
 
+## Track F implementation commit
+
+- Commit: `0298aff857eb7c7e8e5400eb52ce1cd45fa91d2e`
+- Message: `[AI:Codex] Implement Track F toy compiler optimization`
+- Scope: lexer, parser, SSA-like IR, interpreter, five samples, four passes, branch-and-bound pass ordering, exact reference, four required metrics, tests, plots, report, and prompt/failure records.
+- Verification before commit: preflight 7/7; repository validation passed; focused Track F 9/9; repository-wide 78/78; all five programs semantically equivalent.
+
+The implementation hash is linked by a follow-up documentation commit because a commit cannot contain its own final hash.
+
 ## Track E implementation commit
 
 - Commit: `b028ce709e19276c6660daf7260f1322fb821d84`

@@ -7,4 +7,4 @@
 - Budget-8 branch-and-bound selected folding/propagation then DCE, effort 6, objective 25 instructions; exhaustive enumeration of 35 feasible orders returned the identical solution.
 - Focused Track F gate: 9/9 tests passed.
 - Repository-wide gate: environment preflight 7/7, repository/prompt validation passed, and 78/78 tests passed.
-- Commit linkage is added only after the implementation commit exists.
+- Verified implementation commit: `0298aff857eb7c7e8e5400eb52ce1cd45fa91d2e` (`[AI:Codex] Implement Track F toy compiler optimization`).

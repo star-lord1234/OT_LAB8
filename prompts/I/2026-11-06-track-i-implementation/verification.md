@@ -10,4 +10,4 @@
 - Focused Track I gate: 13/13 tests passed.
 - Final repository-wide gate: preflight 7/7, repository/prompt validation passed, and 110/110 tests passed.
 - All three retained plots were visually inspected; the first misleading shared-axis draft was replaced and the regeneration bug is recorded in `logs/failures.md`.
-- Verified implementation commit: pending final Git commit.
+- Verified implementation commit: `117852c8b63d09eb006ee2ffc6548844bd957cd0` (`[AI:Codex] Implement Track I quantum algorithms and QML`).

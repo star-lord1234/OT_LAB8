@@ -8,7 +8,7 @@
   "prompt_file": "prompt.md",
   "response_file": "response.md",
   "verification_file": "verification.md",
-  "commit": "PENDING_VERIFIED_IMPLEMENTATION_COMMIT",
+  "commit": "117852c8b63d09eb006ee2ffc6548844bd957cd0",
   "revisions": [
     {
       "reason": "No supplied file was identifiable as the actual Chapter 6 classroom quantum material",

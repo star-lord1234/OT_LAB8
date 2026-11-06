@@ -2,7 +2,7 @@
 
 Lightweight, reproducible implementation workspace for the compulsory Tracks A-J. The authoritative requirements and current status are in `REQUIREMENTS.md` and `PROGRESS.md`.
 
-Current state: **Tracks A-D implemented and experimentally verified; Tracks E-J remain scaffolded.** Exact Chapter 6 coverage for A-D remains blocked until the classroom syllabus is supplied.
+Current state: **Tracks A-E implemented and experimentally verified; Tracks F-J remain scaffolded.** Track E is a simulation-only case study. Exact Chapter 6 coverage for A-D remains blocked until the classroom syllabus is supplied.
 
 ## Quick start
 
@@ -76,7 +76,7 @@ Validate structure, registry, and prompt records:
 - `configs/tracks/`: per-track configuration placeholders.
 - `experiments/registry.json`: single track registry and dependency map.
 - `tests/infrastructure/`: infrastructure regression tests.
-- `prompts/A` through `prompts/J`: honest track AI histories; A-D currently contain implementation records.
+- `prompts/A` through `prompts/J`: honest track AI histories; A-E currently contain implementation records.
 - `prompts/_cross_track/`: actual requirements, setup, and scaffolding interactions.
 - `logs/`: AI tools register, genuine failure log, and tool-comparison template.
 - `report/`: technical-report, demo, and viva scaffolds.
@@ -96,7 +96,7 @@ The assignment requires this table in the README. The machine-readable source is
 
 | Date | Tool | Model | Scope | Work |
 |---|---|---|---|---|
-| 2026-10-29 | OpenAI Codex | GPT-5 family; exact deployed snapshot not exposed | Cross-track and Tracks A-D | Requirements audit, environment/setup, implementation, debugging, experiments, testing, plots, and documentation |
+| 2026-10-29 to 2026-11-06 | OpenAI Codex | GPT-5 family; exact deployed snapshot not exposed | Cross-track and Tracks A-E | Requirements audit, environment/setup, implementation, debugging, experiments, testing, plots, and documentation |
 
 No second AI tool comparison has occurred yet; that mandatory cross-tool comparison remains open and will not be fabricated.
 

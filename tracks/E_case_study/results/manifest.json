@@ -1,0 +1,43 @@
+{
+  "all_objective_checks_exact": true,
+  "all_runs_correct": true,
+  "arrival_rates": [
+    0.6,
+    1.2
+  ],
+  "artifacts": [
+    "batches.csv",
+    "environment.json",
+    "manifest.json",
+    "plots/batching_load_tradeoff.png",
+    "plots/capacity_slo_efficiency.png",
+    "plots/latency_throughput_by_size.png",
+    "runs.csv",
+    "strategy_selection.csv",
+    "summary.csv",
+    "synthetic_requests.csv",
+    "tiny_exact_reference.json",
+    "verification.csv",
+    "workloads.csv"
+  ],
+  "repeats": 3,
+  "result_type": "discrete-event simulation only; no LLM, GPU, accelerator, or production inference was measured",
+  "runtime_seconds": 0.7967243329621851,
+  "status": "verified_simulated_case_study",
+  "strategies": [
+    "fcfs",
+    "greedy_length",
+    "dynamic_programming"
+  ],
+  "tiny_exact_objective": 2.5778133333333333,
+  "token_capacities": [
+    384,
+    512
+  ],
+  "track": "E",
+  "workload_sizes": [
+    24,
+    64,
+    128
+  ]
+}

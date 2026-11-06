@@ -129,7 +129,7 @@ All paths below are proposed. "Result" names the evidence that must exist before
 | FDN-02 | M | Continuous versus discrete optimization. | Contrast A's real-valued model with B's binary decisions. | Type/domain checks in both tiny examples. | Side-by-side formulation. | Foundations. |
 | FDN-03 | M | Convex/non-convex landscapes; local/global minima and saddle points. | Small plotted/numerically evaluated functions in A. | Known stationary points and Hessian/eigenvalue checks. | Verified examples for every landscape concept. | Foundations; A. |
 | FDN-04 | M | Basic quantum concepts and optimization in QML. | Minimal state/gate/measurement demo in I linked to variational optimization in C/I. | Expected-state/probability tests. | Runnable conceptual evidence, not prose only. | Foundations; C; I. |
-| STR-01 | M | Select methods using variable type, constraints, size, hardware, convergence, and communication cost. | Global strategy matrix plus Track E table. | Each selected/rejected method has a reason. | Complete method-selection table. | Method selection; E. |
+| STR-01 | M | Select methods using variable type, constraints, size, hardware, convergence, and communication cost. | `report/strategy_selection.md`; `tracks/E_case_study/STRATEGY_SELECTION.md`. | Each selected/rejected Track E method has a reason; future tracks remain labeled planned. | `results/strategy_selection.csv` plus repository-wide matrix. | Method selection; E.3. |
 
 ## 7. Track traceability matrices
 
@@ -188,11 +188,11 @@ All paths below are proposed. "Result" names the evidence that must exist before
 
 | ID | Class | Requirement | Planned implementation | Verification/test | Required result/evidence | Report section |
 |---|---|---|---|---|---|---|
-| E-01 | M | Choose a real process and show evidence it needs optimization. | Offline CPU/LLM request-batching simulation with documented service model. | Validate generated arrivals/lengths/deadlines and baseline behavior. | Baseline latency, p95, throughput, misses, and cost. | E.1. |
-| E-02 | M | Define variables, objective, constraints, assumptions, and success metric. | Batch/order decisions with size, token/memory, server, and deadline constraints. | Tiny exhaustive feasibility/objective check. | Complete mathematical formulation. | E.2. |
-| E-03 | M | Strategy-selection table. | Compare exact/heuristic choices by type, size, hardware, and parallelism. | Rationale review against model. | Required short table. | E.3. |
-| E-04 | M | Compare at least two methods. | FIFO fixed-batch baseline, greedy batching, and small-sample ILP/DP if feasible. | Identical workload; brute-force tiny reference. | Quality/runtime trade-off across arrival/memory settings. | E.4-E.5. |
-| E-05 | M | Label simulation and avoid hardware-performance claims. | Explicit service-model and scope labels. | Claim audit. | Results consistently marked simulated. | E.5-E.6. |
+| E-01 | M | Choose a real process and show evidence it needs optimization. | `implementation/workload.py`; documented inference-like request simulation. | `tests/test_workload_strategies.py`; baseline behavior in repeated grid. | `results/workloads.csv`, `runs.csv`, `summary.csv`. | `report/track_e.md#E.1-process-workload-and-optimization-need`. |
+| E-02 | M | Define variables, objective, constraints, assumptions, and success metric. | `MATHEMATICS.md`; `models.py`; `simulator.py`. | Schedule invariants, objective recomputation, tiny exhaustive plan. | `results/tiny_exact_reference.json`, `verification.csv`. | `report/track_e.md#E.2-formulation-constraints-and-service-model`. |
+| E-03 | M | Strategy-selection table. | `STRATEGY_SELECTION.md`; machine-readable table generator. | Rationale includes selected/rejected methods and claim boundaries. | `results/strategy_selection.csv`. | `report/track_e.md#E.3-strategy-selection`. |
+| E-04 | M | Compare at least two methods. | Immediate FCFS, greedy length-aware batching, local dynamic programming. | Identical workload hashes across methods/capacities; exhaustive local/global references. | `results/summary.csv`, three plots. | `report/track_e.md#E.4-repeated-comparison-and-crossover`; E.5. |
+| E-05 | M | Label simulation and avoid hardware-performance claims. | Explicit labels in runner, result rows, manifest, formulation, and report. | Manifest/claim audit and tests. | `results/manifest.json` states no LLM/hardware measurement. | `report/track_e.md#E.6-reproduction-trade-offs-and-scope`. |
 
 ### Track F - Compiler optimization
 

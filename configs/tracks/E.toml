@@ -5,4 +5,10 @@ base_seed = 20261029
 output_dir = "../../tracks/E_case_study/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"
+workload_sizes = [24, 64, 128]
+arrival_rates = [0.6, 1.2]
+token_capacities = [384, 512]
+max_batch_size = 4
+batch_window = 0.8
+max_batch_wait = 2.0

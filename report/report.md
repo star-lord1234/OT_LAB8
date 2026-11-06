@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Tracks A-D have linked experimental evidence; Tracks E-J remain scaffolded.
+Status: active implementation. Tracks A-E have linked experimental evidence; Tracks F-J remain scaffolded.
 
 ## Executive summary
 
@@ -32,7 +32,7 @@ Implemented and verified with real local spawned processes, subject to the unres
 
 ## Track E - Main case study
 
-Pending.
+Implemented and verified as a synthetic discrete-event simulation. See the full [Track E report section](track_e.md), [summary](../tracks/E_case_study/results/summary.csv), [mathematical formulation](../tracks/E_case_study/MATHEMATICS.md), and [evidence manifest](../tracks/E_case_study/results/manifest.json). No actual LLM inference performance is claimed.
 
 ## Track F - Compiler optimization
 

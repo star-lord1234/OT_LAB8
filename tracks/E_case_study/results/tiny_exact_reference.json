@@ -1,0 +1,137 @@
+{
+  "config": {
+    "batch_window": 0.0,
+    "compute_weight": 0.15,
+    "dp_lookahead": 12,
+    "fixed_overhead": 0.35,
+    "max_batch_size": 3,
+    "max_batch_wait": 2.0,
+    "padded_token_capacity": 330,
+    "parallel_penalty": 0.22,
+    "tardiness_penalty": 2.0,
+    "token_capacity": 240
+  },
+  "exact": {
+    "evaluated_as_exact": true,
+    "objective": 2.5778133333333333,
+    "plan": [
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        5
+      ]
+    ],
+    "rows": [
+      {
+        "completion_time": 1.0412,
+        "latency": 1.0412,
+        "request_id": 0,
+        "tardiness": 0.0
+      },
+      {
+        "completion_time": 1.0412,
+        "latency": 1.0412,
+        "request_id": 1,
+        "tardiness": 0.0
+      },
+      {
+        "completion_time": 1.0412,
+        "latency": 1.0412,
+        "request_id": 4,
+        "tardiness": 0.0
+      },
+      {
+        "completion_time": 3.2212,
+        "latency": 3.2212,
+        "request_id": 2,
+        "tardiness": 0.0
+      },
+      {
+        "completion_time": 3.2212,
+        "latency": 3.2212,
+        "request_id": 3,
+        "tardiness": 0.0
+      },
+      {
+        "completion_time": 5.1312,
+        "latency": 5.1312,
+        "request_id": 5,
+        "tardiness": 0.0
+      }
+    ],
+    "simulated": true,
+    "total_busy_time": 5.1312
+  },
+  "requests": [
+    {
+      "arrival_time": 0.0,
+      "deadline": 4.8,
+      "processing_cost": 0.3,
+      "request_id": 0,
+      "token_length": 20
+    },
+    {
+      "arrival_time": 0.0,
+      "deadline": 4.96,
+      "processing_cost": 0.36,
+      "request_id": 1,
+      "token_length": 24
+    },
+    {
+      "arrival_time": 0.0,
+      "deadline": 7.84,
+      "processing_cost": 1.44,
+      "request_id": 2,
+      "token_length": 96
+    },
+    {
+      "arrival_time": 0.0,
+      "deadline": 8.0,
+      "processing_cost": 1.5,
+      "request_id": 3,
+      "token_length": 100
+    },
+    {
+      "arrival_time": 0.0,
+      "deadline": 5.28,
+      "processing_cost": 0.48,
+      "request_id": 4,
+      "token_length": 32
+    },
+    {
+      "arrival_time": 0.0,
+      "deadline": 8.16,
+      "processing_cost": 1.56,
+      "request_id": 5,
+      "token_length": 104
+    }
+  ],
+  "simulated": true,
+  "strategy_comparisons": [
+    {
+      "correct": true,
+      "gap_to_exact": 1.2694866666666669,
+      "objective": 3.8473,
+      "strategy": "fcfs"
+    },
+    {
+      "correct": true,
+      "gap_to_exact": 0.0,
+      "objective": 2.5778133333333333,
+      "strategy": "greedy_length"
+    },
+    {
+      "correct": true,
+      "gap_to_exact": 0.015429999999999833,
+      "objective": 2.593243333333333,
+      "strategy": "dynamic_programming"
+    }
+  ]
+}

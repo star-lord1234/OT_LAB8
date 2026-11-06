@@ -68,3 +68,19 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** explicitly create one spawn process per partition/stage, collect indexed results through queues, check every exit code, and retain both PIDs in the result.
 - **Regression test:** `tracks/D_parallel_distributed/tests/test_parallel.py::test_data_model_and_pipeline_parallel_match_serial_results` asserts two distinct worker PIDs and serial equivalence.
 - **Lesson:** a configured pool size is not evidence of independent execution. Record process identities and test the actual execution topology.
+
+## F-009 - Sparse batching did not change whole-horizon throughput
+
+- **AI-generated artifact:** the initial Track E sparse-traffic regression test asserted that delaying the first isolated request must lower overall throughput.
+- **Failure:** latency and waiting increased, but throughput was identical because the server returned to idle long before the second request arrived.
+- **Fix:** test the actual effect—higher mean waiting and latency, with throughput unchanged or worse—rather than requiring a nonexistent throughput regression.
+- **Regression test:** `tracks/E_case_study/tests/test_simulator.py::test_intentional_batch_wait_can_worsen_sparse_latency`.
+- **Lesson:** latency and throughput measure different time horizons; a latency regression need not change total makespan.
+
+## F-010 - Capacity sweep initially used different workloads
+
+- **AI-generated artifact:** the first Track E experiment runner included capacity in its scenario-based seed offset.
+- **Failure/fairness impact:** method comparisons were fair, but the plotted 384-versus-512 capacity comparison would have mixed capacity effects with different generated requests.
+- **Fix:** derive each seed only from workload size, arrival rate, and repeat, then reuse that workload across capacities and all strategies.
+- **Regression test:** `tracks/E_case_study/tests/test_experiment.py::test_track_e_smoke_experiment_writes_verified_evidence` asserts one workload digest across the capacity sweep.
+- **Lesson:** identical conditions must be enforced by data identity checks, not assumed from nearby loop structure.

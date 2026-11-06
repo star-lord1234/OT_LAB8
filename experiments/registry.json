@@ -60,7 +60,7 @@
     {
       "id": "E",
       "name": "Main real-process case study",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/E_case_study",
       "config": "configs/tracks/E.toml",
       "implementation": "tracks/E_case_study/implementation",
@@ -68,7 +68,7 @@
       "tests": "tracks/E_case_study/tests",
       "results": "tracks/E_case_study/results",
       "report_section": "report/report.md#track-e-main-case-study",
-      "entrypoint": null,
+      "entrypoint": "tracks.E_case_study.benchmarks.run:main",
       "dependencies": ["B"]
     },
     {

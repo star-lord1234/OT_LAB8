@@ -1,0 +1,27 @@
+{
+  "record_id": "2026-11-06-track-e-implementation",
+  "date": "2026-11-06",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "Track E",
+  "purpose": "Implement and verify the simulation-only inference-request batching and scheduling case study",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": null,
+  "revisions": [
+    {
+      "reason": "A sparse-workload test incorrectly assumed delaying the first request must reduce end-to-end throughput",
+      "action": "Asserted the observed higher waiting/latency and unchanged-or-worse throughput instead"
+    },
+    {
+      "reason": "The initial capacity sweep included capacity in the seed index and therefore changed requests between capacity settings",
+      "action": "Keyed workload seeds only by size, arrival rate, and repeat; added a digest-equality regression test"
+    },
+    {
+      "reason": "Visual QA found adjacent plot titles touching",
+      "action": "Shortened the paired plot titles without changing data"
+    }
+  ],
+  "notes": "Only observed work and revisions from this interaction are recorded. No actual LLM inference or second AI tool is claimed."
+}

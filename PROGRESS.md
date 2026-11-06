@@ -2,7 +2,7 @@
 
 Last updated: 2026-10-29
 
-Current phase: **Tracks A-D implemented and verified; Tracks E-J remain to be implemented.**
+Current phase: **Tracks A-E implemented and verified; Tracks F-J remain to be implemented.**
 
 ## 1. Status legend
 
@@ -26,8 +26,8 @@ Current phase: **Tracks A-D implemented and verified; Tracks E-J remain to be im
 | Repository infrastructure | COMPLETE | A-J paths, shared utilities, registry, CLIs, prompt records, and 22 passing infrastructure tests are present. |
 | Exact Chapter 6 syllabus audit | BLOCKED | Obtain lecture notes/slides or official topic list and resolve `SYL-01` through `SYL-08`. |
 | Environment/version capture | COMPLETE | Real machine/tool/package state and final 7/7 preflight are documented in `SETUP.md`. |
-| Algorithm implementation | IN PROGRESS | Tracks A-D implemented; Tracks E-J remain. |
-| Experiments/results/report | IN PROGRESS | A-D have real results, plots, prompt history, and draft report sections. |
+| Algorithm implementation | IN PROGRESS | Tracks A-E implemented; Tracks F-J remain. |
+| Experiments/results/report | IN PROGRESS | A-E have results, plots, prompt history, and draft report sections; E is explicitly simulation-only. |
 
 ## 3. Track status
 
@@ -37,7 +37,7 @@ Current phase: **Tracks A-D implemented and verified; Tracks E-J remain to be im
 | B | Knapsack exact/heuristic comparison; Max-Cut QUBO/Ising; separate constrained penalty QUBO | IMPLEMENTED / VERIFIED / syllabus-blocked | Exact Chapter 6 list | B-01 through B-05 have code, exhaustive tests, raw results, plots, report links, and a hashed C fixture. B-06 remains unresolved. |
 | C | QAOA, VQE, PQC/QNN, parameter-shift, SPSA, QNG, shots/noise/plateau, embedding limits | IMPLEMENTED / VERIFIED SIMULATION / syllabus-blocked | Exact Chapter 6 list | C-01 through C-08 and C-10 have tests, results, plots, report links, and explicit simulator labels. C-09 remains unresolved. |
 | D | Maximum coverage; scheduling/parallel forms; FedAvg; MGDA; GradNorm | IMPLEMENTED / VERIFIED / syllabus-blocked | Exact Chapter 6 list | D-01 through D-07 have code, spawn-safe tests, real results, plots, PIDs, and report links. D-08 remains unresolved. |
-| E | Offline batching simulation; FIFO, greedy, exact small solver | PLANNED | Shared discrete/metrics modules; explicit service model | Section 4 workflow, strategy table, tiny exhaustive check, and multi-setting results complete. |
+| E | Offline batching simulation; FCFS, greedy, local DP, exact tiny solver | IMPLEMENTED / VERIFIED SIMULATION | None | E-01 through E-05 have formulation, identical repeated workloads, tests, results, plots, strategy table, exact reference, and report links. |
 | F | Toy compiler; constant folding/propagation and DCE; pass-order optimization | PLANNED | Shared discrete solver; grammar/semantics specification | Lexer/parser/IR/codegen work; two passes preserve output; four required metrics reported. |
 | G | xv6 priority scheduler; CPU/sleep/mixed workloads | PLANNED | QEMU/RISC-V tools now verified; pinned xv6 base remains | Baseline and modified QEMU runs; boot/usertests/progress; three workload results; cleanly applicable patch. |
 | H | SQLite storage-budgeted index selection using two methods plus default baseline | PLANNED | B discrete solvers; deterministic DB generator | Identical query results; plans, latency, throughput, storage; two-method selection comparison. |
@@ -86,7 +86,7 @@ No track may be marked COMPLETE merely because its script runs. Its formulation,
 | 3 | Implement A and B | COMPLETE EXCEPT SYLLABUS AUDIT | A-01 through A-06 and B-01 through B-05 pass; A-07/B-06 await the syllabus. |
 | 4 | Implement C and D | COMPLETE EXCEPT SYLLABUS AUDIT | C reuses B's hashed fixture; D has real process/distributed results; C-09/D-08 await the syllabus. |
 | 5 | Implement F, G, H | NOT STARTED | Named domain artifacts and correctness evidence exist. |
-| 6 | Complete E, I, J | NOT STARTED | Main case study, full quantum/QML comparison, and realistic SE optimization close. |
+| 6 | Complete E, I, J | IN PROGRESS | E complete as a simulation-only case study; I and J remain. |
 | 7 | Consolidate report/demo/evidence | NOT STARTED | Clean-clone run, coverage checker, report links, AI logs, Q1-Q10, and demo pass. |
 | 8 | Publish | NOT STARTED | Public GitHub URL, secrets scan clean, final report and demo accessible. |
 

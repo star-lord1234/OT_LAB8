@@ -1,27 +1,33 @@
 # Track E - Main real-process case study
 
-Status: **scaffolded; no algorithm implementation or result exists yet.**
+Status: **implemented and verified as a synthetic discrete-event simulation.**
 
-## Minimum planned scope
-
-Optimize a documented offline request-batching simulation using FIFO, greedy, and a tiny exact reference without claiming accelerator measurements.
+This track optimizes a documented inference-like request queue using immediate FCFS, greedy length-aware batching, and dynamic-programming batch selection, with a tiny exhaustive reference. It does not execute an LLM or measure accelerator performance.
 
 The authoritative acceptance criteria are the Track E rows in `REQUIREMENTS.md`. Chapter 6 syllabus-dependent rows remain unresolved until classroom materials are supplied.
 
 ## Fixed locations
 
 - Implementation: `tracks/E_case_study/implementation/`
-- Benchmark runner/data preparation: `tracks/E_case_study/benchmarks/`
-- Track-specific tests: `tracks/E_case_study/tests/`
-- Raw and summarized track evidence: `tracks/E_case_study/results/`
+- Benchmark runner: `tracks/E_case_study/benchmarks/`
+- Tests: `tracks/E_case_study/tests/`
+- Results and plots: `tracks/E_case_study/results/`
 - Configuration: `configs/tracks/E.toml`
 - Prompt history: `prompts/E/`
-- Report destination: see `experiments/registry.json`
+- Formulation: `tracks/E_case_study/MATHEMATICS.md`
+- Strategy table: `tracks/E_case_study/STRATEGY_SELECTION.md`
+- Report: `report/track_e.md`
 
-Inspect this plan without running an experiment:
+Generate the complete evidence bundle:
 
 ```bash
-./scripts/run_track.py E --plan
+./scripts/run_track.py E
 ```
 
-A normal run intentionally exits non-zero until the registry status is changed to `implemented` and a tested entry point is registered.
+Run focused tests:
+
+```bash
+.venv/bin/python -m pytest tracks/E_case_study/tests
+```
+
+All comparisons use identical hashed workloads for a given size, rate, repeat, and capacity sweep. The results are simulated time units and must not be quoted as real inference gains.

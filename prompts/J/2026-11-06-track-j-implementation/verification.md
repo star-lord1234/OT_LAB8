@@ -10,4 +10,5 @@
 - Exact 14-candidate subset: 86-line optimum; greedy gap zero; original-order gap 25 lines.
 - Every selected suite passed three uninstrumented runs; every coverage rerun exactly matched its predicted line union.
 - Focused Track J plus lifecycle gate: 14/14 tests passed.
-- Verified implementation commit: pending final Git commit and repository-wide gate.
+- Final repository-wide gate: preflight 7/7, repository/prompt validation passed, and 118/118 tests passed.
+- Verified implementation commit: `5b793b0d87cfccd803047f95d40c9f5d224ab903` (`[AI:Codex] Implement Track J test suite optimization`).

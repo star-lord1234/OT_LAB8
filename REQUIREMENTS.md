@@ -242,10 +242,10 @@ All paths below are proposed. "Result" names the evidence that must exist before
 
 | ID | Class | Requirement | Planned implementation | Verification/test | Required result/evidence | Report section |
 |---|---|---|---|---|---|---|
-| J-01 | M | Use a realistic, non-trivial codebase in an allowed domain. | Pin a public Python project with a reproducible pytest suite; target over 1,000 lines as conservative evidence. | Record commit, line count, license, baseline test run. | Codebase provenance and baseline. | J.1. |
-| J-02 | M | Profile baseline and identify bottleneck. | Measure per-test time and function/statement coverage. | Repeat baseline and validate coverage collection. | Profile identifying selection/prioritization opportunity. | J.2. |
-| J-03 | M | Formulate variables, objective, constraints and use a named Chapter 6 method versus naive baseline. | Select tests to maximize unique coverage under time budget; greedy coverage/time versus original order. | Tiny exhaustive/ILP reference on subset. | Formal model and quality/runtime comparison. | J.3-J.4. |
-| J-04 | M | Measure gain and costs in correctness, readability, or maintainability. | Coverage-versus-time curve and selected-suite execution. | Selected tests pass; quantify lost coverage/checks. | Measured trade-off and risk discussion. | J.4-J.5. |
+| J-01 | M | Use a realistic, non-trivial codebase in an allowed domain. | Pin MIT `more-itertools` commit `f42dadd` with isolated fetch script; 7,282 physical Python lines. | Commit/license/digest/clean-tree checks; untouched full suite. | `SOURCE.md`, `source_provenance.json`, `baseline_runs.csv`. | `report/track_j.md#J.1-source-license-and-untouched-baseline`. |
+| J-02 | M | Profile baseline and identify bottleneck. | Coverage contexts and pytest setup/call/teardown durations before selection; three ordinary full-suite repeats. | 771 tests pass; percentages bounded; candidate costs positive. | `baseline_profile.json`, `candidate_profile.csv`, retained line sets. | `report/track_j.md#J.2-baseline-profile-and-bottleneck`. |
+| J-03 | M | Formulate variables, objective, constraints and use a named Chapter 6 method versus naive baseline. | Binary maximum coverage under fixed 10% duration budget; original order versus greedy marginal coverage/second. | Recompute unions and budgets; exhaustive 14-candidate reference. | `selection_summary.csv`, `exact_subset_reference.json`, coverage plot. | `report/track_j.md#J.3-original-order-versus-greedy-maximum-coverage`; J.4. |
+| J-04 | M | Measure gain and costs in correctness, readability, or maintainability. | Execute every selected suite three times and reprofile coverage; discuss omitted-test and stale-profile risks. | All selected suites pass; predicted/rerun line sets equal. | Runtime/test-retention plot, raw selected runs, risk analysis. | `report/track_j.md#J.5-reliability-maintainability-and-reproduction`. |
 
 ## 8. Syllabus-dependent register - release blockers
 

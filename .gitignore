@@ -15,5 +15,6 @@ setup_logs/*.tmp
 data/generated/
 results/raw/
 
-# External xv6 checkout; only the pinned revision and patch belong in Git
+# External source checkouts; only provenance, scripts, and retained evidence belong in Git
 external/xv6-riscv/
+external/more-itertools/

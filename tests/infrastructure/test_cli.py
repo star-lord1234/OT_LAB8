@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import subprocess
+import json
 from pathlib import Path
 
 
@@ -18,9 +19,18 @@ def test_track_plan_command() -> None:
     assert "status: implemented" in completed.stdout
 
 
-def test_unimplemented_track_refuses_to_claim_run() -> None:
+def test_scaffolded_registry_entry_refuses_to_claim_run(tmp_path: Path) -> None:
+    registry = json.loads((ROOT / "experiments" / "registry.json").read_text())
+    for track in registry["tracks"]:
+        for key in ("directory", "config", "implementation", "benchmark", "tests", "results"):
+            track[key] = str((ROOT / track[key]).resolve())
+    track_j = next(track for track in registry["tracks"] if track["id"] == "J")
+    track_j["status"] = "scaffolded"
+    track_j["entrypoint"] = None
+    temporary_registry = tmp_path / "registry.json"
+    temporary_registry.write_text(json.dumps(registry), encoding="utf-8")
     completed = subprocess.run(
-        [str(ROOT / "scripts" / "run_track.py"), "J"],
+        [str(ROOT / "scripts" / "run_track.py"), "J", "--registry", str(temporary_registry)],
         check=False,
         capture_output=True,
         text=True,

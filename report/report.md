@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Tracks A-I have linked experimental evidence; Track J remains scaffolded.
+Status: all Tracks A-J have linked experimental evidence. Global report/demo consolidation and exact Chapter 6 syllabus closure remain.
 
 ## Executive summary
 
@@ -61,7 +61,7 @@ Implemented and verified on local CPU simulators, subject to the unresolved exac
 
 ## Track J - Software-engineering optimization
 
-Pending.
+Implemented and verified on the pinned MIT `more-itertools` project. See the full [Track J report section](track_j.md), [source provenance](../tracks/J_software_engineering/results/source_provenance.json), [selection summary](../tracks/J_software_engineering/results/selection_summary.csv), and [evidence manifest](../tracks/J_software_engineering/results/manifest.json). Selected tests are explicitly a fast-feedback subset, not full regression testing.
 
 ## Failures, limitations, trade-offs, and next steps
 
@@ -86,4 +86,4 @@ Pending. Link README register, prompt records, genuine failure log, and real two
 
 ## Acknowledgements and external components
 
-Pending license/library/AI-component inventory.
+Track G uses MIT xv6-riscv at its recorded pinned commit. Track J measures the MIT-licensed `more-itertools` project at commit `f42daddf205f335fea6e200dad46049f33e71221` without modifying or redistributing its checkout; full license and source metadata are recorded in `tracks/J_software_engineering/SOURCE.md`. Python dependencies and AI assistance are disclosed in `pyproject.toml`, `README.md`, and `prompts/`.

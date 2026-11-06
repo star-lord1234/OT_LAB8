@@ -1,0 +1,31 @@
+{
+  "record_id": "2026-11-06-track-j-implementation",
+  "date": "2026-11-06",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "Track J",
+  "purpose": "Implement and verify measured test-suite selection on a genuine pinned public Python project",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": "PENDING_VERIFIED_IMPLEMENTATION_COMMIT",
+  "revisions": [
+    {
+      "reason": "Nested pytest inherited the assignment repository root",
+      "action": "Forced the external checkout as pytest root so profiled node IDs could be rerun exactly"
+    },
+    {
+      "reason": "The first coverage numerator mixed tracer events with executable statements",
+      "action": "Intersected all global and contextual line sets with coverage.py's own statement set"
+    },
+    {
+      "reason": "A 35% budget excluded one dominant slow test and made original and greedy coverage equal",
+      "action": "Documented a tighter fixed 10% fast-feedback budget derived after baseline profiling; retained the prior null-result calibration in the failure/revision history"
+    },
+    {
+      "reason": "Objective counts needed independent verification",
+      "action": "Retained every candidate's executable line IDs and added tests that recompute all unions and budget constraints"
+    }
+  ],
+  "notes": "Only observed work is recorded. The external source was not modified, globally installed, or contacted beyond read-only cloning."
+}

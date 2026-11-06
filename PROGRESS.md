@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-06
 
-Current phase: **Tracks A-I implemented and verified; Track J remains to be implemented.**
+Current phase: **Tracks A-J implemented and verified; global consolidation and exact Chapter 6 syllabus closure remain.**
 
 ## 1. Status legend
 
@@ -26,8 +26,8 @@ Current phase: **Tracks A-I implemented and verified; Track J remains to be impl
 | Repository infrastructure | COMPLETE | A-J paths, shared utilities, registry, CLIs, prompt records, and 22 passing infrastructure tests are present. |
 | Exact Chapter 6 syllabus audit | BLOCKED | Obtain lecture notes/slides or official topic list and resolve `SYL-01` through `SYL-08`. |
 | Environment/version capture | COMPLETE | Real machine/tool/package state and final 7/7 preflight are documented in `SETUP.md`. |
-| Algorithm implementation | IN PROGRESS | Tracks A-I implemented; Track J remains. |
-| Experiments/results/report | IN PROGRESS | A-I have results, plots, prompt history, and draft report sections; C, E, and I are explicitly simulation-only and G is QEMU-only. |
+| Algorithm implementation | COMPLETE | Tracks A-J are implemented. Syllabus-dependent A-D/I release blockers remain external. |
+| Experiments/results/report | COMPLETE BY TRACK | A-J have results, plots, prompt history, and draft report sections; global consolidation remains. C, E, and I are simulation-only and G is QEMU-only. |
 
 ## 3. Track status
 
@@ -42,7 +42,7 @@ Current phase: **Tracks A-I implemented and verified; Track J remains to be impl
 | G | xv6 priority scheduler; CPU/sleep/mixed workloads | IMPLEMENTED / VERIFIED / ONE FEATURE | None | Pinned pristine/support/optimized commits; 3 full usertests passes; 18 benchmark runs/108 jobs; clean-patch boot; report and provenance. |
 | H | SQLite storage-budgeted index selection using two methods plus default baseline | IMPLEMENTED / VERIFIED | None | 69,541 deterministic rows; 5 queries/indexes; baseline/greedy/MILP/DP; real plans/pages/timings; all hashes equal. |
 | I | Every taught quantum algorithm; two hand-coded circuits; QML/classical comparison; advantage analysis | IMPLEMENTED / VERIFIED SIMULATION / syllabus-blocked | Exact Chapter 6 list | PDF's named list, four hand-written circuits, matched VQC/kernel baselines, noise/query/plateau/D contrast pass; I-08/SYL-05/SYL-06 remain unresolved. |
-| J | Public Python codebase test prioritization/minimization | PLANNED | Select/pin licensed project; shared greedy/exact utilities | Baseline profile; formal budgeted objective; real tests/coverage; measured quality and maintenance risk. |
+| J | Public Python codebase test prioritization/minimization | IMPLEMENTED / VERIFIED | Pinned external checkout | MIT `more-itertools` at `f42dadd`; 7,282 lines; 771-test baseline; measured costs/coverage; original/greedy/exact comparison; selected suites pass. |
 
 No track may be marked COMPLETE merely because its script runs. Its formulation, baseline, fair comparison, correctness evidence, results, prompt history, and report links must all pass.
 
@@ -82,11 +82,11 @@ No track may be marked COMPLETE merely because its script runs. Its formulation,
 | 1 | Choose one quantum stack | COMPLETE | PennyLane statevector and mixed-state noise circuits execute locally on CPU. |
 | 1 | Verify xv6 toolchain | COMPLETE | QEMU/RISC-V tools pass preflight; pinned pristine, support baseline, and priority scheduler build/boot/full `usertests` pass; fresh patch boots. |
 | 2 | Scaffold shared experiment contract | COMPLETE | Seeds, config, timing/memory, repeats, exports, plotting, verification, environment metadata, registry, and prompt validation have 22 passing tests. |
-| 2 | Select Track J codebase | NOT STARTED | Public license, pinned commit, >1,000-line conservative target, passing tests, and usable coverage data. |
+| 2 | Select Track J codebase | COMPLETE | MIT `more-itertools` pinned at `f42dadd`; 7,282 Python lines; 771 tests pass; coverage contexts retained. |
 | 3 | Implement A and B | COMPLETE EXCEPT SYLLABUS AUDIT | A-01 through A-06 and B-01 through B-05 pass; A-07/B-06 await the syllabus. |
 | 4 | Implement C and D | COMPLETE EXCEPT SYLLABUS AUDIT | C reuses B's hashed fixture; D has real process/distributed results; C-09/D-08 await the syllabus. |
 | 5 | Implement F, G, H | COMPLETE | F four-pass compiler, G priority scheduler, and H SQLite physical-design study are verified. |
-| 6 | Complete E, I, J | IN PROGRESS | E and I complete as simulation-only studies; J remains. |
+| 6 | Complete E, I, J | COMPLETE | E and I are simulation-only studies; J uses a pinned public project and measured tests/coverage. |
 | 7 | Consolidate report/demo/evidence | NOT STARTED | Clean-clone run, coverage checker, report links, AI logs, Q1-Q10, and demo pass. |
 | 8 | Publish | NOT STARTED | Public GitHub URL, secrets scan clean, final report and demo accessible. |
 

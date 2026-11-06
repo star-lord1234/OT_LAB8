@@ -1,0 +1,18 @@
+{
+  "budget_seconds": 0.010378450574353338,
+  "candidate_universe_lines": 164,
+  "exact_objective_lines": 86,
+  "exact_selected_candidates": [
+    "tests/test_more.py::UniqueToEachTests",
+    "tests/test_more.py::SplitAfterTest",
+    "tests/test_more.py::StaggerTest",
+    "tests/test_more.py::CircularShiftsTests",
+    "tests/test_more.py::UniqueInWindowTests",
+    "tests/test_more.py::ConstrainedBatchesTests"
+  ],
+  "greedy_objective_lines": 86,
+  "greedy_optimality_gap_lines": 0,
+  "original_order_objective_lines": 61,
+  "original_order_optimality_gap_lines": 25,
+  "scope": "first 14 candidates from the measured 24-candidate pool"
+}

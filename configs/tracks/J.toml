@@ -5,4 +5,7 @@ base_seed = 20261029
 output_dir = "../../tracks/J_software_engineering/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"
+candidate_count = 24
+exact_candidate_count = 14
+budget_fraction = 0.10

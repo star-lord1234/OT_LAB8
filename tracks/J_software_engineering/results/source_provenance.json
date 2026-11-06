@@ -1,0 +1,18 @@
+{
+  "checkout_dirty": false,
+  "commit": "f42daddf205f335fea6e200dad46049f33e71221",
+  "commit_date": "2026-11-03T18:20:44-06:00",
+  "commit_subject": "Merge pull request #1345 from chengzhudejing/fix/numeric-range-large-equality-hash",
+  "installation": "not installed; source imported through an isolated PYTHONPATH",
+  "license": "MIT",
+  "license_sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46",
+  "project": "more-itertools",
+  "python_nonblank_noncomment_lines": 5402,
+  "python_physical_lines": 7282,
+  "python_source_files": [
+    "more_itertools/__init__.py",
+    "more_itertools/more.py",
+    "more_itertools/recipes.py"
+  ],
+  "remote": "https://github.com/more-itertools/more-itertools.git"
+}

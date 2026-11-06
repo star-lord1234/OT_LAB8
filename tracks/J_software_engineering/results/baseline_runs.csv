@@ -1,0 +1,4 @@
+repeat,return_code,passed_tests,wall_time_seconds,pytest_summary
+0,0,771,7.107930459082127,"771 passed, 21203 subtests passed in 6.94s"
+1,0,771,7.016289208084345,"771 passed, 21203 subtests passed in 6.87s"
+2,0,771,7.105127582792193,"771 passed, 21203 subtests passed in 6.95s"

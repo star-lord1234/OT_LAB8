@@ -130,7 +130,7 @@
     {
       "id": "J",
       "name": "Software-engineering optimization",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/J_software_engineering",
       "config": "configs/tracks/J.toml",
       "implementation": "tracks/J_software_engineering/implementation",
@@ -138,7 +138,7 @@
       "tests": "tracks/J_software_engineering/tests",
       "results": "tracks/J_software_engineering/results",
       "report_section": "report/report.md#track-j-software-engineering-optimization",
-      "entrypoint": null,
+      "entrypoint": "tracks.J_software_engineering.benchmarks.run:main",
       "dependencies": ["B"]
     }
   ]

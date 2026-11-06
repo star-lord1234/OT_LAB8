@@ -164,3 +164,19 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** restore the QML comparison to two axes and make the training/noise/plateau figure explicitly three axes.
 - **Regression coverage:** the Track I smoke experiment executes the complete plotting path, and the final figures were visually inspected after regeneration.
 - **Lesson:** when several plotting calls have similar constructors, patch and review the exact local context before accepting regenerated evidence.
+
+## F-021 - External pytest inherited the assignment root
+
+- **AI-generated artifact:** the first Track J profiler let pytest discover the parent assignment's configuration while running the nested `more-itertools` checkout.
+- **Failure:** coverage collection succeeded, but candidate node IDs were prefixed with `external/more-itertools/`; rerunning those IDs from the checkout failed with “file or directory not found.” No selection result or manifest was accepted.
+- **Fix:** pass `--rootdir=.` to both ordinary and coverage-instrumented external test runs so collected and executable node IDs share the pinned project's root.
+- **Regression coverage:** the Track J smoke experiment runs the complete profile-select-rerun path and asserts all selected suites pass.
+- **Lesson:** nested third-party test suites need an explicit pytest root; working directory alone does not override parent configuration discovery.
+
+## F-022 - Coverage numerator included non-statement line events
+
+- **AI-generated artifact:** the first successful Track J profiler counted every line event returned by coverage contexts, while its denominator used coverage.py's executable-statement list.
+- **Failure:** the audit exposed an impossible 104.5% full-source coverage value; accepting it would also overstate the maximum-coverage objective.
+- **Fix:** intersect every covered line with the same file's `analysis2(...).statements` set before building global or per-test coverage sets.
+- **Regression coverage:** Track J tests require every reported source coverage percentage to lie in `[0, 100]` and recompute selection unions from retained candidate data.
+- **Lesson:** coverage numerator and denominator must use the same executable-line definition; tracer events alone are not a valid coverage universe.

@@ -1,0 +1,10 @@
+method,repeat,return_code,passed_tests,wall_time_seconds,pytest_summary
+original_order,0,0,50,0.19669391680508852,"50 passed, 40 subtests passed in 0.05s"
+original_order,1,0,50,0.13300475012511015,"50 passed, 40 subtests passed in 0.04s"
+original_order,2,0,50,0.12616841727867723,"50 passed, 40 subtests passed in 0.04s"
+greedy_coverage_per_second,0,0,71,0.1332688331604004,"71 passed, 86 subtests passed in 0.05s"
+greedy_coverage_per_second,1,0,71,0.1327306660823524,"71 passed, 86 subtests passed in 0.04s"
+greedy_coverage_per_second,2,0,71,0.13505470799282193,"71 passed, 86 subtests passed in 0.05s"
+exact_exhaustive,0,0,27,0.11262783408164978,"27 passed, 23 subtests passed in 0.03s"
+exact_exhaustive,1,0,27,0.11180587531998754,"27 passed, 23 subtests passed in 0.03s"
+exact_exhaustive,2,0,27,0.11222816724330187,"27 passed, 23 subtests passed in 0.03s"

@@ -1,0 +1,35 @@
+{
+  "record_id": "2026-11-06-track-i-implementation",
+  "date": "2026-11-06",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "Track I",
+  "purpose": "Implement and verify the named quantum algorithms, matched QML comparisons, and honest advantage analysis",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": "PENDING_VERIFIED_IMPLEMENTATION_COMMIT",
+  "revisions": [
+    {
+      "reason": "No supplied file was identifiable as the actual Chapter 6 classroom quantum material",
+      "action": "Implemented every method named in the authoritative PDF and retained an explicit blocked syllabus row"
+    },
+    {
+      "reason": "A scalable Shor implementation is inappropriate for the laptop scope",
+      "action": "Used a valid eight-qubit N=15 order-finding circuit with exact matrix-compiled modular powers and disclosed its exponential compilation limit"
+    },
+    {
+      "reason": "Quantum annealing hardware was unavailable and paid services were out of scope",
+      "action": "Used a classical Metropolis proxy on Track B's unchanged QUBO and reused Track C's embedding-limit evidence without calling either a physical annealer run"
+    },
+    {
+      "reason": "Quantum and classical speed claims could be conflated",
+      "action": "Separated Grover oracle-query complexity from measured classical-simulator runtime and contrasted both with Track D's process speedup"
+    },
+    {
+      "reason": "Visual QA found noise scale and qubit count sharing one plot axis",
+      "action": "Split noise degradation and barren-plateau variance into separate labeled panels before retaining the final figure"
+    }
+  ],
+  "notes": "Only observed work is recorded. All Track I quantum results are local CPU simulations; no physical quantum hardware result is claimed."
+}

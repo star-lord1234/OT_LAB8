@@ -1,0 +1,58 @@
+{
+  "annealing_exact_hits": 3,
+  "artifacts": [
+    "algorithm_results.csv",
+    "annealing_runs.csv",
+    "barren_plateau_proxy.csv",
+    "circuit_diagrams.txt",
+    "coverage_checklist.csv",
+    "cross_track_comparison.json",
+    "dataset_split.csv",
+    "environment.json",
+    "grover_query_comparison.csv",
+    "manifest.json",
+    "noise_model.csv",
+    "plots/algorithms_and_queries.png",
+    "plots/qml_classical_comparison.png",
+    "plots/training_noise_plateau.png",
+    "qml_comparison.csv",
+    "qml_predictions.csv",
+    "qml_training.csv",
+    "shor_order_finding.json"
+  ],
+  "authoritative_named_algorithm_count": 7,
+  "dataset": "binary Iris subset (petal length and width); bundled with scikit-learn",
+  "dataset_digest": "14175b0f8ef973f44340103a4ed832f19dd7bfed66898671123e51405c0cfddb",
+  "hand_written_circuits": [
+    "Deutsch-Jozsa",
+    "Bernstein-Vazirani",
+    "Grover oracle/diffuser",
+    "QFT"
+  ],
+  "mean_quantum_kernel_accuracy": 1.0,
+  "mean_vqc_accuracy": 1.0,
+  "named_algorithms_executed": [
+    "Deutsch-Jozsa",
+    "Deutsch-Jozsa",
+    "Bernstein-Vazirani",
+    "Grover",
+    "Quantum Fourier Transform",
+    "Quantum Phase Estimation",
+    "Shor order finding",
+    "annealing proxy"
+  ],
+  "physical_hardware_access_decision": "Not used: the project constraint avoids paid services and no authorized free-device credentials were supplied; the PDF permits a hardware-noise model where access allows.",
+  "result_type": "local CPU simulation only; no physical quantum or annealing hardware was used",
+  "reused_track_c_evidence": {
+    "QAOA": "tracks/C_quantum_optimization/results/qaoa_best.json",
+    "VQE_QNG": "tracks/C_quantum_optimization/results/vqe_runs.csv",
+    "annealer_embedding_limits": "tracks/C_quantum_optimization/results/embedding_chain_strength.csv",
+    "finite_shots": "tracks/C_quantum_optimization/results/finite_shots_summary.csv",
+    "parameter_shift": "tracks/C_quantum_optimization/results/parameter_shift.json"
+  },
+  "runtime_seconds": 22.041653499938548,
+  "status": "verified_simulation_with_syllabus_gap",
+  "track": "I",
+  "track_d_best_measured_speedup": 1.0645308549833397,
+  "unresolved": "The actual Chapter 6 classroom material was not supplied. The PDF's named list is covered, but additional taught quantum/QML methods cannot be certified and remain explicitly blocked."
+}

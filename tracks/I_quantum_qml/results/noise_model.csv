@@ -1,0 +1,6 @@
+noise_scale,single_qubit_depolarizing_probability,two_qubit_gate_local_depolarizing_probability,grover_success_probability,backend,physical_hardware,model_scope
+0.0,0.0,0.0,0.9999999999999989,PennyLane default.mixed density-matrix simulator,False,phenomenological gate-local errors; plausible relative rates but not calibrated to a named device
+0.5,0.0005,0.005,0.9795660091605465,PennyLane default.mixed density-matrix simulator,False,phenomenological gate-local errors; plausible relative rates but not calibrated to a named device
+1.0,0.001,0.01,0.9595916722683274,PennyLane default.mixed density-matrix simulator,False,phenomenological gate-local errors; plausible relative rates but not calibrated to a named device
+2.0,0.002,0.02,0.9209882899312092,PennyLane default.mixed density-matrix simulator,False,phenomenological gate-local errors; plausible relative rates but not calibrated to a named device
+5.0,0.005,0.05,0.8153570331829859,PennyLane default.mixed density-matrix simulator,False,phenomenological gate-local errors; plausible relative rates but not calibrated to a named device

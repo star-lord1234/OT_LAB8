@@ -140,3 +140,27 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** credit positive latency reductions only for queries whose actual `EXPLAIN QUERY PLAN` names that candidate index. Increase estimation repetitions from 9 to 15 and retain per-candidate plan usage in `candidate_indexes.csv`.
 - **Verification:** repeated calibration retained the same greedy and exact selections; tests assert real plan changes without logical-result changes.
 - **Lesson:** physical-design benefit estimates should be tied to verified plan use, not correlated noise elsewhere in a workload.
+
+## F-018 - Direct Track I probe omitted the src import path
+
+- **AI command:** the first one-off quantum-algorithm probe invoked `.venv/bin/python` directly without the repository CLI bootstrap or `PYTHONPATH=src`.
+- **Failure:** execution stopped with `ModuleNotFoundError: No module named 'optlab'`; no circuit ran and no result was retained.
+- **Fix:** rerun the bounded probe with `PYTHONPATH=src`; the supported `./scripts/run_track.py I` command already applies the repository bootstrap.
+- **Regression coverage:** the focused Track I tests import through pytest's configured path, and the registered Track I command completed its full artifact bundle.
+- **Lesson:** direct diagnostic commands must reproduce the same source-path setup as supported project entry points.
+
+## F-019 - Infrastructure lifecycle tests were stale after Track I
+
+- **AI-generated artifact:** the infrastructure tests still required Track I to refuse execution and grouped I with scaffolded Track J.
+- **Failure:** the first repository-wide Track I gate reported two failed lifecycle assertions while all 108 other tests passed.
+- **Fix:** require Track I's implemented status and exact benchmark entry point; move the unimplemented-command refusal check to Track J.
+- **Regression coverage:** `tests/infrastructure/test_cli.py::test_unimplemented_track_refuses_to_claim_run` and `tests/infrastructure/test_registry_prompts.py::test_registry_defines_all_tracks_and_existing_locations`.
+- **Lesson:** repository lifecycle assertions must advance with a completed track while preserving refusal behavior for genuinely scaffolded work.
+
+## F-020 - Visual-QA plot split changed the wrong constructor
+
+- **AI-generated artifact:** while separating noise scale from plateau qubit count, the first patch changed the QML comparison figure to three axes but left the limitations figure at two.
+- **Failure:** result regeneration stopped with `IndexError: index 2 is out of bounds`; the interrupted run was not accepted as final evidence.
+- **Fix:** restore the QML comparison to two axes and make the training/noise/plateau figure explicitly three axes.
+- **Regression coverage:** the Track I smoke experiment executes the complete plotting path, and the final figures were visually inspected after regeneration.
+- **Lesson:** when several plotting calls have similar constructors, patch and review the exact local context before accepting regenerated evidence.

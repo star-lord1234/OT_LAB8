@@ -116,7 +116,7 @@
     {
       "id": "I",
       "name": "Quantum algorithms and QML advantage",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/I_quantum_qml",
       "config": "configs/tracks/I.toml",
       "implementation": "tracks/I_quantum_qml/implementation",
@@ -124,7 +124,7 @@
       "tests": "tracks/I_quantum_qml/tests",
       "results": "tracks/I_quantum_qml/results",
       "report_section": "report/report.md#track-i-quantum-algorithms-and-qml",
-      "entrypoint": null,
+      "entrypoint": "tracks.I_quantum_qml.benchmarks.run:main",
       "dependencies": ["C", "D"]
     },
     {

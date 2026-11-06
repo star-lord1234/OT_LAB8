@@ -1,0 +1,9 @@
+{
+  "best_measured_parallel_method": "dynamic_shared_queue",
+  "interpretation": "Track D speedup is measured wall-clock acceleration from classical processes; Grover's advantage is an oracle-query asymptotic result. A classically simulated quantum circuit does not turn that query advantage into hardware speedup.",
+  "median_parallel_efficiency": 0.2661327137458349,
+  "median_speedup": 1.0645308549833397,
+  "negative_speedup_observed_in_track_d": true,
+  "processes": 4,
+  "track_d_result": "tracks/D_parallel_distributed/results/parallel_summary.csv"
+}

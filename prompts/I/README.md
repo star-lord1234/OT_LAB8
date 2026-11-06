@@ -1,6 +1,7 @@
 # Track I AI prompt history
 
-No Track I implementation prompt has been recorded yet. Do not add synthetic entries.
+The real implementation interaction is recorded in
+`2026-11-06-track-i-implementation/`. Do not add synthetic entries.
 
 For each real AI interaction, create a dated subdirectory containing:
 

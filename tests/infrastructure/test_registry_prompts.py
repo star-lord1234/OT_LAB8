@@ -32,7 +32,10 @@ def test_registry_defines_all_tracks_and_existing_locations() -> None:
     assert tracks["G"].entrypoint == "tracks.G_xv6.benchmarks.run:main"
     assert tracks["H"].status == "implemented"
     assert tracks["H"].entrypoint == "tracks.H_dbms.benchmarks.run:main"
-    assert all(tracks[track_id].status == "scaffolded" for track_id in "IJ")
+    assert tracks["I"].status == "implemented"
+    assert tracks["I"].entrypoint == "tracks.I_quantum_qml.benchmarks.run:main"
+    assert tracks["J"].status == "scaffolded"
+    assert tracks["J"].entrypoint is None
 
 
 def test_prompt_record_validation(tmp_path: Path) -> None:

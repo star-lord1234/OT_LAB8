@@ -1,0 +1,24 @@
+All diagrams are local simulator circuits. No physical quantum hardware was used.
+The labels below identify which circuits were built from primitive gates.
+
+Deutsch-Jozsa (hand-written):
+0: ──H────╭●──H────┤ ╭Probs
+1: ──H────│──╭●──H─┤ ╰Probs
+2: ──X──H─╰X─╰X────┤       
+
+Grover (hand-written oracle and diffuser):
+0: ──H────╭●──H──X────╭●──X──H─┤ ╭Probs
+1: ──H──X─╰Z──X──H──X─╰Z──X──H─┤ ╰Probs
+
+QFT (hand-written primitive gates):
+0: ─╭|Ψ⟩──H─╭Rϕ(1.57)─╭Rϕ(0.79)─────────────────╭SWAP─┤  State
+1: ─├|Ψ⟩────╰●────────│──────────H─╭Rϕ(1.57)────│─────┤  State
+2: ─╰|Ψ⟩──────────────╰●───────────╰●─────────H─╰SWAP─┤  State
+
+Variational classifier / QNN:
+0: ──RY(0.20)──╭●──RY(0.00)───RZ(0.00)───────────╭●─╭X──RY(0.00)──RZ(0.00)─╭●─╭X─┤  <Z>
+1: ──RY(-0.40)─╰X──RZ(-0.03)──RY(0.00)──RZ(0.00)─╰X─╰●──RY(0.00)──RZ(0.00)─╰X─╰●─┤     
+
+Quantum fidelity kernel overlap circuit:
+0: ──RY(1.26)─╭●──────────────────────╭X†──RY(1.36)†─┤ ╭Probs
+1: ──RY(1.37)─╰X──RZ(0.55)──RZ(0.83)†─╰X†──RY(1.91)†─┤ ╰Probs

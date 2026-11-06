@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Tracks A-H have linked experimental evidence; Tracks I-J remain scaffolded.
+Status: active implementation. Tracks A-I have linked experimental evidence; Track J remains scaffolded.
 
 ## Executive summary
 
@@ -57,7 +57,7 @@ SQLite's unchanged optimizer. See the full [Track H report section](track_h.md),
 
 ## Track I - Quantum algorithms and QML
 
-Pending.
+Implemented and verified on local CPU simulators, subject to the unresolved exact Chapter 6 classroom list. See the full [Track I report section](track_i.md), generated [coverage checklist](../tracks/I_quantum_qml/results/coverage_checklist.csv), [QML comparison](../tracks/I_quantum_qml/results/qml_comparison.csv), and simulation-only [evidence manifest](../tracks/I_quantum_qml/results/manifest.json). No physical quantum or annealing hardware result is claimed.
 
 ## Track J - Software-engineering optimization
 

@@ -1,0 +1,32 @@
+{
+  "algorithm": "Shor order finding",
+  "circuit_depth": 14,
+  "expected": "[3, 5]",
+  "factors": [
+    3,
+    5
+  ],
+  "gate_count": 21,
+  "hand_written_circuit": false,
+  "instance": "N=15; base=2; 4+4 qubits",
+  "limitation": "matrix-compiled modular multiplication; valid for N=15 but exponentially sized and not scalable",
+  "observed": "[3, 5]",
+  "phase_candidates": [
+    {
+      "fraction": "3/4",
+      "order": 4,
+      "phase_index": 12,
+      "probability": 0.24999999999999967
+    },
+    {
+      "fraction": "1/4",
+      "order": 4,
+      "phase_index": 4,
+      "probability": 0.24999999999999967
+    }
+  ],
+  "query_count": 15,
+  "runtime_seconds": 0.0015221252106130123,
+  "simulator": "PennyLane default.qubit",
+  "success_probability": 0.49999999999999933
+}

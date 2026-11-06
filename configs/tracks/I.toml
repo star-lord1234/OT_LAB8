@@ -5,4 +5,10 @@ base_seed = 20261029
 output_dir = "../../tracks/I_quantum_qml/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"
+vqc_steps = 25
+samples_per_class = 20
+annealing_sweeps = 1200
+grover_qubits = [2, 3, 4]
+plateau_qubits = [2, 4, 6, 8]
+plateau_repeats = 24

@@ -1,0 +1,45 @@
+{
+  "disk": {
+    "free_bytes": 274854047744,
+    "total_bytes": 494332366848,
+    "used_bytes": 219478319104
+  },
+  "git": {
+    "commit": "60f027de0ad82ffae369b8279a93f71a8e3d828c",
+    "dirty": true
+  },
+  "hardware": {
+    "chip": "Apple M5",
+    "memory": "16 GB",
+    "model_identifier": "Mac17,3",
+    "model_name": "MacBook Air",
+    "total_number_of_cores": "10 (4 Performance and 6 Efficiency)"
+  },
+  "packages": {
+    "matplotlib": "3.11.2",
+    "networkx": "3.7",
+    "numpy": "2.5.4",
+    "pennylane": "0.45.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "torch": "2.15.0"
+  },
+  "platform": {
+    "logical_cpus": 10,
+    "mac_version": "26.5.2",
+    "machine": "arm64",
+    "release": "25.5.0",
+    "system": "Darwin",
+    "version": "Darwin Kernel Version 25.5.0: Tue Jun  9 22:28:17 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8142"
+  },
+  "python": {
+    "executable": "/Users/biancasawant/OTLab_8/.venv/bin/python",
+    "implementation": "CPython",
+    "version": "3.12.13"
+  },
+  "tools": {
+    "git": "git version 2.50.1 (Apple Git-155)",
+    "qemu_riscv64": "QEMU emulator version 11.1.1\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+    "riscv64_elf_gcc": "riscv64-elf-gcc (GCC) 16.2.0\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+  }
+}

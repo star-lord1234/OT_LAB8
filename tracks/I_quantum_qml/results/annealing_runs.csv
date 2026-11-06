@@ -1,0 +1,4 @@
+algorithm,seed,sweeps,best_bitstring,best_cut,exact_cut,optimality_gap,accepted_moves,runtime_seconds,method,physical_quantum_annealer,limitation
+annealing proxy,3986925838,1200,00110,8.0,8.0,0.0,200,0.0023255408741533756,classical simulated annealing over a QUBO/Ising objective,False,"does not model tunnelling, device topology, calibration, or physical annealing dynamics"
+annealing proxy,1689274379,1200,01100,8.0,8.0,0.0,224,0.0019407919608056545,classical simulated annealing over a QUBO/Ising objective,False,"does not model tunnelling, device topology, calibration, or physical annealing dynamics"
+annealing proxy,3364955321,1200,00110,8.0,8.0,0.0,228,0.0019691670313477516,classical simulated annealing over a QUBO/Ising objective,False,"does not model tunnelling, device topology, calibration, or physical annealing dynamics"

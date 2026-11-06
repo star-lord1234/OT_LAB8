@@ -1,0 +1,4 @@
+qubits,items,target,grover_oracle_queries,classical_worst_case_queries,query_ratio_classical_over_grover,grover_success_probability,grover_gate_count,grover_simulator_seconds,classical_python_seconds,quantum_query_complexity,classical_query_complexity,wall_time_claim
+2,4,11,1,4,4.0,0.9999999999999991,12,0.0005477080121636391,5.564605817198753e-08,O(sqrt(N)),O(N),none: local quantum simulation is classical work and is slower at these sizes
+3,8,111,2,8,4.0,0.9453124999999976,31,0.0007739579305052757,1.0085455141961574e-07,O(sqrt(N)),O(N),none: local quantum simulation is classical work and is slower at these sizes
+4,16,1111,3,16,5.333333333333333,0.9613189697265582,58,0.0015579168684780598,1.5724985860288144e-07,O(sqrt(N)),O(N),none: local quantum simulation is classical work and is slower at these sizes

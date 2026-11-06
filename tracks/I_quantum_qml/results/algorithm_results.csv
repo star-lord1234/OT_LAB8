@@ -1,0 +1,8 @@
+algorithm,instance,expected,observed,success_probability,query_count,gate_count,circuit_depth,runtime_seconds,hand_written_circuit,simulator
+Deutsch-Jozsa,2 input qubits; constant_zero,constant,constant,0.9999999999999992,1,6,2,0.0009126672521233559,True,PennyLane default.qubit
+Deutsch-Jozsa,2 input qubits; balanced,balanced,balanced,1.0,1,8,5,0.0003855838440358639,True,PennyLane default.qubit
+Bernstein-Vazirani,secret=101,101,101,0.9999999999999989,1,10,5,0.00032074982300400734,True,PennyLane default.qubit
+Grover,N=4; target=10,10,10,0.9999999999999991,1,14,9,0.0012007500045001507,True,PennyLane default.qubit
+Quantum Fourier Transform,3-qubit basis state |101>,101,101,0.9999999999999991,0,8,7,0.001814667135477066,True,PennyLane default.qubit
+Quantum Phase Estimation,phase=0.25; counting_qubits=3,0.250000,0.250000,0.9999999999999991,7,14,10,0.00075141666457057,True,PennyLane default.qubit
+Shor order finding,N=15; base=2; 4+4 qubits,"[3, 5]","[3, 5]",0.49999999999999933,15,21,14,0.0015221252106130123,False,PennyLane default.qubit

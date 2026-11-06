@@ -8,4 +8,4 @@
 - The six-request exhaustive schedule has objective `2.5778133333333333`; greedy matches it on that instance, DP has a disclosed `0.01543` global gap, and FCFS has a `1.26949` gap.
 - Focused Track E gate: 7/7 tests passed.
 - Repository-wide gate: environment preflight 7/7, repository/prompt validation passed, and 69/69 tests passed.
-- Commit linkage is added only after the implementation commit exists.
+- Verified implementation commit: `b028ce709e19276c6660daf7260f1322fb821d84` (`[AI:Codex] Implement Track E inference batching case study`).

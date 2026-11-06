@@ -8,7 +8,7 @@
   "prompt_file": "prompt.md",
   "response_file": "response.md",
   "verification_file": "verification.md",
-  "commit": null,
+  "commit": "b028ce709e19276c6660daf7260f1322fb821d84",
   "revisions": [
     {
       "reason": "A sparse-workload test incorrectly assumed delaying the first request must reduce end-to-end throughput",

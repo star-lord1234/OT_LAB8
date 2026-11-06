@@ -20,3 +20,12 @@ This hash was recorded in a follow-up documentation commit because a commit cann
 - Verification before commit: preflight 7/7; repository validation passed; focused Track D 10/10; repository-wide 62/62.
 
 The implementation hash is linked by a follow-up documentation commit because a commit cannot contain its own final hash.
+
+## Track E implementation commit
+
+- Commit: `b028ce709e19276c6660daf7260f1322fb821d84`
+- Message: `[AI:Codex] Implement Track E inference batching case study`
+- Scope: synthetic workloads, FCFS/greedy/DP scheduling, capacity and latency constraints, exact tiny reference, repeated results, strategy matrices, plots, tests, report, and honest prompt/failure records.
+- Verification before commit: preflight 7/7; repository validation passed; focused Track E 7/7; repository-wide 69/69; 108/108 schedules verified.
+
+The implementation hash is linked by a follow-up documentation commit because a commit cannot contain its own final hash.

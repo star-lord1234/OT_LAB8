@@ -1,0 +1,33 @@
+{
+  "all_configurations_within_budget": true,
+  "all_results_equivalent": true,
+  "artifacts": [
+    "dataset_manifest.json",
+    "schema.sql",
+    "workload.json",
+    "candidate_indexes.csv",
+    "selection_results.csv",
+    "query_runs.csv",
+    "query_summary.csv",
+    "workload_runs.csv",
+    "workload_summary.csv",
+    "query_plans.json",
+    "correctness.json",
+    "environment.json",
+    "plots/workload_performance.png",
+    "plots/candidate_indexes.png"
+  ],
+  "candidates": 5,
+  "configurations": [
+    "baseline",
+    "greedy",
+    "ilp",
+    "dynamic_programming"
+  ],
+  "database_rows": 69541,
+  "queries": 5,
+  "result_type": "measured SQLite CPU timings on synthetic data",
+  "sqlite_optimizer_replaced": false,
+  "status": "verified_sqlite_index_selection",
+  "track": "H"
+}

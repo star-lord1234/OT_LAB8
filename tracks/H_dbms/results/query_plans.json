@@ -1,0 +1,308 @@
+{
+  "baseline": {
+    "category_price_catalog": [
+      {
+        "detail": "SCAN products",
+        "id": 4,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 22,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "customer_recent_orders": [
+      {
+        "detail": "SCAN orders",
+        "id": 4,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 23,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "regional_revenue": [
+      {
+        "detail": "SCAN o",
+        "id": 7,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "id": 11,
+        "not_used": 45,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR GROUP BY",
+        "id": 16,
+        "not_used": 0,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR count(DISTINCT)",
+        "id": 58,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "selected_product_sales": [
+      {
+        "detail": "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "id": 8,
+        "not_used": 68,
+        "parent": 0
+      },
+      {
+        "detail": "SCAN oi",
+        "id": 39,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 81,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "status_window_summary": [
+      {
+        "detail": "SCAN orders",
+        "id": 6,
+        "not_used": 216,
+        "parent": 0
+      }
+    ]
+  },
+  "dynamic_programming": {
+    "category_price_catalog": [
+      {
+        "detail": "SCAN products",
+        "id": 4,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 22,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "customer_recent_orders": [
+      {
+        "detail": "SEARCH orders USING INDEX idx_orders_customer_date (customer_id=? AND order_day>? AND order_day<?)",
+        "id": 5,
+        "not_used": 49,
+        "parent": 0
+      }
+    ],
+    "regional_revenue": [
+      {
+        "detail": "SCAN c",
+        "id": 8,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "SEARCH o USING INDEX idx_orders_customer_date (customer_id=? AND order_day>?)",
+        "id": 12,
+        "not_used": 50,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR count(DISTINCT)",
+        "id": 53,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "selected_product_sales": [
+      {
+        "detail": "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "id": 9,
+        "not_used": 68,
+        "parent": 0
+      },
+      {
+        "detail": "SEARCH oi USING INDEX idx_items_product (product_id=?)",
+        "id": 40,
+        "not_used": 61,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 82,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "status_window_summary": [
+      {
+        "detail": "SCAN orders",
+        "id": 6,
+        "not_used": 216,
+        "parent": 0
+      }
+    ]
+  },
+  "greedy": {
+    "category_price_catalog": [
+      {
+        "detail": "SEARCH products USING INDEX idx_products_category_price (category=? AND price_cents>? AND price_cents<?)",
+        "id": 5,
+        "not_used": 49,
+        "parent": 0
+      }
+    ],
+    "customer_recent_orders": [
+      {
+        "detail": "SCAN orders",
+        "id": 4,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 23,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "regional_revenue": [
+      {
+        "detail": "SCAN o",
+        "id": 7,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "id": 11,
+        "not_used": 45,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR GROUP BY",
+        "id": 16,
+        "not_used": 0,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR count(DISTINCT)",
+        "id": 58,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "selected_product_sales": [
+      {
+        "detail": "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "id": 9,
+        "not_used": 68,
+        "parent": 0
+      },
+      {
+        "detail": "SEARCH oi USING INDEX idx_items_product (product_id=?)",
+        "id": 40,
+        "not_used": 61,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 82,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "status_window_summary": [
+      {
+        "detail": "SCAN orders",
+        "id": 6,
+        "not_used": 216,
+        "parent": 0
+      }
+    ]
+  },
+  "ilp": {
+    "category_price_catalog": [
+      {
+        "detail": "SCAN products",
+        "id": 4,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 22,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "customer_recent_orders": [
+      {
+        "detail": "SEARCH orders USING INDEX idx_orders_customer_date (customer_id=? AND order_day>? AND order_day<?)",
+        "id": 5,
+        "not_used": 49,
+        "parent": 0
+      }
+    ],
+    "regional_revenue": [
+      {
+        "detail": "SCAN c",
+        "id": 8,
+        "not_used": 216,
+        "parent": 0
+      },
+      {
+        "detail": "SEARCH o USING INDEX idx_orders_customer_date (customer_id=? AND order_day>?)",
+        "id": 12,
+        "not_used": 50,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR count(DISTINCT)",
+        "id": 53,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "selected_product_sales": [
+      {
+        "detail": "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "id": 9,
+        "not_used": 68,
+        "parent": 0
+      },
+      {
+        "detail": "SEARCH oi USING INDEX idx_items_product (product_id=?)",
+        "id": 40,
+        "not_used": 61,
+        "parent": 0
+      },
+      {
+        "detail": "USE TEMP B-TREE FOR ORDER BY",
+        "id": 82,
+        "not_used": 0,
+        "parent": 0
+      }
+    ],
+    "status_window_summary": [
+      {
+        "detail": "SCAN orders",
+        "id": 6,
+        "not_used": 216,
+        "parent": 0
+      }
+    ]
+  }
+}

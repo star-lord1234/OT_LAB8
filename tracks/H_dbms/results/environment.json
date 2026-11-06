@@ -1,0 +1,13 @@
+{
+  "automatic_index": false,
+  "estimation_repetitions": 15,
+  "logical_cpus": 10,
+  "machine": "arm64",
+  "page_size_bytes": 4096,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python_sqlite_wrapper": "Python standard-library sqlite3",
+  "query_repetitions": 15,
+  "query_warmups": 3,
+  "sqlite_version": "3.53.1",
+  "timing_clock": "time.perf_counter_ns"
+}

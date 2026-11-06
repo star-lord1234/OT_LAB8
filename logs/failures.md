@@ -124,3 +124,19 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** assert G's implemented status and exact entry point, while retaining the scaffold refusal invariant for H-J.
 - **Regression coverage:** `tests/infrastructure/test_registry_prompts.py::test_registry_defines_all_tracks_and_existing_locations` and the repository-wide gate.
 - **Lesson:** lifecycle tests must advance with real track state while preserving the general implemented/scaffolded contract.
+
+## F-016 - Direct Track H calibration omitted the src import path
+
+- **AI command:** the first one-off Track H calibration invoked `.venv/bin/python -c ...` without the repository CLI bootstrap or `PYTHONPATH=src`.
+- **Failure:** execution stopped immediately with `ModuleNotFoundError: No module named 'optlab'`; no SQLite database or result was produced.
+- **Fix:** rerun the bounded calibration with `PYTHONPATH=src`; the registered `./scripts/run_track.py H` command uses the repository bootstrap and does not need this manual prefix.
+- **Regression coverage:** the focused experiment test imports through pytest's configured path, and the registered command is exercised before completion.
+- **Lesson:** one-off module commands must reproduce the same source-path setup as supported project entry points.
+
+## F-017 - Initial index-benefit estimator credited unrelated timing noise
+
+- **AI-generated artifact:** the first Track H estimator defined a candidate's benefit as the difference between two complete workload timings.
+- **Failure/methodology impact:** a small catalog index could receive apparent benefit from unrelated queries' timing variation, causing its greedy rank to change across runs.
+- **Fix:** credit positive latency reductions only for queries whose actual `EXPLAIN QUERY PLAN` names that candidate index. Increase estimation repetitions from 9 to 15 and retain per-candidate plan usage in `candidate_indexes.csv`.
+- **Verification:** repeated calibration retained the same greedy and exact selections; tests assert real plan changes without logical-result changes.
+- **Lesson:** physical-design benefit estimates should be tied to verified plan use, not correlated noise elsewhere in a workload.

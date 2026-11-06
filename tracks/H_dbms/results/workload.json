@@ -1,0 +1,57 @@
+[
+  {
+    "name": "customer_recent_orders",
+    "parameters": [
+      42,
+      250,
+      730
+    ],
+    "purpose": "interactive customer order history",
+    "sql": "\n        SELECT id, order_day, status, total_cents\n        FROM orders\n        WHERE customer_id = ? AND order_day BETWEEN ? AND ?\n        ORDER BY order_day DESC, id DESC\n        LIMIT 50\n        ",
+    "weight": 40
+  },
+  {
+    "name": "status_window_summary",
+    "parameters": [
+      "shipped",
+      365
+    ],
+    "purpose": "operational status report",
+    "sql": "\n        SELECT status, COUNT(*), SUM(total_cents), AVG(total_cents)\n        FROM orders\n        WHERE status = ? AND order_day >= ?\n        GROUP BY status\n        ",
+    "weight": 10
+  },
+  {
+    "name": "selected_product_sales",
+    "parameters": [
+      5,
+      17,
+      101,
+      233,
+      501
+    ],
+    "purpose": "product-level sales analysis",
+    "sql": "\n        SELECT p.id, p.name, SUM(oi.quantity),\n               SUM(oi.quantity * oi.unit_price_cents)\n        FROM order_items AS oi\n        JOIN products AS p ON p.id = oi.product_id\n        WHERE oi.product_id IN (?, ?, ?, ?, ?)\n        GROUP BY p.id, p.name\n        ORDER BY p.id\n        ",
+    "weight": 20
+  },
+  {
+    "name": "category_price_catalog",
+    "parameters": [
+      "electronics",
+      2500,
+      25000
+    ],
+    "purpose": "category catalog range query",
+    "sql": "\n        SELECT id, name, price_cents\n        FROM products\n        WHERE category = ? AND price_cents BETWEEN ? AND ?\n        ORDER BY price_cents, id\n        LIMIT 100\n        ",
+    "weight": 200
+  },
+  {
+    "name": "regional_revenue",
+    "parameters": [
+      "west",
+      365
+    ],
+    "purpose": "regional revenue report with a join",
+    "sql": "\n        SELECT c.region, COUNT(DISTINCT o.id), SUM(o.total_cents)\n        FROM customers AS c\n        JOIN orders AS o ON o.customer_id = c.id\n        WHERE c.region = ? AND o.order_day >= ?\n        GROUP BY c.region\n        ",
+    "weight": 10
+  }
+]

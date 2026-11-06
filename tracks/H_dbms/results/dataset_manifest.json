@@ -1,0 +1,12 @@
+{
+  "automatic_indexes": false,
+  "customers": 1200,
+  "database_bytes": 2134016,
+  "logical_sha256": "60b061271f83180c8fbeb7d6eb51d98548ab401de5fef979c25c0c27f8ce8e36",
+  "order_items": 52741,
+  "orders": 15000,
+  "page_count": 521,
+  "page_size_bytes": 4096,
+  "products": 600,
+  "seed": 20261029
+}

@@ -1,27 +1,40 @@
-# Track H - DBMS optimization
+# Track H - SQLite physical index selection
 
-Status: **scaffolded; no algorithm implementation or result exists yet.**
+Status: **implemented and verified**.
 
-## Minimum planned scope
+Track H selects optional SQLite indexes under a measured 180-page storage
+budget. It compares no optional indexes, benefit-per-page greedy selection,
+binary MILP through SciPy/HiGHS, and exact 0/1 knapsack dynamic programming.
+SQLite's internal query optimizer remains unchanged and chooses plans from the
+physical indexes made available by each configuration.
 
-Select SQLite indexes under a storage budget with two Chapter 6 methods and verify plans, latency, throughput, storage, and identical results.
+## Evidence
 
-The authoritative acceptance criteria are the Track H rows in `REQUIREMENTS.md`. Chapter 6 syllabus-dependent rows remain unresolved until classroom materials are supplied.
+- Formal model: `MATHEMATICS.md`
+- Dataset documentation: `DATASET.md`
+- Generator/schema: `implementation/database.py`, `benchmarks/generate_database.py`
+- Workload and candidates: `implementation/models.py`
+- Solvers: `implementation/selection.py`
+- Benchmark/plan capture: `implementation/experiment.py`
+- Tests: `tests/`
+- Results, actual plans, and plots: `results/`
+- Report: `report/track_h.md`
+- AI record: `prompts/H/2026-11-06-track-h-implementation/`
 
-## Fixed locations
-
-- Implementation: `tracks/H_dbms/implementation/`
-- Benchmark runner/data preparation: `tracks/H_dbms/benchmarks/`
-- Track-specific tests: `tracks/H_dbms/tests/`
-- Raw and summarized track evidence: `tracks/H_dbms/results/`
-- Configuration: `configs/tracks/H.toml`
-- Prompt history: `prompts/H/`
-- Report destination: see `experiments/registry.json`
-
-Inspect this plan without running an experiment:
+Run the complete retained experiment:
 
 ```bash
-./scripts/run_track.py H --plan
+./scripts/run_track.py H
+.venv/bin/python -m pytest tracks/H_dbms/tests
 ```
 
-A normal run intentionally exits non-zero until the registry status is changed to `implemented` and a tested entry point is registered.
+Generate only the fixed database:
+
+```bash
+.venv/bin/python tracks/H_dbms/benchmarks/generate_database.py \
+  --output data/generated/track_h.sqlite
+```
+
+Fresh timings can vary with power state, cache state, and background load. The
+runner replaces Track H's generated result files, so preserve committed evidence
+before intentionally collecting a new run.

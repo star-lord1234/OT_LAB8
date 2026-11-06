@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Tracks A-G have linked experimental evidence; Tracks H-J remain scaffolded.
+Status: active implementation. Tracks A-H have linked experimental evidence; Tracks I-J remain scaffolded.
 
 ## Executive summary
 
@@ -49,7 +49,11 @@ come from RISC-V QEMU simulation, not physical hardware or the macOS scheduler.
 
 ## Track H - DBMS optimization
 
-Pending.
+Implemented and verified as storage-budgeted optional-index selection around
+SQLite's unchanged optimizer. See the full [Track H report section](track_h.md),
+[formal model](../tracks/H_dbms/MATHEMATICS.md), actual
+[query plans](../tracks/H_dbms/results/query_plans.json), and
+[workload summary](../tracks/H_dbms/results/workload_summary.csv).
 
 ## Track I - Quantum algorithms and QML
 

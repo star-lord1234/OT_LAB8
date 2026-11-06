@@ -1,0 +1,31 @@
+{
+  "record_id": "2026-11-06-track-h-implementation",
+  "date": "2026-11-06",
+  "tool": "OpenAI Codex",
+  "model": "GPT-5 family (exact deployed snapshot not exposed)",
+  "scope": "Track H",
+  "purpose": "Implement and verify storage-budgeted SQLite index selection on a reproducible synthetic database",
+  "prompt_file": "prompt.md",
+  "response_file": "response.md",
+  "verification_file": "verification.md",
+  "commit": null,
+  "revisions": [
+    {
+      "reason": "The first direct calibration command omitted the repository src path",
+      "action": "Reran through the supported Python path and retained the failure in logs/failures.md"
+    },
+    {
+      "reason": "A 100-page preliminary budget admitted only a weak one-index solution",
+      "action": "Fixed the final documented budget at 180 measured pages so meaningful two-index alternatives compete"
+    },
+    {
+      "reason": "Whole-workload candidate timing could credit unrelated query noise",
+      "action": "Restricted benefit to plan-confirmed query use and increased estimation repetitions"
+    },
+    {
+      "reason": "The original query mix did not reliably distinguish greedy from exact selection",
+      "action": "Documented a read-heavy storefront mix with catalog weight 200 before retaining final results"
+    }
+  ],
+  "notes": "Only observed work and failures are recorded. The data are synthetic, timings are local warm-cache SQLite measurements, and SQLite's internal optimizer was not replaced."
+}

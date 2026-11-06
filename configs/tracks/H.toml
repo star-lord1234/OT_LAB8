@@ -5,4 +5,11 @@ base_seed = 20261029
 output_dir = "../../tracks/H_dbms/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"
+customers = 1200
+products = 600
+orders = 15000
+storage_budget_pages = 180
+warmups = 3
+query_repetitions = 15
+estimation_repetitions = 15

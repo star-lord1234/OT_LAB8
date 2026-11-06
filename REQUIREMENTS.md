@@ -219,11 +219,11 @@ All paths below are proposed. "Result" names the evidence that must exist before
 
 | ID | Class | Requirement | Planned implementation | Verification/test | Required result/evidence | Report section |
 |---|---|---|---|---|---|---|
-| H-01 | M | Optimize a real DBMS workload and formulate variables, objective, and storage/time constraint. | SQLite index selection under storage budget. | Recreate fixed-seed database and candidates. | Formal binary model and baseline workload. | H.1-H.2. |
-| H-02 | M | Compare at least two Chapter 6 methods with the default optimizer; one added index is insufficient. | Greedy versus knapsack DP/ILP, plus no-selected-index/default SQLite baseline. | Same candidate benefits/budget/workload. | Selection objective/runtime and actual DB execution comparison. | H.3. |
-| H-03 | M | Use accepted benchmark or documented synthetic data of stated size. | Small generated orders/customers/products dataset. | Row counts, constraints, deterministic hash. | Dataset manifest and generator. | H.1. |
-| H-04 | M | Compare plans, latency, throughput, and storage cost. | `EXPLAIN QUERY PLAN`, repeated query timings, index file-size accounting. | Warm-up/cache policy documented. | All required DB metrics before/after. | H.4. |
-| H-05 | M | Query results must be identical. | Stable sorted results/checksums. | Baseline versus every index set. | Equivalence tests pass. | H.4-H.5. |
+| H-01 | M | Optimize a real DBMS workload and formulate variables, objective, and storage/time constraint. | Five binary optional-index choices under a measured 180-page budget; `MATHEMATICS.md`. | Regenerate fixed-seed DB; page-aligned cost assertions. | Formal model, schema, baseline, candidates. | `report/track_h.md#H.1-schema-dataset-and-workload`; H.2. |
+| H-02 | M | Compare at least two Chapter 6 methods with the default optimizer; one added index is insufficient. | Baseline versus benefit/page greedy, binary MILP, and exact knapsack DP. | Exact toy counterexample; MILP/DP agreement; same measured benefits and budget. | `selection_results.csv`; optimization runtimes and selected multi-index sets. | `report/track_h.md#H.3-greedy-ilp-and-dynamic-programming`. |
+| H-03 | M | Use accepted benchmark or documented synthetic data of stated size. | 69,541-row synthetic commerce DB; fixed local RNG; four related tables. | Duplicate generation digest/count test. | `DATASET.md`, generator, schema, `dataset_manifest.json`. | `report/track_h.md#H.1-schema-dataset-and-workload`. |
+| H-04 | M | Compare plans, latency, throughput, and storage cost. | Actual SQLite plans; 3 warmups + 15 timings × 3 configuration repeats; page counts. | Plan names and budget checks; raw/summary exports. | `query_plans.json`, latency/throughput/storage CSVs, two plots. | `report/track_h.md#H.4-plans-latency-throughput-and-storage`. |
+| H-05 | M | Query results must be identical. | Ordered SHA-256 results for every query/configuration/repeat. | Generator/plan/result tests and complete exporter. | `correctness.json`; every comparison true. | `report/track_h.md#H.5-correctness-limits-and-reproduction`. |
 
 ### Track I - Quantum algorithms and QML advantage
 

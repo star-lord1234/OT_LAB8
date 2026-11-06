@@ -1,0 +1,5 @@
+configuration,selected_indexes,repeats,weighted_mean_latency_seconds_mean,weighted_mean_latency_seconds_std,workload_throughput_queries_per_second_mean,workload_throughput_queries_per_second_std,index_storage_bytes_mean,index_storage_pages,within_budget,all_results_equivalent
+baseline,,3,0.00042029144047619045,8.768080311063957e-07,2379.3117150477415,4.95896694160087,0.0,0,True,True
+dynamic_programming,idx_orders_customer_date;idx_items_product,3,4.9539309523809525e-05,5.449574418050327e-07,20188.449874765378,223.62835261597837,737280.0,180,True,True
+greedy,idx_items_product;idx_products_category_price,3,9.497775e-05,2.8441096188103495e-07,10528.8763541199,31.595626466462214,557056.0,136,True,True
+ilp,idx_orders_customer_date;idx_items_product,3,4.928444047619048e-05,2.3826228247339852e-07,20290.8544268078,98.24181788358032,737280.0,180,True,True

@@ -102,7 +102,7 @@
     {
       "id": "H",
       "name": "DBMS optimization",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/H_dbms",
       "config": "configs/tracks/H.toml",
       "implementation": "tracks/H_dbms/implementation",
@@ -110,7 +110,7 @@
       "tests": "tracks/H_dbms/tests",
       "results": "tracks/H_dbms/results",
       "report_section": "report/report.md#track-h-dbms-optimization",
-      "entrypoint": null,
+      "entrypoint": "tracks.H_dbms.benchmarks.run:main",
       "dependencies": ["B"]
     },
     {

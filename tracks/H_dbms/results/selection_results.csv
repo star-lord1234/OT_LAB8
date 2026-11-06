@@ -1,0 +1,5 @@
+method,selected,total_cost_pages,estimated_benefit_seconds,estimated_cost_seconds,runtime_seconds,optimal,budget_pages,within_budget
+baseline,,0,0.0,0.0004196576785714286,0.0,True,180,True
+greedy,idx_items_product;idx_products_category_price,136,0.00032436592857142853,9.529175000000005e-05,5.125e-06,False,180,True
+ilp,idx_orders_customer_date;idx_items_product,180,0.0003705655357142857,4.9092142857142874e-05,0.013015917,True,180,True
+dynamic_programming,idx_orders_customer_date;idx_items_product,180,0.0003705655357142857,4.9092142857142874e-05,4.0583e-05,True,180,True

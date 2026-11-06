@@ -1,0 +1,13 @@
+configuration,repeat,selected_indexes,weighted_mean_latency_seconds,workload_throughput_queries_per_second,index_storage_bytes,index_storage_pages,storage_budget_pages,within_budget,all_results_equivalent
+baseline,1,,0.0004193914285714286,2384.4073385245288,0,0,180,True,True
+baseline,2,,0.00042000275000000003,2380.9367914852937,0,0,180,True,True
+baseline,3,,0.00042148014285714285,2372.5910151334024,0,0,180,True,True
+greedy,1,idx_items_product;idx_products_category_price,9.457553571428571e-05,10573.5589277656,557056,136,180,True,True
+greedy,2,idx_items_product;idx_products_category_price,9.517739285714285e-05,10506.696705812867,557056,136,180,True,True
+greedy,3,idx_items_product;idx_products_category_price,9.518032142857143e-05,10506.373428781235,557056,136,180,True,True
+ilp,1,idx_orders_customer_date;idx_items_product,4.8970785714285714e-05,20420.33807328276,737280,180,180,True,True
+ilp,2,idx_orders_customer_date;idx_items_product,4.954789285714286e-05,20182.49298478168,737280,180,180,True,True
+ilp,3,idx_orders_customer_date;idx_items_product,4.9334642857142857e-05,20269.73222235896,737280,180,180,True,True
+dynamic_programming,1,idx_orders_customer_date;idx_items_product,5.0026571428571424e-05,19989.37707389787,737280,180,180,True,True
+dynamic_programming,2,idx_orders_customer_date;idx_items_product,4.8778571428571425e-05,20500.80538878313,737280,180,180,True,True
+dynamic_programming,3,idx_orders_customer_date;idx_items_product,4.981278571428572e-05,20075.167161615132,737280,180,180,True,True

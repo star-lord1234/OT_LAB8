@@ -1,0 +1,36 @@
+{
+  "configurations": {
+    "baseline": {
+      "all_repeats_equivalent": true,
+      "selected_indexes": []
+    },
+    "dynamic_programming": {
+      "all_repeats_equivalent": true,
+      "selected_indexes": [
+        "idx_orders_customer_date",
+        "idx_items_product"
+      ]
+    },
+    "greedy": {
+      "all_repeats_equivalent": true,
+      "selected_indexes": [
+        "idx_items_product",
+        "idx_products_category_price"
+      ]
+    },
+    "ilp": {
+      "all_repeats_equivalent": true,
+      "selected_indexes": [
+        "idx_orders_customer_date",
+        "idx_items_product"
+      ]
+    }
+  },
+  "reference_digests": {
+    "category_price_catalog": "14f348713deda21bf93fda08308fd732236b6c3e3b98ef6f8091b46f14921098",
+    "customer_recent_orders": "4736803684ba9260abe3e98ca606846eeaf9ac5ebb5c217d95c17e9dcc7f9e33",
+    "regional_revenue": "23f3063c3091c6aa6691a333c92a606e9c1ed4a6c2dc36d0cd96bb12d6e6c650",
+    "selected_product_sales": "5949726e0c92181a304b10c4ebc911e12f1aba2268928a19f2c4fa2710b024b2",
+    "status_window_summary": "d7ec39fe9828e12823c6b210782b9fd45257cef6e0bb2e9641147e9f53b5af91"
+  }
+}

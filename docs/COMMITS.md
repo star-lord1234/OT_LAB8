@@ -21,6 +21,15 @@ This hash was recorded in a follow-up documentation commit because a commit cann
 
 The implementation hash is linked by a follow-up documentation commit because a commit cannot contain its own final hash.
 
+## Track G implementation commit
+
+- Commit: `ec147bb2b58ca6ff7035a9758e76e780bdc937c9`
+- Message: `[AI:Codex] Implement Track G xv6 priority scheduler`
+- Scope: pinned official xv6-riscv, pristine/support/optimized checkpoints, one priority scheduler with aging, three identical workloads, 18 QEMU runs, 108 job records, clean patches, full usertests transcripts, tests, plot, report, and honest prompt/failure records.
+- Verification before commit: pristine, support-baseline, and optimized full `usertests` passed; fresh patch applied/built/booted; preflight 7/7; repository validation passed; focused Track G 11/11; repository-wide 89/89.
+
+The implementation hash is linked by a follow-up documentation commit because a commit cannot contain its own final hash.
+
 ## Track F implementation commit
 
 - Commit: `0298aff857eb7c7e8e5400eb52ce1cd45fa91d2e`

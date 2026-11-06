@@ -8,4 +8,4 @@
 - Complete patch applied cleanly to a fresh clone at the pinned commit, rebuilt, booted, and completed the CPU benchmark.
 - Focused Track G gate: 11/11 tests passed.
 - Repository-wide gate: environment preflight 7/7, repository/prompt validation passed, and 89/89 tests passed.
-- Implementation commit is filled only after the final content is committed.
+- Verified implementation commit: `ec147bb2b58ca6ff7035a9758e76e780bdc937c9` (`[AI:Codex] Implement Track G xv6 priority scheduler`).

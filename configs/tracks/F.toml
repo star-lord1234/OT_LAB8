@@ -5,4 +5,7 @@ base_seed = 20261029
 output_dir = "../../tracks/F_compiler/results"
 
 [parameters]
-status = "scaffolded"
+status = "implemented"
+execution_iterations = 5000
+compilation_iterations = 500
+pass_effort_budget = 8

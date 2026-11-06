@@ -74,7 +74,7 @@
     {
       "id": "F",
       "name": "Compiler optimization",
-      "status": "scaffolded",
+      "status": "implemented",
       "directory": "tracks/F_compiler",
       "config": "configs/tracks/F.toml",
       "implementation": "tracks/F_compiler/implementation",
@@ -82,7 +82,7 @@
       "tests": "tracks/F_compiler/tests",
       "results": "tracks/F_compiler/results",
       "report_section": "report/report.md#track-f-compiler-optimization",
-      "entrypoint": null,
+      "entrypoint": "tracks.F_compiler.benchmarks.run:main",
       "dependencies": ["B"]
     },
     {

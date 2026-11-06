@@ -1,0 +1,10 @@
+// All passes have useful work; reassignment creates a new SSA value.
+input x;
+input y;
+let a = x + y;
+let b = x + y;
+let unused = (a * 16) + 99;
+let result = (a * b) + (x * 8);
+print result;
+x = x + 1;
+print x;

@@ -1,0 +1,6 @@
+// One live and one dead calculation.
+input x;
+let live = x + 1;
+let dead = x * 99;
+live = live * 2;
+print live;

@@ -1,0 +1,37 @@
+{
+  "branch_and_bound": {
+    "baseline_instruction_count": 42,
+    "effort_budget": 8,
+    "instruction_reduction": 17,
+    "lower_bound": 6,
+    "method": "branch_and_bound",
+    "nodes_visited": 35,
+    "optimized_instruction_count": 25,
+    "pruned_by_budget": 24,
+    "pruned_by_lower_bound": 0,
+    "selected_effort": 6,
+    "selected_order": [
+      "constant_folding_propagation",
+      "dead_code_elimination"
+    ]
+  },
+  "exhaustive_reference": {
+    "effort_budget": 8,
+    "method": "exhaustive_enumeration",
+    "optimized_instruction_count": 25,
+    "orders_evaluated": 35,
+    "selected_effort": 6,
+    "selected_order": [
+      "constant_folding_propagation",
+      "dead_code_elimination"
+    ]
+  },
+  "formulation": "choose an ordered subset of passes, each at most once, minimizing total suite instruction count subject to sum of pass effort costs <= budget",
+  "pass_costs": {
+    "common_subexpression_elimination": 3,
+    "constant_folding_propagation": 3,
+    "dead_code_elimination": 3,
+    "strength_reduction": 2
+  },
+  "verified_equal": true
+}

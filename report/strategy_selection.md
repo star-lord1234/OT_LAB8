@@ -9,7 +9,7 @@ This matrix is provisional where the exact Chapter 6 syllabus or a future track 
 | C | Circuit angles and measured quantum objectives | Small QAOA/VQE/QNN simulations | Local CPU quantum simulators | Exact classical references; shot/noise cost reported; no hardware claim |
 | D | Sets, process tasks, model weights | Greedy/exact coverage, spawned processes, FedAvg, MGDA, GradNorm | CPU processes; simulated federation | Checksums/exact coverage; FedAvg communication counted |
 | E | Binary batch assignments, order, start times; count/token/SLO constraints | Immediate FCFS, scalable greedy, exact local DP, tiny exhaustive reference | Single CPU discrete-event simulation; modeled batch parallelism only | DP exact only for bounded local score; exhaustive tiny global optimum; no interprocess/network communication |
-| F | Planned IR/pass decisions under effort budget | Toy compiler plus exact tiny pass ordering | CPU | Not implemented; no claim |
+| F | Ordered pass subset under effort budget | Branch-and-bound with exhaustive reference; full four-pass benchmark | CPU toy compiler/interpreter | Exact equality on 35 feasible orders; no communication |
 | G | Planned scheduler/kernel decisions | xv6/QEMU experiments | RISC-V QEMU | Not implemented; process scheduling overhead to be measured |
 | H | Planned binary index choices under storage budget | SQLite default plus heuristic/exact selection | CPU/SQLite | Not implemented; no claim |
 | I | Planned discrete/continuous quantum and QML parameters | Exact circuits plus matched classical baselines | Local simulator unless access changes | Not implemented; quantum advantage cannot be claimed |

@@ -1,6 +1,6 @@
 # Assignment 8 Technical Report
 
-Status: active implementation. Tracks A-E have linked experimental evidence; Tracks F-J remain scaffolded.
+Status: active implementation. Tracks A-F have linked experimental evidence; Tracks G-J remain scaffolded.
 
 ## Executive summary
 
@@ -36,7 +36,7 @@ Implemented and verified as a synthetic discrete-event simulation. See the full 
 
 ## Track F - Compiler optimization
 
-Pending.
+Implemented and verified with the four-pass target. See the full [Track F report section](track_f.md), [language and optimization model](../tracks/F_compiler/LANGUAGE_AND_OPTIMIZATION.md), [benchmark summary](../tracks/F_compiler/results/benchmark_summary.csv), and [evidence manifest](../tracks/F_compiler/results/manifest.json).
 
 ## Track G - xv6 optimization
 

@@ -1,0 +1,6 @@
+// The repeated x+y expression is safe to reuse in SSA-like IR.
+input x;
+input y;
+let a = x + y;
+let b = x + y;
+print a * b;

@@ -1,0 +1,4 @@
+// Constant folding and propagation.
+let a = 2 + 3;
+let b = a * 8;
+print b;

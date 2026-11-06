@@ -1,0 +1,7 @@
+[
+  {"name": "constants", "file": "constants.toy", "inputs": {}, "expected": [40]},
+  {"name": "dead_code", "file": "dead_code.toy", "inputs": {"x": 7}, "expected": [16]},
+  {"name": "common_subexpression", "file": "common_subexpression.toy", "inputs": {"x": 4, "y": 5}, "expected": [81]},
+  {"name": "strength", "file": "strength.toy", "inputs": {"x": 7}, "expected": [59]},
+  {"name": "mixed", "file": "mixed.toy", "inputs": {"x": 10, "y": 3}, "expected": [249, 11]}
+]

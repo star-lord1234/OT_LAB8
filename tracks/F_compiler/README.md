@@ -1,27 +1,33 @@
 # Track F - Compiler optimization
 
-Status: **scaffolded; no algorithm implementation or result exists yet.**
+Status: **implemented and verified with four optimization passes.**
 
-## Minimum planned scope
-
-Build a toy compiler pipeline, implement at least two semantics-preserving passes, optimize a compiler decision, and measure four required costs.
+The track contains a lexer, recursive-descent parser, SSA-like three-address IR, IR interpreter, unoptimized compiler, constant folding/propagation, common subexpression elimination, strength reduction, and dead-code elimination. Five programs are checked before and after optimization.
 
 The authoritative acceptance criteria are the Track F rows in `REQUIREMENTS.md`. Chapter 6 syllabus-dependent rows remain unresolved until classroom materials are supplied.
 
 ## Fixed locations
 
 - Implementation: `tracks/F_compiler/implementation/`
-- Benchmark runner/data preparation: `tracks/F_compiler/benchmarks/`
-- Track-specific tests: `tracks/F_compiler/tests/`
-- Raw and summarized track evidence: `tracks/F_compiler/results/`
+- Benchmark runner: `tracks/F_compiler/benchmarks/`
+- Tests: `tracks/F_compiler/tests/`
+- Results and plots: `tracks/F_compiler/results/`
 - Configuration: `configs/tracks/F.toml`
 - Prompt history: `prompts/F/`
-- Report destination: see `experiments/registry.json`
+- Language/optimization model: `tracks/F_compiler/LANGUAGE_AND_OPTIMIZATION.md`
+- Samples: `tracks/F_compiler/samples/`
+- Report: `report/track_f.md`
 
-Inspect this plan without running an experiment:
+Generate the complete evidence bundle:
 
 ```bash
-./scripts/run_track.py F --plan
+./scripts/run_track.py F
 ```
 
-A normal run intentionally exits non-zero until the registry status is changed to `implemented` and a tested entry point is registered.
+Run focused tests:
+
+```bash
+.venv/bin/python -m pytest tracks/F_compiler/tests
+```
+
+Runtime results measure the Python IR interpreter, and code size is serialized IR bytes. Neither is presented as native-code performance.

@@ -198,11 +198,11 @@ All paths below are proposed. "Result" names the evidence that must exist before
 
 | ID | Class | Requirement | Planned implementation | Verification/test | Required result/evidence | Report section |
 |---|---|---|---|---|---|---|
-| F-01 | M | Build mini-compiler pipeline or equivalent framework. | Toy lexer, parser, IR, and interpreter/code generator. | Parser/codegen tests and known programs. | Runnable unoptimized pipeline. | F.1. |
-| F-02 | M | At least two optimizations. | Constant folding/propagation and dead-code elimination. | Before/after semantic equivalence on edge cases. | Optimized IR and preserved outputs. | F.2. |
-| F-03 | FC | Four passes for full credit. | Add CSE and safe strength reduction after mandatory closure. | Algebraic safety and semantic regression tests. | Four verified passes. | F.2. |
-| F-04 | M | Formulate a compiler decision and solve with a Chapter 6 method. | Pass ordering under compilation-effort budget. | Exhaustive tiny ordering reference. | Selected order, objective, and constraint evidence. | F.3. |
-| F-05 | M | Measure instruction count, runtime, code size, and compile time. | Shared benchmark over representative programs. | Same outputs optimized/unoptimized. | All four metrics with units. | F.4. |
+| F-01 | M | Build mini-compiler pipeline or equivalent framework. | `lexer.py`, `parser.py`, `ir.py`; five fixed samples. | `tests/test_frontend_ir.py`; known outputs and invalid inputs. | `results/ir_snapshots.json`, runnable baseline. | `report/track_f.md#F.1-frontend-ir-and-baseline-execution`. |
+| F-02 | M | At least two optimizations. | Folding/propagation and DCE in `passes.py`. | `tests/test_passes.py`; before/after execution. | `optimization_trace.csv`, semantic evidence. | `report/track_f.md#F.2-four-optimization-passes`. |
+| F-03 | FC | Four passes for full credit. | Add verified CSE and safe power-of-two strength reduction. | CSE known case; negative/zero/positive shift equivalence. | Four passes in manifest and IR snapshots. | `report/track_f.md#F.2-four-optimization-passes`. |
+| F-04 | M | Formulate a compiler decision and solve with a Chapter 6 method. | Branch-and-bound ordered pass selection under effort budget. | `tests/test_pass_order.py`; exhaustive enumeration equality. | `results/pass_order_decision.json`. | `report/track_f.md#F.3-budgeted-pass-order-optimization`. |
+| F-05 | M | Measure instruction count, runtime, code size, and compile time. | Repeated baseline/four-pass benchmark in `experiment.py`. | Same outputs; 5,000 executions/500 compilations per repeat. | `benchmark_runs.csv`, `benchmark_summary.csv`, plots. | `report/track_f.md#F.4-required-measurements`. |
 
 ### Track G - xv6 operating-system optimization
 

@@ -1,0 +1,85 @@
+[
+  {
+    "baseline_output": [
+      40
+    ],
+    "expected": [
+      40
+    ],
+    "inputs": {},
+    "optimized_output": [
+      40
+    ],
+    "program": "constants",
+    "semantic_equivalent": true
+  },
+  {
+    "baseline_output": [
+      16
+    ],
+    "expected": [
+      16
+    ],
+    "inputs": {
+      "x": 7
+    },
+    "optimized_output": [
+      16
+    ],
+    "program": "dead_code",
+    "semantic_equivalent": true
+  },
+  {
+    "baseline_output": [
+      81
+    ],
+    "expected": [
+      81
+    ],
+    "inputs": {
+      "x": 4,
+      "y": 5
+    },
+    "optimized_output": [
+      81
+    ],
+    "program": "common_subexpression",
+    "semantic_equivalent": true
+  },
+  {
+    "baseline_output": [
+      59
+    ],
+    "expected": [
+      59
+    ],
+    "inputs": {
+      "x": 7
+    },
+    "optimized_output": [
+      59
+    ],
+    "program": "strength",
+    "semantic_equivalent": true
+  },
+  {
+    "baseline_output": [
+      249,
+      11
+    ],
+    "expected": [
+      249,
+      11
+    ],
+    "inputs": {
+      "x": 10,
+      "y": 3
+    },
+    "optimized_output": [
+      249,
+      11
+    ],
+    "program": "mixed",
+    "semantic_equivalent": true
+  }
+]

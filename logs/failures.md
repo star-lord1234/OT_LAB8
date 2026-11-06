@@ -84,3 +84,11 @@ These are real cross-track setup/infrastructure failures observed on 2026-10-29.
 - **Fix:** derive each seed only from workload size, arrival rate, and repeat, then reuse that workload across capacities and all strategies.
 - **Regression test:** `tracks/E_case_study/tests/test_experiment.py::test_track_e_smoke_experiment_writes_verified_evidence` asserts one workload digest across the capacity sweep.
 - **Lesson:** identical conditions must be enforced by data identity checks, not assumed from nearby loop structure.
+
+## F-011 - Compiler optimization trace had heterogeneous columns
+
+- **AI-generated artifact:** the first Track F trace recorded `instructions_removed` only after an optimization pass, not on the baseline row.
+- **Failure:** the shared strict CSV exporter rejected the evidence table during the Track F smoke experiment.
+- **Fix:** baseline trace rows now record `instructions_removed=0`, giving every row one explicit schema.
+- **Regression test:** `tracks/F_compiler/tests/test_experiment.py::test_track_f_smoke_experiment_writes_complete_evidence` executes the complete exporter.
+- **Lesson:** baseline and optimized evidence must share a uniform schema; an omitted field is ambiguous, not equivalent to a recorded zero.

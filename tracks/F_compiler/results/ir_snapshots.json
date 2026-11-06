@@ -1,0 +1,42 @@
+[
+  {
+    "baseline_instruction_count": 6,
+    "baseline_ir": "%0 = CONST 2\n%1 = CONST 3\n%2 = ADD %0, %1\n%3 = CONST 8\n%4 = MUL %2, %3\nPRINT %4\n",
+    "optimized_instruction_count": 1,
+    "optimized_ir": "PRINT 40\n",
+    "program": "constants",
+    "source": "// Constant folding and propagation.\nlet a = 2 + 3;\nlet b = a * 8;\nprint b;\n"
+  },
+  {
+    "baseline_instruction_count": 8,
+    "baseline_ir": "%0 = INPUT x\n%1 = CONST 1\n%2 = ADD %0, %1\n%3 = CONST 99\n%4 = MUL %0, %3\n%5 = CONST 2\n%6 = MUL %2, %5\nPRINT %6\n",
+    "optimized_instruction_count": 4,
+    "optimized_ir": "%0 = INPUT x\n%2 = ADD 1, %0\n%6 = SHL %2, 1\nPRINT %6\n",
+    "program": "dead_code",
+    "source": "// One live and one dead calculation.\ninput x;\nlet live = x + 1;\nlet dead = x * 99;\nlive = live * 2;\nprint live;\n"
+  },
+  {
+    "baseline_instruction_count": 6,
+    "baseline_ir": "%0 = INPUT x\n%1 = INPUT y\n%2 = ADD %0, %1\n%3 = ADD %0, %1\n%4 = MUL %2, %3\nPRINT %4\n",
+    "optimized_instruction_count": 5,
+    "optimized_ir": "%0 = INPUT x\n%1 = INPUT y\n%2 = ADD %0, %1\n%4 = MUL %2, %2\nPRINT %4\n",
+    "program": "common_subexpression",
+    "source": "// The repeated x+y expression is safe to reuse in SSA-like IR.\ninput x;\ninput y;\nlet a = x + y;\nlet b = x + y;\nprint a * b;\n"
+  },
+  {
+    "baseline_instruction_count": 6,
+    "baseline_ir": "%0 = INPUT x\n%1 = CONST 8\n%2 = MUL %0, %1\n%3 = CONST 3\n%4 = ADD %2, %3\nPRINT %4\n",
+    "optimized_instruction_count": 4,
+    "optimized_ir": "%0 = INPUT x\n%2 = SHL %0, 3\n%4 = ADD 3, %2\nPRINT %4\n",
+    "program": "strength",
+    "source": "// Multiplication by a power of two can become a shift.\ninput x;\nlet y = x * 8;\nlet z = y + 3;\nprint z;\n"
+  },
+  {
+    "baseline_instruction_count": 16,
+    "baseline_ir": "%0 = INPUT x\n%1 = INPUT y\n%2 = ADD %0, %1\n%3 = ADD %0, %1\n%4 = CONST 16\n%5 = MUL %2, %4\n%6 = CONST 99\n%7 = ADD %5, %6\n%8 = MUL %2, %3\n%9 = CONST 8\n%10 = MUL %0, %9\n%11 = ADD %8, %10\nPRINT %11\n%12 = CONST 1\n%13 = ADD %0, %12\nPRINT %13\n",
+    "optimized_instruction_count": 9,
+    "optimized_ir": "%0 = INPUT x\n%1 = INPUT y\n%2 = ADD %0, %1\n%8 = MUL %2, %2\n%10 = SHL %0, 3\n%11 = ADD %10, %8\nPRINT %11\n%13 = ADD 1, %0\nPRINT %13\n",
+    "program": "mixed",
+    "source": "// All passes have useful work; reassignment creates a new SSA value.\ninput x;\ninput y;\nlet a = x + y;\nlet b = x + y;\nlet unused = (a * 16) + 99;\nlet result = (a * b) + (x * 8);\nprint result;\nx = x + 1;\nprint x;\n"
+  }
+]

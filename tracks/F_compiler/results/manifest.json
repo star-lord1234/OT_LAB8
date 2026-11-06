@@ -1,0 +1,36 @@
+{
+  "all_semantically_equivalent": true,
+  "artifacts": [
+    "benchmark_runs.csv",
+    "benchmark_summary.csv",
+    "environment.json",
+    "ir_snapshots.json",
+    "manifest.json",
+    "optimization_trace.csv",
+    "pass_order_decision.json",
+    "plots/instruction_count_code_size.png",
+    "plots/runtime_compile_time.png",
+    "semantic_equivalence.json"
+  ],
+  "pass_order_verified_exact": true,
+  "passes": [
+    "constant_folding_propagation",
+    "common_subexpression_elimination",
+    "strength_reduction",
+    "dead_code_elimination"
+  ],
+  "programs": [
+    "constants",
+    "dead_code",
+    "common_subexpression",
+    "strength",
+    "mixed"
+  ],
+  "runtime_seconds": 0.7940255831927061,
+  "selected_budgeted_order": [
+    "constant_folding_propagation",
+    "dead_code_elimination"
+  ],
+  "status": "verified_four_pass_toy_compiler",
+  "track": "F"
+}

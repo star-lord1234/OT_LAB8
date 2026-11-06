@@ -1,0 +1,31 @@
+program,mode,repeat,passes,instruction_count,code_size_bytes,execution_seconds_per_run,compilation_seconds_per_run,execution_iterations,compilation_iterations,output,semantic_equivalent
+constants,baseline,0,none,6,80,5.075749941170216e-07,1.2064334005117416e-05,5000,500,[40],True
+constants,optimized_four_pass,0,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,1,9,1.2843338772654534e-07,1.8636749126017094e-05,5000,500,[40],True
+constants,baseline,1,none,6,80,5.009334534406662e-07,1.2236500158905983e-05,5000,500,[40],True
+constants,optimized_four_pass,1,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,1,9,1.2885835021734238e-07,1.9057915546000003e-05,5000,500,[40],True
+constants,baseline,2,none,6,80,5.015668459236622e-07,1.216591615229845e-05,5000,500,[40],True
+constants,optimized_four_pass,2,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,1,9,1.3902494683861734e-07,1.8826166167855262e-05,5000,500,[40],True
+dead_code,baseline,0,none,8,110,7.207250222563744e-07,1.7922081984579562e-05,5000,500,[16],True
+dead_code,optimized_four_pass,0,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,4,52,4.1213324293494224e-07,2.811891585588455e-05,5000,500,[16],True
+dead_code,baseline,1,none,8,110,7.300831377506256e-07,1.785883214324713e-05,5000,500,[16],True
+dead_code,optimized_four_pass,1,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,4,52,4.0703341364860537e-07,2.794016618281603e-05,5000,500,[16],True
+dead_code,baseline,2,none,8,110,7.50841572880745e-07,1.7873833887279035e-05,5000,500,[16],True
+dead_code,optimized_four_pass,2,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,4,52,3.9352504536509516e-07,2.8014915995299816e-05,5000,500,[16],True
+common_subexpression,baseline,0,none,6,83,6.174918264150619e-07,1.6062749549746513e-05,5000,500,[81],True
+common_subexpression,optimized_four_pass,0,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,5,67,5.096250213682651e-07,2.3942166008055212e-05,5000,500,[81],True
+common_subexpression,baseline,1,none,6,83,5.925749428570271e-07,1.621366757899523e-05,5000,500,[81],True
+common_subexpression,optimized_four_pass,1,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,5,67,5.028749816119671e-07,2.3970331996679306e-05,5000,500,[81],True
+common_subexpression,baseline,2,none,6,83,6.034250371158123e-07,1.6176082193851472e-05,5000,500,[81],True
+common_subexpression,optimized_four_pass,2,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,5,67,5.043416284024715e-07,2.4195250123739244e-05,5000,500,[81],True
+strength,baseline,0,none,6,80,5.343666300177574e-07,1.3442499563097953e-05,5000,500,[59],True
+strength,optimized_four_pass,0,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,4,52,3.9980001747608183e-07,2.111291792243719e-05,5000,500,[59],True
+strength,baseline,1,none,6,80,5.278832279145717e-07,1.355500053614378e-05,5000,500,[59],True
+strength,optimized_four_pass,1,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,4,52,4.03125025331974e-07,2.111524995416403e-05,5000,500,[59],True
+strength,baseline,2,none,6,80,5.299168638885022e-07,1.3509832322597504e-05,5000,500,[59],True
+strength,optimized_four_pass,2,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,4,52,4.036334343254566e-07,2.0939749665558337e-05,5000,500,[59],True
+mixed,baseline,0,none,16,234,1.5616917982697488e-06,3.774450067430735e-05,5000,500,"[249, 11]",True
+mixed,optimized_four_pass,0,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,9,128,9.387250058352947e-07,5.774641595780849e-05,5000,500,"[249, 11]",True
+mixed,baseline,1,none,16,234,1.586316805332899e-06,3.7622916512191295e-05,5000,500,"[249, 11]",True
+mixed,optimized_four_pass,1,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,9,128,9.428584016859531e-07,5.7523165829479696e-05,5000,500,"[249, 11]",True
+mixed,baseline,2,none,16,234,1.574566587805748e-06,3.762008342891931e-05,5000,500,"[249, 11]",True
+mixed,optimized_four_pass,2,constant_folding_propagation;common_subexpression_elimination;strength_reduction;dead_code_elimination,9,128,9.346416220068932e-07,5.77819999307394e-05,5000,500,"[249, 11]",True

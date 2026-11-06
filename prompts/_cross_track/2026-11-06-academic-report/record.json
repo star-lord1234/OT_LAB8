@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-06",
+  "tool": "OpenAI Codex",
+  "model": "GPT-6 family; exact deployed snapshot not exposed",
+  "scope": "Academic report generation and visual validation",
+  "work_types": ["repository inspection", "report writing", "DOCX/PDF generation", "pagination", "visual verification"],
+  "prompt": "prompts/_cross_track/2026-11-06-academic-report/prompt.md",
+  "response": "prompts/_cross_track/2026-11-06-academic-report/response.md",
+  "verification": "prompts/_cross_track/2026-11-06-academic-report/verification.md",
+  "commit": null,
+  "notes": "Real prompt and verification record. No second AI tool was used."
+}
